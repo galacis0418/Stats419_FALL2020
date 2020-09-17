@@ -1,0 +1,4 @@
+Specifically, for 10 persons (yourself included), you will measure:  height (standing), the height of your head (chin to top of head), the size of your hand (middle finger to wrist), hand span (pinkie to thumb fully extended), the length from your middle finger to your elbow (measured on the inside), 
+the length from your elbow to your armpit, your wingspan (middle finger of each hand fully stretched out), standing reach (flat footed, how far can you reach on a wall with the tip of your finger), length of foot, sitting length from the floor to your knee pit (like armpit but for your knee), 
+standing length from the floor to your hip bone, standing length (height) from the floor to your armpit. {We need to also collect the person's gender, age, and ethnicity.  We also need an identifier for each person: e.g., I would suggest something like MonteS passed through an md5 encryption 
+[http://md5.mshaffer.com/] => 1c240

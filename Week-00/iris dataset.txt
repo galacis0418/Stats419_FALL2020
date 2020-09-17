@@ -1,0 +1,10 @@
+3. The Iris dataset is a multivariate dataset invented by a Biologist names Ronald Fisher in the 1930's.  He was a biologist and 
+was using the data to understand the differences between the three variations of iris flowers.  There are 150 samples total with
+a third from each species. The Species are Versicolor, virginica, and Setosa. The data he collected was the length and width of the petals.
+This data is still used today, but mainly for statistics.
+
+
+4. number of columns in the dataset before 63 and after it's still 63. after removing the data_test column and the V00 column but
+adding the two news column it ended the same.
+
+the number of rows before was 838 and after it was 678. 
