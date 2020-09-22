@@ -1,26 +1,66 @@
 ---
 title: "week 3 assignment"
-output: pdf_document
 author: "Joshua Bennett"
 Email: "joshua.r.bennett@wsu.edu"
 wsu-id: "1137311"
 course: "Stats 419"
 instructor: "Monte Shaffer"
 date: "9/16/2020"
+
+output:
+  pdf_document:
+    citation_package: natbib
+    latex_engine: pdflatex
+    template: C:\Users\Galac\Desktop\git419\Stats419_FALL2020\LateX\full-example\homework.TeX
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
+```{r,mychunk-iris-demo}
+
+# plot function here ...
+plot(iris);
+plot(iris[,-5]);
+plot(iris[,-5],col=iris[,5]);
+levels(iris[,5]);
+myColors = c("red","green","blue");
+plot(iris[,-5],col=myColors);
+
+species = as.numeric(iris[,5]);
+
+as.numeric(iris[,5]);  # map to myColors ...
+
+species = as.numeric(iris[,5]);
+myColors[species]
+
+plot(iris[,-5],col=myColors[species]);
+
+plot(iris[,-5],col=myColors[species], pch=19);
+
+myColors = c("red","green","blue");
+mySymbols = c(15, 16, 18);
+species = as.numeric(iris[,5]);
+plot(iris[,-5],col=myColors[species], pch=mySymbols[species]);
+
+
+#legend("bottomright",unique(species),col=myColors[species],pch=mySymbols[species]);  # why is legend not working?
+
+
+
+
+# final answer using plot
+myColors = c("red","green","blue");
+mySymbols = c(19, 19, 19);
+species = as.numeric(iris[,5]);
+plot( iris[,-5],
+      col=myColors[species], 
+      pch=mySymbols[species],
+      main="Iris Data (red=setosa,green=versicolor,blue=virginica)"
+    );
+# we need to add a caption into our final answer of our writeup ...  ALWAYS ...
+
 
 ## R Markdown
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
 
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
-
-```{r cars}
-summary(cars)
 ```
 
 ## Including Plots

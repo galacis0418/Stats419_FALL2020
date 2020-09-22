@@ -1,4 +1,17 @@
 ---
+title: "week 3 assignment"
+output: pdf_document
+author: "Joshua Bennett"
+Email: "joshua.r.bennett@wsu.edu"
+wsu-id: "1137311"
+course: "Stats 419"
+instructor: "Monte Shaffer"
+date: "9/16/2020"
+---
+
+
+
+---
 title: 'R Notebook sandbox: Assignment "Datasets" (10 points) Revisited'
 output:
   html_document:
