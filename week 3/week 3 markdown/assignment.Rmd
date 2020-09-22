@@ -14,53 +14,10 @@ output:
     template: C:\Users\Galac\Desktop\git419\Stats419_FALL2020\LateX\full-example\homework.TeX
 ---
 
-```{r,mychunk-iris-demo}
-
-# plot function here ...
-plot(iris);
-plot(iris[,-5]);
-plot(iris[,-5],col=iris[,5]);
-levels(iris[,5]);
-myColors = c("red","green","blue");
-plot(iris[,-5],col=myColors);
-
-species = as.numeric(iris[,5]);
-
-as.numeric(iris[,5]);  # map to myColors ...
-
-species = as.numeric(iris[,5]);
-myColors[species]
-
-plot(iris[,-5],col=myColors[species]);
-
-plot(iris[,-5],col=myColors[species], pch=19);
-
-myColors = c("red","green","blue");
-mySymbols = c(15, 16, 18);
-species = as.numeric(iris[,5]);
-plot(iris[,-5],col=myColors[species], pch=mySymbols[species]);
-
-
-#legend("bottomright",unique(species),col=myColors[species],pch=mySymbols[species]);  # why is legend not working?
-
-
-
-
-# final answer using plot
-myColors = c("red","green","blue");
-mySymbols = c(19, 19, 19);
-species = as.numeric(iris[,5]);
-plot( iris[,-5],
-      col=myColors[species], 
-      pch=mySymbols[species],
-      main="Iris Data (red=setosa,green=versicolor,blue=virginica)"
-    );
-# we need to add a caption into our final answer of our writeup ...  ALWAYS ...
-
-
-## R Markdown
-
-
+```{r}
+library(devtools);
+github.path = "https://raw.githubusercontent.com/galacis0418/Stats419_FALL2020/";
+source_url (paste0(github.path, "master/functions/data%203%20rework.Rmd"));
 ```
 
 ## Including Plots
