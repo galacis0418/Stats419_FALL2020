@@ -1,0 +1,67 @@
+PStill Conversion Problem Report
+
+* Date: Wed Nov 10 07:29:09 2010
+* Input from: C:\Documents and Settings\Monte\My Documents\My Dropbox\Apples\_latex\graphics\location_6.eps
+@lPStill Conversion Log
+* Call is equivalent to the following command line options:
+  -m Xusesrctransp -c -c -c -c -w 612 -h 792 -i -t -2 -W -M optimizefonts -M useSrcUnicodeMap 
+  -R 0 -a 3 -d 300 -M regenfonts -T C:\DOCUME~1\Monte\LOCALS~1\Temp -M useTTFCache 
+  
+- Option selected: PDF transcoding will use src transparency
+- Option selected: Optimizing embedded fonts for smaller size
++ Preset: Use source PDF unicode maps if present
+- Option selected: Regenerating embedded fonts from RunTime Info
+* Output to 'C:\Documents and Settings\Monte\My Documents\My Dropbox\Apples\_latex\graphics\location_6.pdf'
++ Read 192 encoding mappings from windrv_mapping.table
+* Licensed to 'MonteShaffer', thanks for registering!
+
+PStill W32 GUI Version  WIN32 V1.74.14 of 27. April 2010
+
+Copyright by Dipl.-Ing. Frank Siegert, [frank@wizards.de], All rights reserved
+See http://www.pstill.com for more information and updates
+
+* Starting ResourceExtractor...
+* Job's printer driver setup looks good for Type 1 font extraction
+* Calculating widths and metrics for fonts...
+* Erasing metrics for calculation run...
+[done]
+
+Initial setup is 2549 x 3299 device pts at 300 dpi (612 x 792 pts true)
+
++ Prefering document fonts to installed fonts...
+ Document Title: ''
+ Creator of Job: 'PScript5.dll Version 5.2.2'
+ Creation date: '11/10/2010 7:27:10'
+ For: 'Monte'
+- Page 1 finished
+
+* PStill Interpreter concluded, 1 pages, status Ok, vmstat 5077.1 kByte
+* Processing has recognized 1 different text encodings
+The interpretation produced the following messages:
+PS-Messages> * PStill is interpreting C:\Documents and Settings\Monte\My Documents\My Dropbox\Apples\_latex\graphics\location_6.eps
+PS-Messages> * Interpreter Level 2 active
+PS-Messages> %%[ ProductName: PStill ]%%
+PS-Messages> %%[Page: 1]%%
+PS-Messages> %%[LastPage]%%
+- End of messages - 
+
+* Starting up PDF Backend
+- Found start of content stream
+[1] 
+
+* Content Analysis complete 
+* Font Analysis complete 
+* Annotation Analysis complete 
+* Object List Optimization complete
+* Output PDF Level automatically set to 1.2
+* Document does not declare outlines
+* Object List Dump complete 
+* XRef Dump complete (14 Objects referenced)
+* Output according to PDF Specification '1.2' written
+* PDF Conversion complete (1 page, 14 objects, 1 images, 0 recycled images) 
+*** Error: Unable to create C:\Documents and Settings\Monte\My Documents\My Dropbox\Apples\_latex\graphics\location_6.pdf, file may be still open
+
+(Error info: PostScript=0, Signal=0, PDFConverter=1)
+A conversion error has occured - output may be incomplete
+
+ERROR: Problem during conversion - output may be corrupt or incomplete

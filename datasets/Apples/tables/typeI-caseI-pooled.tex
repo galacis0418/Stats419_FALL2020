@@ -1,0 +1,79 @@
+
+		%\begin{tabular}{cccc}
+		%\begin{tabular*}{150mm}{@{\extracolsep{\fill}}cccc}
+		\begin{tabular*}{215mm}{r@{.}lccccccccccccccc}
+		\hline	
+		\hline		
+		\multicolumn{17}{c}{ } \\
+		\multicolumn{2}{c}{ \bf{$var(Y)$} } & \multicolumn{3}{c}{$n_{ij} = 10$ }& \multicolumn{3}{c}{$n_{ij} = 30$ }& \multicolumn{3}{c}{$n_{ij} = 50$ }& \multicolumn{3}{c}{$n_{ij} = 100$ }& \multicolumn{3}{c}{$n_{ij} = 200$ }  \\
+		\multicolumn{17}{c}{ } \\
+		0&05	& \nicefrac{924}{8351} &=& .11060 & \nicefrac{723}{9989} &=& .07238 & \nicefrac{667}{10000} &=& .06670 & \nicefrac{602}{10000} &=& .06020 & \nicefrac{582}{10000} &=& .05820 \\
+		\multicolumn{17}{c}{ } \\
+		0&10	& \nicefrac{329}{4587} &=& .07172 & \nicefrac{776}{9612} &=& .08073 & \nicefrac{665}{9974} &=& .06667 & \nicefrac{640}{10000} &=& .06400 & \nicefrac{605}{10000} &=& .06050 \\
+		\multicolumn{17}{c}{ } \\
+		0&15	& \nicefrac{114}{2400} &=& .04750 & \nicefrac{646}{8754} &=& .07380 & \nicefrac{720}{9780} &=& .07362 & \nicefrac{653}{9996} &=& .06533 & \nicefrac{603}{10000} &=& .06030 \\
+		\multicolumn{17}{c}{ } \\
+		0&20	& \nicefrac{45}{1496} &=& .03008 & \nicefrac{527}{7504} &=& .07023 & \nicefrac{748}{9330} &=& .08017 & \nicefrac{665}{9965} &=& .06673 & \nicefrac{574}{10000} &=& .05740 \\
+		\multicolumn{17}{c}{ } \\
+		0&25	& \nicefrac{33}{1028} &=& .03210 & \nicefrac{406}{6421} &=& .06323 & \nicefrac{680}{8776} &=& .07748 & \nicefrac{661}{9907} &=& .06672 & \nicefrac{635}{9999} &=& .06351 \\
+		\multicolumn{17}{c}{ } \\
+		\hline
+		\hline
+		\end{tabular*}
+			
+
+\begin{comment}
+N_i = 10
+
+     beta  delta tau  var gsim reject.pooled reject.L
+simP 2.87 0.0345 173 0.05 8351           924     1311
+simP 2.87 0.0345 173 0.10 4587           329      660
+simP 2.87 0.0345 173 0.15 2400           114      295
+simP 2.87 0.0345 173 0.20 1496            45      135
+simP 2.87 0.0345 173 0.25 1028            33       98
+
+N_i = 200
+
+> resultS;
+     beta  delta tau  var  gsim reject.pooled reject.L
+simP 2.87 0.0345 173 0.05 10000           582      384
+simP 2.87 0.0345 173 0.10 10000           605      326
+simP 2.87 0.0345 173 0.15 10000           603      343
+simP 2.87 0.0345 173 0.20 10000           574      307
+simP 2.87 0.0345 173 0.25  9999           635      375
+
+
+N_i = 30
+			> resultS;
+     beta  delta tau  var gsim reject.pooled reject.L
+simP 2.87 0.0345 173 0.05 9989           723      548
+simP 2.87 0.0345 173 0.10 9612           776      787
+simP 2.87 0.0345 173 0.15 8754           646      820
+simP 2.87 0.0345 173 0.20 7504           527      672
+simP 2.87 0.0345 173 0.25 6421           406      518
+> 
+
+N_i = 50
+
+> resultS;
+     beta  delta tau  var  gsim reject.pooled reject.L
+simP 2.87 0.0345 173 0.05 10000           667      425
+simP 2.87 0.0345 173 0.10  9974           665      522
+simP 2.87 0.0345 173 0.15  9780           720      653
+simP 2.87 0.0345 173 0.20  9330           748      726
+simP 2.87 0.0345 173 0.25  8776           680      730
+> 
+
+N_i = 100
+
+> resultS;
+     beta  delta tau  var  gsim reject.pooled reject.L
+simP 2.87 0.0345 173 0.05 10000           602      349
+simP 2.87 0.0345 173 0.10 10000           640      381
+simP 2.87 0.0345 173 0.15  9996           653      441
+simP 2.87 0.0345 173 0.20  9965           665      451
+simP 2.87 0.0345 173 0.25  9907           661      552
+
+
+
+\end{comment}

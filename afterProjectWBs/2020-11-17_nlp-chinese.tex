@@ -1,0 +1,342 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  pdftitle={R Notebook: learn chinese with NLP},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\usepackage[margin=1in]{geometry}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+
+\title{R Notebook: learn chinese with NLP}
+\author{}
+\date{\vspace{-2.5em}}
+
+\begin{document}
+\maketitle
+
+{
+\setcounter{tocdepth}{4}
+\tableofcontents
+}
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{library}\NormalTok{(devtools);}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Loading required package: usethis
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{library}\NormalTok{(humanVerseWSU);}
+
+\NormalTok{path.github =}\StringTok{ "https://raw.githubusercontent.com/MonteShaffer/humanVerseWSU/master/"}\NormalTok{;}
+
+\NormalTok{include.me =}\StringTok{ }\KeywordTok{paste0}\NormalTok{(path.github, }\StringTok{"misc/functions{-}nlp.R"}\NormalTok{);}
+\CommentTok{\# source\_url( include.me );}
+\NormalTok{include.me =}\StringTok{ }\KeywordTok{paste0}\NormalTok{(path.github, }\StringTok{"humanVerseWSU/R/functions{-}encryption.R"}\NormalTok{);}
+\KeywordTok{source\_url}\NormalTok{( include.me );}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## SHA-1 hash of file is da71dde620bed33db055778b752eefb476f7bf6b
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{include.me =}\StringTok{ }\KeywordTok{paste0}\NormalTok{(path.github, }\StringTok{"misc/functions{-}chinese.R"}\NormalTok{);}
+\CommentTok{\# source\_url( include.me );}
+
+
+\NormalTok{path.to.nascent =}\StringTok{ "C:/Users/Alexander Nevsky/Dropbox/WSU{-}419/Fall 2020/\_\_student\_access\_\_/unit\_02\_confirmatory\_data\_analysis/nascent/"}\NormalTok{;}
+
+\NormalTok{folder.nlp =}\StringTok{ "nlp/"}\NormalTok{;}
+\NormalTok{path.to.nlp =}\StringTok{ }\KeywordTok{paste0}\NormalTok{(path.to.nascent, folder.nlp);}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{chinese-word-translation-as-nlp-classifier-problem}{%
+\section{Chinese word translation as NLP classifier
+problem}\label{chinese-word-translation-as-nlp-classifier-problem}}
+
+The Chinese language is ancient. It consists of glyphs that at times
+have sub-glyphs or radicals.
+
+Can we use a document training to translate a simple English word like
+``water'' or ``ox''?
+
+The mathematics we will use is the concept of set-theory. If ``water''
+is in let's say ten records, and is unique to the other words in the
+set, we can uniquely identify the matching Chinese glyph or glyphs.
+
+\hypertarget{water-ox}{%
+\subsection{1973 Water Ox}\label{water-ox}}
+
+I was born in March 1973 \url{https://en.wikipedia.org/wiki/1973}
+
+On the above page, it links to the Chinese Zodiac symbol ``Water Ox''
+and provides the following symbols or glyphs \texttt{癸丑年}.
+
+\hypertarget{decomposing-each-glyph}{%
+\subsubsection{Decomposing each Glyph}\label{decomposing-each-glyph}}
+
+There are some dictionaries that decompose each of these three glyphs,
+for example
+\url{https://hanzicraft.com/character/\%E7\%99\%B8\%E4\%B8\%91\%E5\%B9\%B4}
+
+\begin{itemize}
+\tightlist
+\item
+  Radical 1 (\texttt{癸}):
+  \texttt{癸\ =\textgreater{}\ 癶\ (footsteps),\ 一\ (one),\ 大\ (big)}
+\item
+  Radical 2 (\texttt{丑}):
+  \texttt{丑\ =\textgreater{}\ 刀\ (knife),\ 二\ (two)}
+\item
+  Radical 3 (\texttt{年}):
+  \texttt{年\ =\textgreater{}\ 丿\ (bend),\ 一\ (one),\ 十\ (ten),\ ㇗\ (N/A),\ 丨\ (line)}
+\end{itemize}
+
+From the radical decomposition, I don't see ``Water'' or ``Ox''
+anywhere. An important part of language decomposition is called
+etymology: how were the words derived? This is a personal research
+question I have.
+
+\hypertarget{hanzicraft-resources}{%
+\subsubsection{Hanzicraft Resources}\label{hanzicraft-resources}}
+
+This website links to several ``internal'' dictionaries:
+
+\begin{itemize}
+\tightlist
+\item
+  \url{https://hanzicraft.com/lists/frequency}
+\item
+  \url{https://hanzicraft.com/lists/phonetic-sets}
+\item
+  \url{https://hanzicraft.com/lists/productive-component}
+\end{itemize}
+
+and to several ``external'' dictionaries
+\url{https://hanzicraft.com/about}:
+
+\begin{itemize}
+\tightlist
+\item
+  \url{http://lwc.daanvanesch.nl/}
+\item
+  \url{https://cjkdecomp.codeplex.com/}
+\item
+  \url{http://www.mdbg.net/chindict/chindict.php?page=cc-cedict}
+\item
+  \url{http://lingua.mtsu.edu/chinese-computing/}
+\end{itemize}
+
+There are better ``linguistic data sets'', but for this notebook, we can
+use this data as we see fit.
+
+\hypertarget{translated-prose}{%
+\subsection{Translated Prose}\label{translated-prose}}
+
+Having single-word dictionaries has its use, but seeing the words in
+context would provide other insights into definitions. So can I find a
+dataset that has english and chinese from a known text?
+
+\hypertarget{chinese-english-document}{%
+\subsubsection{Chinese-English
+Document}\label{chinese-english-document}}
+
+Since the Bible is so pervasive, significant effort has been made in
+translating it into many languages. In fact, the Gutenberg printing
+press and much of Western Society is linked to the translation of the
+Bible (King James created copyright law to prevent the dissemination of
+un-approved bibles:
+\url{https://en.wikipedia.org/wiki/Copyright\#Background} which led to
+the modern U.S. law on copyright and patents).
+
+\hypertarget{chinese-hgb-and-hb5}{%
+\paragraph{Chinese HGB and HB5}\label{chinese-hgb-and-hb5}}
+
+There is a website \url{http://www.o-bible.com/} that contains the Bible
+in two variants of Chinese. One called ``GB'' and ``Big5''. For example,
+Genesis 1:
+
+\begin{itemize}
+\tightlist
+\item
+  English KJV
+  \url{http://www.o-bible.com/cgibin/ob.cgi?version=kjv\&book=gen\&chapter=1}
+\item
+  English BBE
+  \url{http://www.o-bible.com/cgibin/ob.cgi?version=bbe\&book=ge\&chapter=1}
+\item
+  Chinese HGB
+  \url{http://www.o-bible.com/cgibin/ob.cgi?version=hgb\&book=gen\&chapter=1}
+\item
+  Chinese HB5
+  \url{http://www.o-bible.com/cgibin/ob.cgi?version=hb5\&book=gen\&chapter=1}
+\end{itemize}
+
+These versions seem to be very common (see
+\url{http://web.mit.edu/jywang/www/cef/Bible/Chinese/hgb.htm}).
+
+\begin{itemize}
+\tightlist
+\item
+  GB refers to the ``national standard'' encoding and often uses the new
+  simplified characters (tied to the current Chinese government:
+  \url{https://en.wikipedia.org/wiki/Simplified_Chinese_characters}).
+\item
+  Big5 refers to the ``Taiwan/Hong Kong'' encoding and often uses
+  traditional characters.
+\end{itemize}
+
+\hypertarget{chinese-punctuation}{%
+\paragraph{Chinese Punctuation}\label{chinese-punctuation}}
+
+This is a nice example because we can decompose text into books,
+chapters, and verses
+\url{https://www.gotquestions.org/divided-Bible-chapters-verses.html}
+(paragraph-like). And then (within a verse) we can analyze each
+sentence. The period ``.'' appears to be \texttt{。} and the comma ``,''
+appears to be \texttt{、} or \texttt{，} and the colon ``:'' appears to
+be \texttt{．} (Genesis 1:14 of HB5)
+
+This will test the capabilities of R, as encoding other languages is a
+bit of a challenge. We are also testing a large dataset than the
+previous examples. More text to process.
+
+\hypertarget{four-versions-2-in-english-1-in-each-form-of-chinese}{%
+\paragraph{Four versions (2 in English, 1 in each form of
+Chinese)}\label{four-versions-2-in-english-1-in-each-form-of-chinese}}
+
+\hypertarget{read-in-the-data}{%
+\subparagraph{Read in the data}\label{read-in-the-data}}
+
+Each of the four versions have the same number of lines. Line 1 is a
+header, and we can skip it. The keys in the KJV are slightly different,
+so we will process that one last, and use the keys from BBE for all four
+versions. I choose BBE because it is English and I can read it.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{versions =}\StringTok{ }\KeywordTok{c}\NormalTok{(}\StringTok{"bbe"}\NormalTok{,}\StringTok{"kjv"}\NormalTok{,}\StringTok{"hb5"}\NormalTok{,}\StringTok{"hbg"}\NormalTok{);}
+\NormalTok{langs    =}\StringTok{ }\KeywordTok{c}\NormalTok{(}\StringTok{"en{-}us"}\NormalTok{, }\StringTok{"en{-}gb"}\NormalTok{, }\StringTok{"zh{-}tw"}\NormalTok{, }\StringTok{"zh{-}cn"}\NormalTok{);}
+\CommentTok{\# https://en.wikipedia.org/wiki/ISO\_639{-}1}
+\CommentTok{\# https://en.wikipedia.org/wiki/ISO\_3166{-}1\_alpha{-}2}
+\NormalTok{langK    =}\StringTok{ }\KeywordTok{c}\NormalTok{(}\StringTok{"American English"}\NormalTok{, }\StringTok{"English"}\NormalTok{, }\StringTok{"Traditional Chinese"}\NormalTok{, }\StringTok{"Simplified Chinese"}\NormalTok{);}
+\CommentTok{\# we will use the standard codes ...}
+
+
+\CommentTok{\# dataframe format}
+\CommentTok{\# version .. lang .. book.n ... chap.n ... para.n (verse) ... para.text (verse)}
+
+\NormalTok{path.to.obible =}\StringTok{ }\KeywordTok{paste0}\NormalTok{(path.to.nlp, }\StringTok{"\_data\_/chinese/o{-}bible/"}\NormalTok{);}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# https://cran.r{-}project.org/web/packages/corpus/vignettes/chinese.html}
+\NormalTok{cstops \textless{}{-}}\StringTok{ "https://raw.githubusercontent.com/ropensci/textworkshop17/master/demos/chineseDemo/ChineseStopWords.txt"}
+\NormalTok{csw \textless{}{-}}\StringTok{ }\KeywordTok{paste}\NormalTok{(}\KeywordTok{readLines}\NormalTok{(cstops, }\DataTypeTok{encoding =} \StringTok{"UTF{-}8"}\NormalTok{), }\DataTypeTok{collapse =} \StringTok{"}\CharTok{\textbackslash{}n}\StringTok{"}\NormalTok{) }\CommentTok{\# download}
+\end{Highlighting}
+\end{Shaded}
+
+
+\end{document}

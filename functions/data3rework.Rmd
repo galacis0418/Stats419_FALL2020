@@ -1,12 +1,14 @@
 ---
 title: "week 3 assignment"
-output: pdf_document
 author: "Joshua Bennett"
-Email: "joshua.r.bennett@wsu.edu"
-wsu-id: "1137311"
-course: "Stats 419"
-instructor: "Monte Shaffer"
 date: "9/16/2020"
+output:
+  html_document:
+    df_print: paged
+wsu-id: '1137311'
+course: Stats 419
+instructor: Monte Shaffer
+Email: joshua.r.bennett@wsu.edu
 ---
 
 
@@ -26,17 +28,6 @@ my-var: "monte"  # https://bookdown.org/yihui/rmarkdown/html-document.html
 
 
 
-```{r,mychunk-common-include,message=FALSE}
-library(devtools);
-my.source = 'local';
-local.path = "C:/_git_/WSU_STATS419_FALL2020/";
-local.data.path = "R:/WSU_STATS419_FALL2020/";
-source( paste0(local.path,"functions/libraries.R"), local=T );
-
-# Rtools running .... 07a Technical Support ... 
-#install_github("MonteShaffer/humanVerseWSU/humanVerseWSU");
-library(humanVerseWSU); # if your functions have the same name as the humanVerseWSU functions, there may be a collision ...  order of sourcing/library (which comes first, second, third, etc.) matters.
-```
 
 
 # Matrix

@@ -1,0 +1,1087 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  pdftitle={R Notebook: IMDB (predict gender from biography)},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\usepackage[margin=1in]{geometry}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+
+\title{R Notebook: IMDB (predict gender from biography)}
+\author{}
+\date{\vspace{-2.5em}}
+
+\begin{document}
+\maketitle
+
+{
+\setcounter{tocdepth}{5}
+\tableofcontents
+}
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{library}\NormalTok{(devtools);}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Loading required package: usethis
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{library}\NormalTok{(humanVerseWSU);}
+
+\NormalTok{path.github =}\StringTok{ "https://raw.githubusercontent.com/MonteShaffer/humanVerseWSU/master/"}\NormalTok{;}
+
+\NormalTok{include.me =}\StringTok{ }\KeywordTok{paste0}\NormalTok{(path.github, }\StringTok{"misc/functions{-}nlp.R"}\NormalTok{);}
+\KeywordTok{source\_url}\NormalTok{( include.me );}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## SHA-1 hash of file is 704afa69d52215d315cb5f59cdc020b0bbfd0b13
+\end{verbatim}
+
+\begin{verbatim}
+## Warning: package 'tm' was built under R version 4.0.3
+\end{verbatim}
+
+\begin{verbatim}
+## Loading required package: NLP
+\end{verbatim}
+
+\begin{verbatim}
+## Warning: package 'NLP' was built under R version 4.0.3
+\end{verbatim}
+
+\begin{verbatim}
+## Warning: package 'SentimentAnalysis' was built under R version 4.0.3
+\end{verbatim}
+
+\begin{verbatim}
+## 
+## Attaching package: 'SentimentAnalysis'
+\end{verbatim}
+
+\begin{verbatim}
+## The following object is masked from 'package:base':
+## 
+##     write
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{include.me =}\StringTok{ }\KeywordTok{paste0}\NormalTok{(path.github, }\StringTok{"misc/functions{-}nlp{-}str.R"}\NormalTok{);}
+\KeywordTok{source\_url}\NormalTok{( include.me );}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## SHA-1 hash of file is 6bdb234fa84eea995969dc29d6ff2a78f3982131
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{include.me =}\StringTok{ }\KeywordTok{paste0}\NormalTok{(path.github, }\StringTok{"misc/functions{-}nlp{-}stack.R"}\NormalTok{);}
+\KeywordTok{source\_url}\NormalTok{( include.me );}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## SHA-1 hash of file is 034efbce0405954198545f8798e119b77a4809c9
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{include.me =}\StringTok{ }\KeywordTok{paste0}\NormalTok{(path.github, }\StringTok{"misc/functions{-}nlp{-}pos.R"}\NormalTok{);}
+\KeywordTok{source\_url}\NormalTok{( include.me );}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## SHA-1 hash of file is d8c8cf01c8ead1b6d4228891aa52bac77084a6e7
+\end{verbatim}
+
+\begin{verbatim}
+## Warning: package 'openNLP' was built under R version 4.0.3
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{include.me =}\StringTok{ }\KeywordTok{paste0}\NormalTok{(path.github, }\StringTok{"humanVerseWSU/R/functions{-}encryption.R"}\NormalTok{);}
+\KeywordTok{source\_url}\NormalTok{( include.me );}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## SHA-1 hash of file is da71dde620bed33db055778b752eefb476f7bf6b
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{path.to.nascent =}\StringTok{ "C:/Users/Alexander Nevsky/Dropbox/WSU{-}419/Fall 2020/\_\_student\_access\_\_/unit\_02\_confirmatory\_data\_analysis/nascent/"}\NormalTok{;}
+
+\NormalTok{folder.nlp =}\StringTok{ "nlp/"}\NormalTok{;}
+\NormalTok{path.to.nlp =}\StringTok{ }\KeywordTok{paste0}\NormalTok{(path.to.nascent, folder.nlp);}
+
+
+\CommentTok{\#\#\#\#\#\# UPDATES TO dataframe subset function \#\#\#\#\#\#}
+\CommentTok{\# inflation adjustments for NA ... and improvements on subsetting}
+\NormalTok{include.me =}\StringTok{ }\KeywordTok{paste0}\NormalTok{(path.github, }\StringTok{"humanVerseWSU/R/functions{-}dataframe.R"}\NormalTok{);}
+\KeywordTok{source\_url}\NormalTok{( include.me );}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## SHA-1 hash of file is 1149cbf3e865f692b50d4d1983e6364dc56ce62d
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{include.me =}\StringTok{ }\KeywordTok{paste0}\NormalTok{(path.github, }\StringTok{"humanVerseWSU/R/functions{-}inflation.R"}\NormalTok{);}
+\KeywordTok{source\_url}\NormalTok{( include.me );}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## SHA-1 hash of file is b6d29327e3fe030ca132b135f4a89b6fc6a61a66
+\end{verbatim}
+
+\hypertarget{imdb-social-network}{%
+\section{(IMDB) Social Network}\label{imdb-social-network}}
+
+\hypertarget{ranking-an-adjacency-matrix}{%
+\subsection{Ranking an Adjacency
+Matrix}\label{ranking-an-adjacency-matrix}}
+
+Ever wonder how the Google Page Rank algorithm works, well you are about
+to see. The classic paper (1999) was never published, and explained the
+idea as a ``popular vote'' and the web user as a random surfer. As we
+will soon see, it is an eigenvector measure of a special type of matrix,
+an adjacency matrix.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{myV =}\StringTok{ }\KeywordTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{0}\NormalTok{,}
+        \DecValTok{0}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{0}\NormalTok{,}
+        \DecValTok{0}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{0}\NormalTok{,}
+        \DecValTok{0}\NormalTok{,}\DecValTok{1}\NormalTok{,}\DecValTok{1}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{0}\NormalTok{,}
+        \DecValTok{1}\NormalTok{,}\DecValTok{1}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{0}\NormalTok{,}
+        \DecValTok{0}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{0}\NormalTok{,}
+        \DecValTok{1}\NormalTok{,}\DecValTok{1}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{1}\NormalTok{,}\DecValTok{1}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{0}\NormalTok{,}
+        \DecValTok{1}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{1}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{1}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{0}\NormalTok{,}
+        \DecValTok{0}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{1}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{0}\NormalTok{,}
+        \DecValTok{0}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{1}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{1}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{0}\NormalTok{);}
+
+\NormalTok{myA =}\StringTok{ }\KeywordTok{matrix}\NormalTok{(myV, }\DataTypeTok{nrow=}\DecValTok{10}\NormalTok{, }\DataTypeTok{byrow=}\OtherTok{TRUE}\NormalTok{);}
+  \KeywordTok{rownames}\NormalTok{(myA) =}\StringTok{ }\KeywordTok{colnames}\NormalTok{(myA) =}\StringTok{ }\KeywordTok{paste0}\NormalTok{(}\StringTok{"P."}\NormalTok{,}\DecValTok{1}\OperatorTok{:}\DecValTok{10}\NormalTok{);}
+\NormalTok{myA;}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##      P.1 P.2 P.3 P.4 P.5 P.6 P.7 P.8 P.9 P.10
+## P.1    0   0   0   0   0   0   0   0   0    0
+## P.2    0   0   0   0   0   0   0   0   0    0
+## P.3    0   0   0   0   0   0   0   0   0    0
+## P.4    0   1   1   0   0   0   0   0   0    0
+## P.5    1   1   0   0   0   0   0   0   0    0
+## P.6    0   0   0   0   0   0   0   0   0    0
+## P.7    1   1   0   0   1   1   0   0   0    0
+## P.8    1   0   0   1   0   1   0   0   0    0
+## P.9    0   0   1   0   0   0   0   0   0    0
+## P.10   0   0   0   0   0   1   0   1   0    0
+\end{verbatim}
+
+Much of what I describe can be found in my dissertation:
+\url{http://www.mshaffer.com/arizona/dissertation/mjsPRINT.pdf}. I will
+include some screenshots of some relevant descriptions.
+
+The Google method does not require sorting (but it does no harm). The
+method I use (thanks to some brilliant Italian math colleagues) does
+require sorting.
+
+\hypertarget{row-sort}{%
+\subsubsection{Row sort}\label{row-sort}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# row sort}
+\NormalTok{rs =}\StringTok{ }\KeywordTok{rowSums}\NormalTok{(myA);}
+\NormalTok{rs.s =}\StringTok{ }\KeywordTok{sort}\NormalTok{(rs);}
+\NormalTok{rs.idx =}\StringTok{ }\KeywordTok{as.numeric}\NormalTok{( }\KeywordTok{gsub}\NormalTok{(}\StringTok{"P."}\NormalTok{,}\StringTok{""}\NormalTok{,}\KeywordTok{names}\NormalTok{(rs.s)) );}
+
+\NormalTok{myA.s =}\StringTok{ }\NormalTok{myA[rs.idx,];}
+\NormalTok{myA.s;}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##      P.1 P.2 P.3 P.4 P.5 P.6 P.7 P.8 P.9 P.10
+## P.1    0   0   0   0   0   0   0   0   0    0
+## P.2    0   0   0   0   0   0   0   0   0    0
+## P.3    0   0   0   0   0   0   0   0   0    0
+## P.6    0   0   0   0   0   0   0   0   0    0
+## P.9    0   0   1   0   0   0   0   0   0    0
+## P.4    0   1   1   0   0   0   0   0   0    0
+## P.5    1   1   0   0   0   0   0   0   0    0
+## P.10   0   0   0   0   0   1   0   1   0    0
+## P.8    1   0   0   1   0   1   0   0   0    0
+## P.7    1   1   0   0   1   1   0   0   0    0
+\end{verbatim}
+
+\hypertarget{then-column-sort}{%
+\subsubsection{Then, Column sort}\label{then-column-sort}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# col sort}
+\NormalTok{cs =}\StringTok{ }\KeywordTok{colSums}\NormalTok{(myA.s);}
+\NormalTok{cs.s =}\StringTok{ }\KeywordTok{sort}\NormalTok{(cs);}
+\NormalTok{cs.idx =}\StringTok{ }\KeywordTok{as.numeric}\NormalTok{( }\KeywordTok{gsub}\NormalTok{(}\StringTok{"P."}\NormalTok{,}\StringTok{""}\NormalTok{,}\KeywordTok{names}\NormalTok{(cs.s)) );}
+
+\NormalTok{myA.ss =}\StringTok{ }\NormalTok{myA.s[,cs.idx];}
+\NormalTok{myA.ss;}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##      P.7 P.9 P.10 P.4 P.5 P.8 P.3 P.1 P.2 P.6
+## P.1    0   0    0   0   0   0   0   0   0   0
+## P.2    0   0    0   0   0   0   0   0   0   0
+## P.3    0   0    0   0   0   0   0   0   0   0
+## P.6    0   0    0   0   0   0   0   0   0   0
+## P.9    0   0    0   0   0   0   1   0   0   0
+## P.4    0   0    0   0   0   0   1   0   1   0
+## P.5    0   0    0   0   0   0   0   1   1   0
+## P.10   0   0    0   0   0   1   0   0   0   1
+## P.8    0   0    0   1   0   0   0   1   0   1
+## P.7    0   0    0   0   1   0   0   1   1   1
+\end{verbatim}
+
+\hypertarget{not-exactly-joint-sort}{%
+\subsubsection{Not exactly, joint sort}\label{not-exactly-joint-sort}}
+
+The two-stage approach doesn't work exactly, it doesn't maintain the
+adjacency feature. A row/col should represent the same index. Below is a
+correct sorting solution.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{order =}\StringTok{ }\KeywordTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{2}\NormalTok{,}\DecValTok{3}\NormalTok{,}\DecValTok{6}\NormalTok{,}\DecValTok{4}\NormalTok{,}\DecValTok{5}\NormalTok{,}\DecValTok{8}\NormalTok{,}\DecValTok{7}\NormalTok{,}\DecValTok{9}\NormalTok{,}\DecValTok{10}\NormalTok{);}
+\NormalTok{myA.f =}\StringTok{ }\NormalTok{myA[order,order];}
+\NormalTok{myA.f;}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##      P.1 P.2 P.3 P.6 P.4 P.5 P.8 P.7 P.9 P.10
+## P.1    0   0   0   0   0   0   0   0   0    0
+## P.2    0   0   0   0   0   0   0   0   0    0
+## P.3    0   0   0   0   0   0   0   0   0    0
+## P.6    0   0   0   0   0   0   0   0   0    0
+## P.4    0   1   1   0   0   0   0   0   0    0
+## P.5    1   1   0   0   0   0   0   0   0    0
+## P.8    1   0   0   1   1   0   0   0   0    0
+## P.7    1   1   0   1   0   1   0   0   0    0
+## P.9    0   0   1   0   0   0   0   0   0    0
+## P.10   0   0   0   1   0   0   1   0   0    0
+\end{verbatim}
+
+\hypertarget{relationship-to-a-network-graph}{%
+\subsection{Relationship to a Network
+Graph}\label{relationship-to-a-network-graph}}
+
+A network graph is a mathematics define entity relationships linked in
+an ecosystem.
+
+\textbf{Source: Dissertation, pg. 218}
+
+In this example, we have what is called a directed graph. Each circle
+represents an entity or node. In this case, the represent patents. The
+direction of the arrow represents the nature of the relationship between
+the two nodes. For example \(P_7\) links to \({P_6, P_2, P_5}\). In
+patents, this link is a legally-required reference to ``prior-art'' that
+the new patent builds upon.
+
+Three patents (1, 2, 6) have three in-bound links (or votes). Both 1 \&
+2 share patents (5 \& 7) as two of those links. (1) also has a link from
+(8) and (2) has a link from (5) which is also linked to (7). Ergo, (2)
+should be the winner. Unless that recursive vote should be discounted
+because (7) has no incoming votes. So maybe Google's hackathon approach
+is ``better''. \textbf{What do you think?} Examining this graphic, which
+node is ``best''?
+
+In this time-constrained graph, we have a triangular adjacency matrix
+(no data in the top-right, see first matrix before sorting).
+\textbf{Note:} It is common to definitionally say that a node does not
+link to itself; the diagonal of the matrix is all zeroes.
+
+\hypertarget{adjacency-matrix}{%
+\subsubsection{Adjacency Matrix}\label{adjacency-matrix}}
+
+\textbf{Source: Dissertation, pg. 218} The rows represent the ``backward
+links'' or citations. The columns represent the ``forward links'' or
+citations. This square matrix is a representation of the graph with
+nodes and arrows.
+
+\hypertarget{network-graph-techniques}{%
+\subsubsection{Network Graph
+Techniques}\label{network-graph-techniques}}
+
+Google applies this same technique to web pages linking to other web
+pages. A link is like a vote in a popularity contest, but not all votes
+are equal. The nature of the interactions of the entire network
+determines the overall value of any given node. This is what I will
+demonstrate today.
+
+There are other graph approaches. Multigraph, Shannon's Entropy, and
+others. The accomplish similar ideas. Shannon's entropy was developed in
+the 1950s before we had any real computing power to ascertain the
+optimal setup of the old ``party-line telephone system''. I have used it
+to simultaneously rank both the nodes and the links. A multiclass
+approach is a research interest of mine: mingle the networks of patents,
+inventors, firms, and so on. In the IMDB data setup, it would be
+similar: movies, actors (creatives), production companies, and so on. A
+network of networks. This solution is an iterative one and has been
+developed by Francesco Romani and Gianna Del Corso. The basic solution
+they developed in 2008, and I contacted them to help me perform the
+computations. At the time, I had limited computing power. The network
+graph had over 5 million nodes. You can't do that in R.
+
+\hypertarget{row-stochastic}{%
+\subsubsection{Row Stochastic}\label{row-stochastic}}
+
+For the mathematics of eigenvector centrality to work on an adjacency
+matrix (the rows and columns have the same descriptor), each matrix row
+must be ``stochastic'' This can be accomplished in several ways.
+
+\textbf{Source: Dissertation, pg. 220}
+
+\hypertarget{googles-random-surfer-add-a-little-noise}{%
+\paragraph{Google's random surfer, add a little
+noise}\label{googles-random-surfer-add-a-little-noise}}
+
+For simplicity of comparison, we will use the sorted matrix.
+
+\url{https://en.wikipedia.org/wiki/PageRank}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{M =}\StringTok{ }\NormalTok{myA.f;}
+\NormalTok{rs =}\StringTok{ }\KeywordTok{rowSums}\NormalTok{(M);}
+\NormalTok{rs.zeroes =}\StringTok{ }\KeywordTok{as.numeric}\NormalTok{( }\KeywordTok{which}\NormalTok{(rs }\OperatorTok{==}\StringTok{ }\DecValTok{0}\NormalTok{) );}
+\NormalTok{M;}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##      P.1 P.2 P.3 P.6 P.4 P.5 P.8 P.7 P.9 P.10
+## P.1    0   0   0   0   0   0   0   0   0    0
+## P.2    0   0   0   0   0   0   0   0   0    0
+## P.3    0   0   0   0   0   0   0   0   0    0
+## P.6    0   0   0   0   0   0   0   0   0    0
+## P.4    0   1   1   0   0   0   0   0   0    0
+## P.5    1   1   0   0   0   0   0   0   0    0
+## P.8    1   0   0   1   1   0   0   0   0    0
+## P.7    1   1   0   1   0   1   0   0   0    0
+## P.9    0   0   1   0   0   0   0   0   0    0
+## P.10   0   0   0   1   0   0   1   0   0    0
+\end{verbatim}
+
+\hypertarget{hack-1-dangling-nodes}{%
+\subparagraph{Hack 1: dangling nodes}\label{hack-1-dangling-nodes}}
+
+The first Google hack is to replace rows with all zeroes with all ones.
+This addresses the issue of an isolate in the network, called a dangling
+node.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{ones =}\StringTok{ }\KeywordTok{rep}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DataTypeTok{times=}\DecValTok{10}\NormalTok{);}
+
+\NormalTok{M.d =}\StringTok{ }\NormalTok{M;}
+\NormalTok{M.d[rs.zeroes,] =}\StringTok{ }\NormalTok{ones;}
+\NormalTok{M.d;}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##      P.1 P.2 P.3 P.6 P.4 P.5 P.8 P.7 P.9 P.10
+## P.1    1   1   1   1   1   1   1   1   1    1
+## P.2    1   1   1   1   1   1   1   1   1    1
+## P.3    1   1   1   1   1   1   1   1   1    1
+## P.6    1   1   1   1   1   1   1   1   1    1
+## P.4    0   1   1   0   0   0   0   0   0    0
+## P.5    1   1   0   0   0   0   0   0   0    0
+## P.8    1   0   0   1   1   0   0   0   0    0
+## P.7    1   1   0   1   0   1   0   0   0    0
+## P.9    0   0   1   0   0   0   0   0   0    0
+## P.10   0   0   0   1   0   0   1   0   0    0
+\end{verbatim}
+
+\hypertarget{hack-2-row-normalize}{%
+\subparagraph{Hack 2: row normalize}\label{hack-2-row-normalize}}
+
+This is a common procedure, so ``hack'' may be a bit harsh. We divide
+each row by its sum.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{M.dr =}\StringTok{ }\NormalTok{M.d }\OperatorTok{/}\StringTok{ }\KeywordTok{rowSums}\NormalTok{(M.d);}
+\NormalTok{M.dr;}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##            P.1  P.2 P.3       P.6       P.4  P.5 P.8 P.7 P.9 P.10
+## P.1  0.1000000 0.10 0.1 0.1000000 0.1000000 0.10 0.1 0.1 0.1  0.1
+## P.2  0.1000000 0.10 0.1 0.1000000 0.1000000 0.10 0.1 0.1 0.1  0.1
+## P.3  0.1000000 0.10 0.1 0.1000000 0.1000000 0.10 0.1 0.1 0.1  0.1
+## P.6  0.1000000 0.10 0.1 0.1000000 0.1000000 0.10 0.1 0.1 0.1  0.1
+## P.4  0.0000000 0.50 0.5 0.0000000 0.0000000 0.00 0.0 0.0 0.0  0.0
+## P.5  0.5000000 0.50 0.0 0.0000000 0.0000000 0.00 0.0 0.0 0.0  0.0
+## P.8  0.3333333 0.00 0.0 0.3333333 0.3333333 0.00 0.0 0.0 0.0  0.0
+## P.7  0.2500000 0.25 0.0 0.2500000 0.0000000 0.25 0.0 0.0 0.0  0.0
+## P.9  0.0000000 0.00 1.0 0.0000000 0.0000000 0.00 0.0 0.0 0.0  0.0
+## P.10 0.0000000 0.00 0.0 0.5000000 0.0000000 0.00 0.5 0.0 0.0  0.0
+\end{verbatim}
+
+\hypertarget{hack-3-scaling}{%
+\subparagraph{Hack 3: scaling}\label{hack-3-scaling}}
+
+In the random surfer setup, there was some factor of 0.15 related to
+some assumed probability, so the scaling factor
+\(\alpha = 1-0.15 = 0.85\).
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{alpha =}\StringTok{ }\FloatTok{0.85}\NormalTok{;}
+\NormalTok{M.drs =}\StringTok{ }\NormalTok{M.dr }\OperatorTok{*}\StringTok{ }\NormalTok{alpha;}
+\NormalTok{M.drs;}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##            P.1    P.2   P.3       P.6       P.4    P.5   P.8   P.7   P.9  P.10
+## P.1  0.0850000 0.0850 0.085 0.0850000 0.0850000 0.0850 0.085 0.085 0.085 0.085
+## P.2  0.0850000 0.0850 0.085 0.0850000 0.0850000 0.0850 0.085 0.085 0.085 0.085
+## P.3  0.0850000 0.0850 0.085 0.0850000 0.0850000 0.0850 0.085 0.085 0.085 0.085
+## P.6  0.0850000 0.0850 0.085 0.0850000 0.0850000 0.0850 0.085 0.085 0.085 0.085
+## P.4  0.0000000 0.4250 0.425 0.0000000 0.0000000 0.0000 0.000 0.000 0.000 0.000
+## P.5  0.4250000 0.4250 0.000 0.0000000 0.0000000 0.0000 0.000 0.000 0.000 0.000
+## P.8  0.2833333 0.0000 0.000 0.2833333 0.2833333 0.0000 0.000 0.000 0.000 0.000
+## P.7  0.2125000 0.2125 0.000 0.2125000 0.0000000 0.2125 0.000 0.000 0.000 0.000
+## P.9  0.0000000 0.0000 0.850 0.0000000 0.0000000 0.0000 0.000 0.000 0.000 0.000
+## P.10 0.0000000 0.0000 0.000 0.4250000 0.0000000 0.0000 0.425 0.000 0.000 0.000
+\end{verbatim}
+
+\hypertarget{hack-4-irreducibility}{%
+\subparagraph{Hack 4: irreducibility}\label{hack-4-irreducibility}}
+
+The eigenvector computation must converge. When it doesn't, it suffers
+from an ``irreducibility'' problem. Google addresses this by adding a
+small element to every cell in the matrix.
+
+Final we have a row-stochastic matrix that can be evaluated.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{i.factor =}\StringTok{ }\NormalTok{(}\DecValTok{1}\OperatorTok{{-}}\NormalTok{alpha)}\OperatorTok{/}\KeywordTok{nrow}\NormalTok{(M);  }
+\NormalTok{M.drsi =}\StringTok{ }\NormalTok{M.drs }\OperatorTok{+}\StringTok{ }\KeywordTok{matrix}\NormalTok{(i.factor, }\DataTypeTok{nrow=}\DecValTok{10}\NormalTok{, }\DataTypeTok{ncol=}\DecValTok{10}\NormalTok{);}
+\NormalTok{P.g =}\StringTok{ }\NormalTok{M.drsi;}
+\NormalTok{P.g;}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##            P.1    P.2   P.3       P.6       P.4    P.5   P.8   P.7   P.9  P.10
+## P.1  0.1000000 0.1000 0.100 0.1000000 0.1000000 0.1000 0.100 0.100 0.100 0.100
+## P.2  0.1000000 0.1000 0.100 0.1000000 0.1000000 0.1000 0.100 0.100 0.100 0.100
+## P.3  0.1000000 0.1000 0.100 0.1000000 0.1000000 0.1000 0.100 0.100 0.100 0.100
+## P.6  0.1000000 0.1000 0.100 0.1000000 0.1000000 0.1000 0.100 0.100 0.100 0.100
+## P.4  0.0150000 0.4400 0.440 0.0150000 0.0150000 0.0150 0.015 0.015 0.015 0.015
+## P.5  0.4400000 0.4400 0.015 0.0150000 0.0150000 0.0150 0.015 0.015 0.015 0.015
+## P.8  0.2983333 0.0150 0.015 0.2983333 0.2983333 0.0150 0.015 0.015 0.015 0.015
+## P.7  0.2275000 0.2275 0.015 0.2275000 0.0150000 0.2275 0.015 0.015 0.015 0.015
+## P.9  0.0150000 0.0150 0.865 0.0150000 0.0150000 0.0150 0.015 0.015 0.015 0.015
+## P.10 0.0150000 0.0150 0.015 0.4400000 0.0150000 0.0150 0.440 0.015 0.015 0.015
+\end{verbatim}
+
+\hypertarget{supernode-approach}{%
+\paragraph{Supernode approach}\label{supernode-approach}}
+
+\textbf{Source: Dissertation, pg. 219}
+
+An alternative to all of the above, is to simply introduce a super-node
+into the network. This is a bi-directional link (arrows going both
+ways). In the patent space, it could represent the U.S. Patent Office,
+the gatekeeper of patents. In the web space, today it could represent
+Google who dominates search. In the IMDB space, it could represent the
+latent concept of ``Hollywood.''
+
+\hypertarget{augment-matrix}{%
+\subparagraph{Augment Matrix}\label{augment-matrix}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{M =}\StringTok{ }\NormalTok{myA.f;}
+\NormalTok{cn =}\StringTok{ }\KeywordTok{rownames}\NormalTok{(M);}
+
+\NormalTok{M.s =}\StringTok{ }\KeywordTok{matrix}\NormalTok{(}\DecValTok{0}\NormalTok{, }\DataTypeTok{nrow=}\DecValTok{11}\NormalTok{, }\DataTypeTok{ncol=}\DecValTok{11}\NormalTok{);}
+\NormalTok{M.s[}\DecValTok{1}\NormalTok{,}\DecValTok{2}\OperatorTok{:}\DecValTok{11}\NormalTok{] =}\StringTok{ }\DecValTok{1}\NormalTok{;}
+\NormalTok{M.s[}\DecValTok{2}\OperatorTok{:}\DecValTok{11}\NormalTok{,}\DecValTok{1}\NormalTok{] =}\StringTok{ }\DecValTok{1}\NormalTok{;}
+\NormalTok{M.s[}\DecValTok{2}\OperatorTok{:}\DecValTok{11}\NormalTok{,}\DecValTok{2}\OperatorTok{:}\DecValTok{11}\NormalTok{] =}\StringTok{ }\NormalTok{M;}
+
+\KeywordTok{rownames}\NormalTok{(M.s) =}\StringTok{ }\KeywordTok{colnames}\NormalTok{(M.s) =}\StringTok{ }\KeywordTok{c}\NormalTok{(}\StringTok{"P.0"}\NormalTok{, cn);}
+\NormalTok{M.s;}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##      P.0 P.1 P.2 P.3 P.6 P.4 P.5 P.8 P.7 P.9 P.10
+## P.0    0   1   1   1   1   1   1   1   1   1    1
+## P.1    1   0   0   0   0   0   0   0   0   0    0
+## P.2    1   0   0   0   0   0   0   0   0   0    0
+## P.3    1   0   0   0   0   0   0   0   0   0    0
+## P.6    1   0   0   0   0   0   0   0   0   0    0
+## P.4    1   0   1   1   0   0   0   0   0   0    0
+## P.5    1   1   1   0   0   0   0   0   0   0    0
+## P.8    1   1   0   0   1   1   0   0   0   0    0
+## P.7    1   1   1   0   1   0   1   0   0   0    0
+## P.9    1   0   0   1   0   0   0   0   0   0    0
+## P.10   1   0   0   0   1   0   0   1   0   0    0
+\end{verbatim}
+
+\hypertarget{row-normalize}{%
+\subparagraph{Row normalize}\label{row-normalize}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{P.s =}\StringTok{ }\NormalTok{M.s }\OperatorTok{/}\StringTok{ }\KeywordTok{rowSums}\NormalTok{(M.s);}
+\NormalTok{P.s;}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##            P.0       P.1       P.2       P.3       P.6  P.4 P.5       P.8 P.7
+## P.0  0.0000000 0.1000000 0.1000000 0.1000000 0.1000000 0.10 0.1 0.1000000 0.1
+## P.1  1.0000000 0.0000000 0.0000000 0.0000000 0.0000000 0.00 0.0 0.0000000 0.0
+## P.2  1.0000000 0.0000000 0.0000000 0.0000000 0.0000000 0.00 0.0 0.0000000 0.0
+## P.3  1.0000000 0.0000000 0.0000000 0.0000000 0.0000000 0.00 0.0 0.0000000 0.0
+## P.6  1.0000000 0.0000000 0.0000000 0.0000000 0.0000000 0.00 0.0 0.0000000 0.0
+## P.4  0.3333333 0.0000000 0.3333333 0.3333333 0.0000000 0.00 0.0 0.0000000 0.0
+## P.5  0.3333333 0.3333333 0.3333333 0.0000000 0.0000000 0.00 0.0 0.0000000 0.0
+## P.8  0.2500000 0.2500000 0.0000000 0.0000000 0.2500000 0.25 0.0 0.0000000 0.0
+## P.7  0.2000000 0.2000000 0.2000000 0.0000000 0.2000000 0.00 0.2 0.0000000 0.0
+## P.9  0.5000000 0.0000000 0.0000000 0.5000000 0.0000000 0.00 0.0 0.0000000 0.0
+## P.10 0.3333333 0.0000000 0.0000000 0.0000000 0.3333333 0.00 0.0 0.3333333 0.0
+##      P.9 P.10
+## P.0  0.1  0.1
+## P.1  0.0  0.0
+## P.2  0.0  0.0
+## P.3  0.0  0.0
+## P.6  0.0  0.0
+## P.4  0.0  0.0
+## P.5  0.0  0.0
+## P.8  0.0  0.0
+## P.7  0.0  0.0
+## P.9  0.0  0.0
+## P.10 0.0  0.0
+\end{verbatim}
+
+We are good to go.
+
+\hypertarget{compute-eigenvector-network-centrality}{%
+\subsubsection{Compute Eigenvector Network
+Centrality}\label{compute-eigenvector-network-centrality}}
+
+\hypertarget{power-approach}{%
+\paragraph{Power Approach}\label{power-approach}}
+
+\url{https://en.wikipedia.org/wiki/PageRank\#Power_method} The easiest
+way to compute is to multiply the matrix by itself a lot of times. Let's
+give it a try:
+
+\hypertarget{google}{%
+\subparagraph{Google}\label{google}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{matrixPower =}\StringTok{ }\ControlFlowTok{function}\NormalTok{(M, }\DataTypeTok{times=}\DecValTok{1}\NormalTok{)}
+\NormalTok{  \{}
+  \ControlFlowTok{for}\NormalTok{(i }\ControlFlowTok{in} \DecValTok{1}\OperatorTok{:}\NormalTok{times)}
+\NormalTok{    \{}
+\NormalTok{    M =}\StringTok{ }\NormalTok{M }\OperatorTok{\%*\%}\StringTok{ }\NormalTok{M;}
+\NormalTok{    \}}
+\NormalTok{  M;}
+\NormalTok{  \}}
+
+\NormalTok{P.g10 =}\StringTok{ }\KeywordTok{matrixPower}\NormalTok{(P.g,}\DecValTok{10}\NormalTok{);}
+\NormalTok{P.g10;}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##            P.1       P.2      P.3       P.6        P.4        P.5        P.8
+## P.1  0.1333471 0.1454111 0.153055 0.1276973 0.08781636 0.07585207 0.08914573
+## P.2  0.1333471 0.1454111 0.153055 0.1276973 0.08781636 0.07585207 0.08914573
+## P.3  0.1333471 0.1454111 0.153055 0.1276973 0.08781636 0.07585207 0.08914573
+## P.6  0.1333471 0.1454111 0.153055 0.1276973 0.08781636 0.07585207 0.08914573
+## P.4  0.1333471 0.1454111 0.153055 0.1276973 0.08781636 0.07585207 0.08914573
+## P.5  0.1333471 0.1454111 0.153055 0.1276973 0.08781636 0.07585207 0.08914573
+## P.8  0.1333471 0.1454111 0.153055 0.1276973 0.08781636 0.07585207 0.08914573
+## P.7  0.1333471 0.1454111 0.153055 0.1276973 0.08781636 0.07585207 0.08914573
+## P.9  0.1333471 0.1454111 0.153055 0.1276973 0.08781636 0.07585207 0.08914573
+## P.10 0.1333471 0.1454111 0.153055 0.1276973 0.08781636 0.07585207 0.08914573
+##            P.7       P.9      P.10
+## P.1  0.0625584 0.0625584 0.0625584
+## P.2  0.0625584 0.0625584 0.0625584
+## P.3  0.0625584 0.0625584 0.0625584
+## P.6  0.0625584 0.0625584 0.0625584
+## P.4  0.0625584 0.0625584 0.0625584
+## P.5  0.0625584 0.0625584 0.0625584
+## P.8  0.0625584 0.0625584 0.0625584
+## P.7  0.0625584 0.0625584 0.0625584
+## P.9  0.0625584 0.0625584 0.0625584
+## P.10 0.0625584 0.0625584 0.0625584
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{P.g.eigen =}\StringTok{ }\NormalTok{P.g10[}\DecValTok{1}\NormalTok{,]; }\CommentTok{\# any row}
+\NormalTok{P.g.eigen;}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##        P.1        P.2        P.3        P.6        P.4        P.5        P.8 
+## 0.13334715 0.14541115 0.15305500 0.12769734 0.08781636 0.07585207 0.08914573 
+##        P.7        P.9       P.10 
+## 0.06255840 0.06255840 0.06255840
+\end{verbatim}
+
+\hypertarget{supernode}{%
+\subparagraph{Supernode}\label{supernode}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{P.s10 =}\StringTok{ }\KeywordTok{matrixPower}\NormalTok{(P.s,}\DecValTok{10}\NormalTok{);}
+\NormalTok{P.s10;}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##            P.0       P.1        P.2        P.3        P.6        P.4        P.5
+## P.0  0.4055881 0.0784137 0.08292023 0.07886435 0.07570978 0.05407841 0.04867057
+## P.1  0.4055881 0.0784137 0.08292023 0.07886435 0.07570978 0.05407841 0.04867057
+## P.2  0.4055881 0.0784137 0.08292023 0.07886435 0.07570978 0.05407841 0.04867057
+## P.3  0.4055881 0.0784137 0.08292023 0.07886435 0.07570978 0.05407841 0.04867057
+## P.6  0.4055881 0.0784137 0.08292023 0.07886435 0.07570978 0.05407841 0.04867057
+## P.4  0.4055881 0.0784137 0.08292023 0.07886435 0.07570978 0.05407841 0.04867057
+## P.5  0.4055881 0.0784137 0.08292023 0.07886435 0.07570978 0.05407841 0.04867057
+## P.8  0.4055881 0.0784137 0.08292023 0.07886435 0.07570978 0.05407841 0.04867057
+## P.7  0.4055881 0.0784137 0.08292023 0.07886435 0.07570978 0.05407841 0.04867057
+## P.9  0.4055881 0.0784137 0.08292023 0.07886435 0.07570978 0.05407841 0.04867057
+## P.10 0.4055881 0.0784137 0.08292023 0.07886435 0.07570978 0.05407841 0.04867057
+##             P.8        P.7        P.9       P.10
+## P.0  0.05407841 0.04055881 0.04055881 0.04055881
+## P.1  0.05407841 0.04055881 0.04055881 0.04055881
+## P.2  0.05407841 0.04055881 0.04055881 0.04055881
+## P.3  0.05407841 0.04055881 0.04055881 0.04055881
+## P.6  0.05407841 0.04055881 0.04055881 0.04055881
+## P.4  0.05407841 0.04055881 0.04055881 0.04055881
+## P.5  0.05407841 0.04055881 0.04055881 0.04055881
+## P.8  0.05407841 0.04055881 0.04055881 0.04055881
+## P.7  0.05407841 0.04055881 0.04055881 0.04055881
+## P.9  0.05407841 0.04055881 0.04055881 0.04055881
+## P.10 0.05407841 0.04055881 0.04055881 0.04055881
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{P.s.eigen =}\StringTok{ }\NormalTok{P.s10[}\DecValTok{1}\NormalTok{,]; }\CommentTok{\# any row}
+\NormalTok{P.s.eigen;}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##        P.0        P.1        P.2        P.3        P.6        P.4        P.5 
+## 0.40558810 0.07841370 0.08292023 0.07886435 0.07570978 0.05407841 0.04867057 
+##        P.8        P.7        P.9       P.10 
+## 0.05407841 0.04055881 0.04055881 0.04055881
+\end{verbatim}
+
+\hypertarget{equal}{%
+\subparagraph{Equal?}\label{equal}}
+
+Since my dissertation, I have worked with a mathematician (Mirek) to
+demonstrate that these are equal (under certain conditions). Let's just
+see how they correlate. Remember, we added the supernode, so let's drop
+that result to compare the original 10 scores across the two methods.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{cor}\NormalTok{(P.g.eigen, P.s.eigen[}\OperatorTok{{-}}\KeywordTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{)]);}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0.9891432
+\end{verbatim}
+
+Mathematics is a strange thing?
+
+\hypertarget{linear-solution-instead-of-power}{%
+\paragraph{Linear Solution (Instead of
+Power)}\label{linear-solution-instead-of-power}}
+
+In the real world, we have very large sparse matrices, lots of zeroes. I
+reached out to the Italian mathematicians because I felt their solution
+was more robust and elegant. They only have to solve the linear system
+of one sub-block of the data, use substitutions for the other
+sub-blocks, and we have a solution.
+
+This process is explained on pg. 165 of the dissertation
+\url{http://www.mshaffer.com/arizona/dissertation/mjsPRINT.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{M;}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##      P.1 P.2 P.3 P.6 P.4 P.5 P.8 P.7 P.9 P.10
+## P.1    0   0   0   0   0   0   0   0   0    0
+## P.2    0   0   0   0   0   0   0   0   0    0
+## P.3    0   0   0   0   0   0   0   0   0    0
+## P.6    0   0   0   0   0   0   0   0   0    0
+## P.4    0   1   1   0   0   0   0   0   0    0
+## P.5    1   1   0   0   0   0   0   0   0    0
+## P.8    1   0   0   1   1   0   0   0   0    0
+## P.7    1   1   0   1   0   1   0   0   0    0
+## P.9    0   0   1   0   0   0   0   0   0    0
+## P.10   0   0   0   1   0   0   1   0   0    0
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{P.s;}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##            P.0       P.1       P.2       P.3       P.6  P.4 P.5       P.8 P.7
+## P.0  0.0000000 0.1000000 0.1000000 0.1000000 0.1000000 0.10 0.1 0.1000000 0.1
+## P.1  1.0000000 0.0000000 0.0000000 0.0000000 0.0000000 0.00 0.0 0.0000000 0.0
+## P.2  1.0000000 0.0000000 0.0000000 0.0000000 0.0000000 0.00 0.0 0.0000000 0.0
+## P.3  1.0000000 0.0000000 0.0000000 0.0000000 0.0000000 0.00 0.0 0.0000000 0.0
+## P.6  1.0000000 0.0000000 0.0000000 0.0000000 0.0000000 0.00 0.0 0.0000000 0.0
+## P.4  0.3333333 0.0000000 0.3333333 0.3333333 0.0000000 0.00 0.0 0.0000000 0.0
+## P.5  0.3333333 0.3333333 0.3333333 0.0000000 0.0000000 0.00 0.0 0.0000000 0.0
+## P.8  0.2500000 0.2500000 0.0000000 0.0000000 0.2500000 0.25 0.0 0.0000000 0.0
+## P.7  0.2000000 0.2000000 0.2000000 0.0000000 0.2000000 0.00 0.2 0.0000000 0.0
+## P.9  0.5000000 0.0000000 0.0000000 0.5000000 0.0000000 0.00 0.0 0.0000000 0.0
+## P.10 0.3333333 0.0000000 0.0000000 0.0000000 0.3333333 0.00 0.0 0.3333333 0.0
+##      P.9 P.10
+## P.0  0.1  0.1
+## P.1  0.0  0.0
+## P.2  0.0  0.0
+## P.3  0.0  0.0
+## P.6  0.0  0.0
+## P.4  0.0  0.0
+## P.5  0.0  0.0
+## P.8  0.0  0.0
+## P.7  0.0  0.0
+## P.9  0.0  0.0
+## P.10 0.0  0.0
+\end{verbatim}
+
+We have lots of zeroes. We can classify them into blocks. Recall that
+columns represent forward-citations or links. Well,
+\({P_7, P_9, P_{10}\) don't have any of those. So let's just assign them
+a minimal ``trivial'' score, we chose one (1) for these ``DUDS''.
+
+We solve the matrix \({P_4, P_5, P_8}\) which is described in the
+dissertation:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{sn =}\StringTok{ }\KeywordTok{c}\NormalTok{(}\StringTok{"P.4"}\NormalTok{,}\StringTok{"P.5"}\NormalTok{,}\StringTok{"P.8"}\NormalTok{);}
+\NormalTok{sidx =}\StringTok{ }\DecValTok{6}\OperatorTok{:}\DecValTok{8}\NormalTok{;}
+
+\CommentTok{\# pg. 166 is example of computation}
+\CommentTok{\# pg. 80 [EQN 3.6 ... 3.10]  explains the why}
+\NormalTok{R.bar =}\StringTok{ }\KeywordTok{t}\NormalTok{(P.s[sidx,sidx]); }\CommentTok{\# R.bar is a block partition}
+\NormalTok{LHS =}\StringTok{ }\KeywordTok{diag}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DataTypeTok{nrow=}\DecValTok{3}\NormalTok{) }\OperatorTok{{-}}\StringTok{ }\NormalTok{R.bar;}
+\NormalTok{LHS;}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##     P.4 P.5   P.8
+## P.4   1   0 -0.25
+## P.5   0   1  0.00
+## P.8   0   0  1.00
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{sn =}\StringTok{ }\KeywordTok{c}\NormalTok{(}\StringTok{"P.7"}\NormalTok{,}\StringTok{"P.9"}\NormalTok{,}\StringTok{"P.10"}\NormalTok{);}
+\NormalTok{sidx =}\StringTok{ }\DecValTok{9}\OperatorTok{:}\DecValTok{11}\NormalTok{;}
+\NormalTok{P.s.dud =}\StringTok{ }\NormalTok{P.s[sidx,sidx];}
+\NormalTok{pi}\FloatTok{.7910}\NormalTok{ =}\StringTok{ }\KeywordTok{rep}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DataTypeTok{times=}\DecValTok{3}\NormalTok{);}
+\NormalTok{pi}\FloatTok{.7910}\NormalTok{;}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 1 1 1
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{T.bar =}\StringTok{ }\KeywordTok{t}\NormalTok{(P.s[}\DecValTok{9}\OperatorTok{:}\DecValTok{11}\NormalTok{, }\DecValTok{6}\OperatorTok{:}\DecValTok{8}\NormalTok{]);  }\CommentTok{\# T.bar is a block partition}
+\NormalTok{one.col3 =}\StringTok{ }\KeywordTok{matrix}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DataTypeTok{ncol=}\DecValTok{1}\NormalTok{, }\DataTypeTok{nrow=}\DecValTok{3}\NormalTok{);}
+
+\NormalTok{RHS =}\StringTok{ }\NormalTok{one.col3 }\OperatorTok{+}\StringTok{ }\NormalTok{T.bar }\OperatorTok{\%*\%}\StringTok{ }\NormalTok{one.col3;}
+\NormalTok{RHS;}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##         [,1]
+## P.4 1.000000
+## P.5 1.200000
+## P.8 1.333333
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{pi}\FloatTok{.456}\NormalTok{ =}\StringTok{ }\KeywordTok{solve}\NormalTok{(LHS,RHS);  }\CommentTok{\# or "inv" function}
+\NormalTok{pi}\FloatTok{.456}\NormalTok{;}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##         [,1]
+## P.4 1.333333
+## P.5 1.200000
+## P.8 1.333333
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# dangling nodes}
+\NormalTok{one.col4 =}\StringTok{ }\KeywordTok{matrix}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DataTypeTok{ncol=}\DecValTok{1}\NormalTok{, }\DataTypeTok{nrow=}\DecValTok{4}\NormalTok{);}
+\NormalTok{pi}\FloatTok{.1236}\NormalTok{ =}\StringTok{ }\NormalTok{one.col4 }\OperatorTok{+}\StringTok{ }\KeywordTok{t}\NormalTok{(P.s[}\DecValTok{6}\OperatorTok{:}\DecValTok{8}\NormalTok{, }\DecValTok{2}\OperatorTok{:}\DecValTok{5}\NormalTok{]) }\OperatorTok{\%*\%}\StringTok{ }\NormalTok{pi}\FloatTok{.456} \OperatorTok{+}\StringTok{ }\KeywordTok{t}\NormalTok{(P.s[}\DecValTok{9}\OperatorTok{:}\DecValTok{11}\NormalTok{, }\DecValTok{2}\OperatorTok{:}\DecValTok{5}\NormalTok{])  }\OperatorTok{\%*\%}\StringTok{ }\NormalTok{one.col3;}
+
+\NormalTok{pi =}\StringTok{ }\KeywordTok{c}\NormalTok{(pi}\FloatTok{.1236}\NormalTok{, pi}\FloatTok{.456}\NormalTok{, pi}\FloatTok{.7910}\NormalTok{);}
+\NormalTok{pi;}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##  [1] 1.933333 2.044444 1.944444 1.866667 1.333333 1.200000 1.333333 1.000000
+##  [9] 1.000000 1.000000
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# }
+\CommentTok{\# cor(pi, P.g.eigen);}
+\CommentTok{\# cor(pi, P.s.eigen[{-}c(1)]);}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{scaling-final-answers}{%
+\paragraph{Scaling Final Answers}\label{scaling-final-answers}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{myResults =}\StringTok{ }\KeywordTok{cbind}\NormalTok{(( }\DecValTok{100} \OperatorTok{*}\StringTok{ }\NormalTok{pi }\OperatorTok{/}\StringTok{ }\KeywordTok{max}\NormalTok{(pi)), ( }\KeywordTok{as.numeric}\NormalTok{( }\DecValTok{100} \OperatorTok{*}\StringTok{ }\NormalTok{P.g.eigen }\OperatorTok{/}\StringTok{ }\KeywordTok{max}\NormalTok{(P.g.eigen))), (}\KeywordTok{as.numeric}\NormalTok{( }\DecValTok{100} \OperatorTok{*}\StringTok{ }\NormalTok{P.s.eigen[}\OperatorTok{{-}}\KeywordTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{)] }\OperatorTok{/}\StringTok{ }\KeywordTok{max}\NormalTok{(P.s.eigen[}\OperatorTok{{-}}\KeywordTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{)]))));}
+\KeywordTok{colnames}\NormalTok{(myResults) =}\StringTok{ }\KeywordTok{c}\NormalTok{(}\StringTok{"Supernode.linear"}\NormalTok{, }\StringTok{"Google.power"}\NormalTok{, }\StringTok{"Supernode.power"}\NormalTok{);}
+\KeywordTok{rownames}\NormalTok{(myResults) =}\StringTok{ }\KeywordTok{rownames}\NormalTok{(P.g);}
+\NormalTok{myResults;}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##      Supernode.linear Google.power Supernode.power
+## P.1          94.56522     87.12368        94.56522
+## P.2         100.00000     95.00581       100.00000
+## P.3          95.10870    100.00000        95.10870
+## P.6          91.30435     83.43232        91.30435
+## P.4          65.21739     57.37569        65.21739
+## P.5          58.69565     49.55870        58.69565
+## P.8          65.21739     58.24424        65.21739
+## P.7          48.91304     40.87315        48.91304
+## P.9          48.91304     40.87315        48.91304
+## P.10         48.91304     40.87315        48.91304
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{cor}\NormalTok{(myResults);}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##                  Supernode.linear Google.power Supernode.power
+## Supernode.linear        1.0000000    0.9891432       1.0000000
+## Google.power            0.9891432    1.0000000       0.9891432
+## Supernode.power         1.0000000    0.9891432       1.0000000
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#order = as.numeric(gsub("P.","",rownames(myResults)));}
+\CommentTok{\# c(1,2,3,6,4,5,8,7,9,10);}
+\NormalTok{order =}\StringTok{ }\KeywordTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{2}\NormalTok{,}\DecValTok{3}\NormalTok{,}\DecValTok{5}\NormalTok{,}\DecValTok{6}\NormalTok{,}\DecValTok{4}\NormalTok{,}\DecValTok{8}\NormalTok{,}\DecValTok{7}\NormalTok{,}\DecValTok{9}\NormalTok{,}\DecValTok{10}\NormalTok{);}
+\NormalTok{myResults.o =}\StringTok{ }\NormalTok{myResults[order,];}
+\NormalTok{myResults.o;}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##      Supernode.linear Google.power Supernode.power
+## P.1          94.56522     87.12368        94.56522
+## P.2         100.00000     95.00581       100.00000
+## P.3          95.10870    100.00000        95.10870
+## P.4          65.21739     57.37569        65.21739
+## P.5          58.69565     49.55870        58.69565
+## P.6          91.30435     83.43232        91.30435
+## P.7          48.91304     40.87315        48.91304
+## P.8          65.21739     58.24424        65.21739
+## P.9          48.91304     40.87315        48.91304
+## P.10         48.91304     40.87315        48.91304
+\end{verbatim}
+
+If you understand the vote-weighting idea, you should be able to review
+the graphic, and understand why the results are returning the way they
+are.
+
+\textbf{Source: Dissertation, pg. 218}
+
+Regardless, the concept of a Supernode is more intuitive than adding a
+bunch of small elements to a matrix (and altering the sparse matrix into
+a full-sized matrix).
+
+Albeit a bit more ``algebra'' at setup, this solution is more precise as
+it does not rely on asymptotics of a power-convergence.
+
+For larger matrices, computing the power and iterating is a complicated
+task, but if you understand the nature of matrix multiplication, this
+can be parallel-processed. It does have some computational advantages
+(Google can compute a power-matrix of a 10-billion node network; it
+originally parallel-processed on simple desktop computers
+daisy-chained).
+
+Google hacks with assumptions up front, the Super-node approach requires
+some linear algebra and the inverse of one much smaller matrix. Albeit
+nontrivial, once you develop the algorithm and function, this approach
+is also efficient. As demonstrated in several papers by my colleagues.
+
+\hypertarget{imdb-data}{%
+\subsection{IMDB data}\label{imdb-data}}
+
+Back to the research question, after a bit of a detour. Can we apply
+this method.
+
+HHI
+
+\end{document}

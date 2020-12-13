@@ -1,0 +1,10 @@
+	Dist	Radius	Mass		Density	Moons	Rings
+Mercury	57.9	2439	3.3e+23		5.42	0	no
+Venus	108.2	6050	4.87e+24	5.25	0	no
+Earth	149.6	6378	5.98e+24	5.52	1	no
+Mars	227.9	3398	6.42e+23	3.94	2	no
+Jupiter 778.3	71900	1.90e+27	1.31	16	yes
+Saturn	1427.0	60000	5.69e+26	0.69	17	yes
+Uranus	2869.6	26145	8.66e+25	1.19	15	yes
+Neptune	4496.6	24750	1.03e+26	1.66	8	yes
+Pluto	5900.0	1550	1.10e+22	1.20	1	no

@@ -17,7 +17,7 @@ output:
 ```{r}
 library(devtools);
 github.path = "https://raw.githubusercontent.com/galacis0418/Stats419_FALL2020/";
-source_url (paste0(github.path, "master/functions/data%203%20rework.Rmd"));
+source_url ( paste0(github.path,"master/functions/data3rework.Rmd") );
 ```
 
 ## Including Plots

@@ -1,0 +1,1678 @@
+%-12345X@PJL JOB
+@PJL SET RESOLUTION = 600
+@PJL SET ECONOMODE = OFF
+@PJL ENTER LANGUAGE = POSTSCRIPT 
+%!PS-Adobe-3.0
+%%Title: 
+%%Creator: PScript5.dll Version 5.2.2
+%%CreationDate: 11/10/2010 7:27:10
+%%For: Monte
+%%BoundingBox: (atend)
+%%Pages: (atend)
+%%Orientation: Portrait
+%%PageOrder: Special
+%%DocumentNeededResources: (atend)
+%%DocumentSuppliedResources: (atend)
+%%DocumentData: Clean7Bit
+%%TargetDevice: (HP LaserJet 6P) (2014.108) 1
+%%LanguageLevel: 2
+%%EndComments
+
+%%BeginDefaults
+%%PageBoundingBox: 13 13 599 780
+%%ViewingOrientation: 1 0 0 1
+%%EndDefaults
+
+
+%%BeginProlog
+%%BeginResource: file Pscript_WinNT_ErrorHandler 5.0 0
+/currentpacking where{pop/oldpack currentpacking def/setpacking where{pop false
+setpacking}if}if/$brkpage 64 dict def $brkpage begin/prnt{dup type/stringtype
+ne{=string cvs}if dup length 6 mul/tx exch def/ty 10 def currentpoint/toy exch
+def/tox exch def 1 setgray newpath tox toy 2 sub moveto 0 ty rlineto tx 0
+rlineto 0 ty neg rlineto closepath fill tox toy moveto 0 setgray show}bind def
+/nl{currentpoint exch pop lmargin exch moveto 0 -10 rmoveto}def/=={/cp 0 def
+typeprint nl}def/typeprint{dup type exec}readonly def/lmargin 72 def/rmargin 72
+def/tprint{dup length cp add rmargin gt{nl/cp 0 def}if dup length cp add/cp
+exch def prnt}readonly def/cvsprint{=string cvs tprint( )tprint}readonly def
+/integertype{cvsprint}readonly def/realtype{cvsprint}readonly def/booleantype
+{cvsprint}readonly def/operatortype{(--)tprint =string cvs tprint(-- )tprint}
+readonly def/marktype{pop(-mark- )tprint}readonly def/dicttype{pop
+(-dictionary- )tprint}readonly def/nulltype{pop(-null- )tprint}readonly def
+/filetype{pop(-filestream- )tprint}readonly def/savetype{pop(-savelevel- )
+tprint}readonly def/fonttype{pop(-fontid- )tprint}readonly def/nametype{dup
+xcheck not{(/)tprint}if cvsprint}readonly def/stringtype{dup rcheck{(\()tprint
+tprint(\))tprint}{pop(-string- )tprint}ifelse}readonly def/arraytype{dup rcheck
+{dup xcheck{({)tprint{typeprint}forall(})tprint}{([)tprint{typeprint}forall(])
+tprint}ifelse}{pop(-array- )tprint}ifelse}readonly def/packedarraytype{dup
+rcheck{dup xcheck{({)tprint{typeprint}forall(})tprint}{([)tprint{typeprint}
+forall(])tprint}ifelse}{pop(-packedarray- )tprint}ifelse}readonly def/courier
+/Courier findfont 10 scalefont def end errordict/handleerror{systemdict begin
+$error begin $brkpage begin newerror{/newerror false store vmstatus pop pop 0
+ne{grestoreall}if errorname(VMerror)ne{showpage}if initgraphics courier setfont
+lmargin 720 moveto errorname(VMerror)eq{userdict/ehsave known{clear userdict
+/ehsave get restore 2 vmreclaim}if vmstatus exch pop exch pop PrtVMMsg}{
+(ERROR: )prnt errorname prnt nl(OFFENDING COMMAND: )prnt/command load prnt
+$error/ostack known{nl nl(STACK:)prnt nl nl $error/ostack get aload length{==}
+repeat}if}ifelse systemdict/showpage get exec(%%[ Error: )print errorname
+=print(; OffendingCommand: )print/command load =print( ]%%)= flush}if end end
+end}dup 0 systemdict put dup 4 $brkpage put bind readonly put/currentpacking
+where{pop/setpacking where{pop oldpack setpacking}if}if
+%%EndResource
+userdict /Pscript_WinNT_Incr 230 dict dup begin put
+%%BeginResource: file Pscript_FatalError 5.0 0
+userdict begin/FatalErrorIf{{initgraphics findfont 1 index 0 eq{exch pop}{dup
+length dict begin{1 index/FID ne{def}{pop pop}ifelse}forall/Encoding
+{ISOLatin1Encoding}stopped{StandardEncoding}if def currentdict end
+/ErrFont-Latin1 exch definefont}ifelse exch scalefont setfont counttomark 3 div
+cvi{moveto show}repeat showpage quit}{cleartomark}ifelse}bind def end
+%%EndResource
+userdict begin/PrtVMMsg{vmstatus exch sub exch pop gt{[
+(This job requires more memory than is available in this printer.)100 500
+(Try one or more of the following, and then print again:)100 485
+(For the output format, choose Optimize For Portability.)115 470
+(In the Device Settings page, make sure the Available PostScript Memory is accurate.)
+115 455(Reduce the number of fonts in the document.)115 440
+(Print the document in parts.)115 425 12/Times-Roman showpage
+(%%[ PrinterError: Low Printer VM ]%%)= true FatalErrorIf}if}bind def end
+version cvi 2016 ge{/VM?{pop}bind def}{/VM? userdict/PrtVMMsg get def}ifelse
+105000 VM?
+%%BeginResource: file Pscript_Win_Basic 5.0 0
+/d/def load def/,/load load d/~/exch , d/?/ifelse , d/!/pop , d/`/begin , d/^
+/index , d/@/dup , d/+/translate , d/$/roll , d/U/userdict , d/M/moveto , d/-
+/rlineto , d/&/currentdict , d/:/gsave , d/;/grestore , d/F/false , d/T/true ,
+d/N/newpath , d/E/end , d/Ac/arc , d/An/arcn , d/A/ashow , d/D/awidthshow , d/C
+/closepath , d/V/div , d/O/eofill , d/L/fill , d/I/lineto , d/-c/curveto , d/-M
+/rmoveto , d/+S/scale , d/Ji/setfont , d/Lc/setlinecap , d/Lj/setlinejoin , d
+/Lw/setlinewidth , d/Lm/setmiterlimit , d/sd/setdash , d/S/show , d/LH/showpage
+, d/K/stroke , d/W/widthshow , d/R/rotate , d/L2? false/languagelevel where{pop
+languagelevel 2 ge{pop true}if}if d L2?{/xS/xshow , d/yS/yshow , d/zS/xyshow ,
+d}if/b{bind d}bind d/bd{bind d}bind d/xd{~ d}bd/ld{, d}bd/bn/bind ld/lw/Lw ld
+/lc/Lc ld/lj/Lj ld/sg/setgray ld/ADO_mxRot null d/self & d/OrgMx matrix
+currentmatrix d/reinitialize{: OrgMx setmatrix[/TextInit/GraphInit/UtilsInit
+counttomark{@ where{self eq}{F}?{cvx exec}{!}?}repeat cleartomark ;}b
+/initialize{`{/Pscript_Win_Data where{!}{U/Pscript_Win_Data & put}?/ADO_mxRot ~
+d/TextInitialised? F d reinitialize E}{U/Pscript_Win_Data 230 dict @ ` put
+/ADO_mxRot ~ d/TextInitialised? F d reinitialize}?}b/terminate{!{& self eq
+{exit}{E}?}loop E}b/suspend/terminate , d/resume{` Pscript_Win_Data `}b U `
+/lucas 21690 d/featurebegin{countdictstack lucas[}b/featurecleanup{stopped
+{cleartomark @ lucas eq{! exit}if}loop countdictstack ~ sub @ 0 gt{{E}repeat}
+{!}?}b E/snap{transform 0.25 sub round 0.25 add ~ 0.25 sub round 0.25 add ~
+itransform}b/dsnap{dtransform round ~ round ~ idtransform}b/nonzero_round{@ 0.5
+ge{round}{@ -0.5 lt{round}{0 ge{1}{-1}?}?}?}b/nonzero_dsnap{dtransform
+nonzero_round ~ nonzero_round ~ idtransform}b U<04>cvn{}put/rr{1 ^ 0 - 0 ~ -
+neg 0 - C}b/irp{4 -2 $ + +S fx 4 2 $ M 1 ^ 0 - 0 ~ - neg 0 -}b/rp{4 2 $ M 1 ^ 0
+- 0 ~ - neg 0 -}b/solid{[]0 sd}b/g{@ not{U/DefIf_save save put}if U/DefIf_bool
+2 ^ put}b/DefIf_El{if U/DefIf_bool get not @{U/DefIf_save get restore}if}b/e
+{DefIf_El !}b/UDF{L2?{undefinefont}{!}?}b/UDR{L2?{undefineresource}{! !}?}b
+/freeVM{/Courier findfont[40 0 0 -40 0 0]makefont Ji 2 vmreclaim}b/hfRedefFont
+{findfont @ length dict `{1 ^/FID ne{d}{! !}?}forall & E @ ` ~{/CharStrings 1
+dict `/.notdef 0 d & E d}if/Encoding 256 array 0 1 255{1 ^ ~/.notdef put}for d
+E definefont !}bind d/hfMkCIDFont{/CIDFont findresource @ length 2 add dict `{1
+^ @/FID eq ~ @/XUID eq ~/UIDBase eq or or{! !}{d}?}forall/CDevProc ~ d/Metrics2
+16 dict d/CIDFontName 1 ^ d & E 1 ^ ~/CIDFont defineresource ![~]composefont !}
+bind d
+%%EndResource
+%%BeginResource: file Pscript_Win_Utils_L2 5.0 0
+/rf/rectfill , d/fx{1 1 dtransform @ 0 ge{1 sub 0.5}{1 add -0.5}? 3 -1 $ @ 0 ge
+{1 sub 0.5}{1 add -0.5}? 3 1 $ 4 1 $ idtransform 4 -2 $ idtransform}b/BZ{4 -2 $
+snap + +S fx rf}b/rs/rectstroke , d/rc/rectclip , d/UtilsInit{currentglobal{F
+setglobal}if}b/scol{! setcolor}b/colspA/DeviceGray d/colspABC/DeviceRGB d
+/colspRefresh{colspABC setcolorspace}b/SetColSpace{colspABC setcolorspace}b
+/resourcestatus where{!/ColorRendering/ProcSet resourcestatus{! ! T}{F}?}{F}?
+not{/ColorRendering<</GetHalftoneName{currenthalftone @/HalftoneName known{
+/HalftoneName get}{!/none}?}bn/GetPageDeviceName{currentpagedevice @
+/PageDeviceName known{/PageDeviceName get @ null eq{!/none}if}{!/none}?}bn
+/GetSubstituteCRD{!/DefaultColorRendering/ColorRendering resourcestatus{! !
+/DefaultColorRendering}{(DefaultColorRendering*){cvn exit}127 string
+/ColorRendering resourceforall}?}bn>>/defineresource where{!/ProcSet
+defineresource !}{! !}?}if/buildcrdname{/ColorRendering/ProcSet findresource `
+mark GetHalftoneName @ type @/nametype ne ~/stringtype ne and{!/none}if(.)
+GetPageDeviceName @ type @/nametype ne ~/stringtype ne and{!/none}if(.)5 ^ 0 5
+-1 1{^ length add}for string 6 1 $ 5 ^ 5{~ 1 ^ cvs length 1 ^ length 1 ^ sub
+getinterval}repeat ! cvn 3 1 $ ! ! E}b/definecolorrendering{~ buildcrdname ~
+/ColorRendering defineresource !}b/findcolorrendering where{!}{
+/findcolorrendering{buildcrdname @/ColorRendering resourcestatus{! ! T}{
+/ColorRendering/ProcSet findresource ` GetSubstituteCRD E F}?}b}?
+/selectcolorrendering{findcolorrendering !/ColorRendering findresource
+setcolorrendering}b/G2UBegin{findresource/FontInfo get/GlyphNames2Unicode get
+`}bind d/G2CCBegin{findresource/FontInfo get/GlyphNames2HostCode get `}bind d
+/G2UEnd{E}bind d/AddFontInfoBegin{/FontInfo 8 dict @ `}bind d/AddFontInfo{
+/GlyphNames2Unicode 16 dict d/GlyphNames2HostCode 16 dict d}bind d
+/AddFontInfoEnd{E d}bind d/T0AddCFFMtx2{/CIDFont findresource/Metrics2 get ` d
+E}bind d
+%%EndResource
+end
+%%EndProlog
+
+%%BeginSetup
+statusdict begin (%%[ ProductName: ) print product print ( ]%%)= flush end
+[ 1 0 0 1 0 0 ] false Pscript_WinNT_Incr dup /initialize get exec
+featurebegin{
+%%BeginNonPPDFeature: JobTimeout 0
+0 /languagelevel where{pop languagelevel}{1}ifelse 2 ge{1 dict dup/JobTimeout  4 -1 roll put setuserparams}{statusdict/setjobtimeout get exec}ifelse
+%%EndNonPPDFeature
+}featurecleanup
+
+featurebegin{
+%%BeginNonPPDFeature: WaitTimeout 120
+120 /languagelevel where{pop languagelevel}{1}ifelse 2 ge{1 dict dup/WaitTimeout 4 -1 roll put setuserparams}{statusdict/waittimeout 3 -1 roll put}ifelse
+%%EndNonPPDFeature
+}featurecleanup
+
+featurebegin{
+%%BeginFeature: *HPHalftone PrinterDefault
+
+%%EndFeature
+}featurecleanup
+featurebegin{
+%%BeginFeature: *Smoothing Medium
+
+<< /PostRenderingEnhance true
+     /PostRenderingEnhanceDetails << /REValue 2 /Type 8 >>
+>> setpagedevice
+%%EndFeature
+}featurecleanup
+featurebegin{
+%%BeginFeature: *PageSize Letter
+
+    <</DeferredMediaSelection true /PageSize [612 792] /ImagingBBox null>> setpagedevice
+%%EndFeature
+}featurecleanup
+featurebegin{
+%%BeginFeature: *InstalledMemory 3MB
+
+%%EndFeature
+}featurecleanup
+1 setlinecap 1 setlinejoin
+/mysetup [ 72 600 V 0 0 -72 600 V 12.99968 780.00091 ] def 
+%%EndSetup
+
+userdict begin /ehsave save def end
+%%Page: 1 1
+%%PageBoundingBox: 13 13 599 780
+%%EndPageComments
+%%BeginPageSetup
+/DeviceRGB dup setcolorspace /colspABC exch def
+mysetup concat colspRefresh
+%%EndPageSetup
+
+Pscript_WinNT_Incr begin
+%%BeginResource: file Pscript_Win_GdiObject 5.0 0
+/SavedCTM null d/CTMsave{/SavedCTM SavedCTM currentmatrix d}b/CTMrestore
+{SavedCTM setmatrix}b/mp null d/ADO_mxRot null d/GDIHMatrix null d
+/GDIHPatternDict 22 dict d GDIHPatternDict `/PatternType 1 d/PaintType 2 d/Reps
+L2?{1}{5}? d/XStep 8 Reps mul d/YStep XStep d/BBox[0 0 XStep YStep]d/TilingType
+1 d/PaintProc{` 1 Lw[]0 sd PaintData , exec E}b/FGnd null d/BGnd null d
+/HS_Horizontal{horiz}b/HS_Vertical{vert}b/HS_FDiagonal{fdiag}b/HS_BDiagonal
+{biag}b/HS_Cross{horiz vert}b/HS_DiagCross{fdiag biag}b/MaxXYStep XStep YStep
+gt{XStep}{YStep}? d/horiz{Reps{0 4 M XStep 0 - 0 8 +}repeat 0 -8 Reps mul + K}b
+/vert{Reps{4 0 M 0 YStep - 8 0 +}repeat 0 -8 Reps mul + K}b/biag{Reps{0 0 M
+MaxXYStep @ - 0 YStep neg M MaxXYStep @ - 0 8 +}repeat 0 -8 Reps mul + 0 YStep
+M 8 8 - K}b/fdiag{Reps{0 0 M MaxXYStep @ neg - 0 YStep M MaxXYStep @ neg - 0 8
++}repeat 0 -8 Reps mul + MaxXYStep @ M 8 -8 - K}b E/makehatch{4 -2 $/yOrg ~ d
+/xOrg ~ d GDIHPatternDict/PaintData 3 -1 $ put CTMsave GDIHMatrix setmatrix
+GDIHPatternDict matrix xOrg yOrg + mp CTMrestore ~ U ~ 2 ^ put}b/h0{/h0
+/HS_Horizontal makehatch}b/h1{/h1/HS_Vertical makehatch}b/h2{/h2/HS_FDiagonal
+makehatch}b/h3{/h3/HS_BDiagonal makehatch}b/h4{/h4/HS_Cross makehatch}b/h5{/h5
+/HS_DiagCross makehatch}b/GDIBWPatternMx null d/pfprep{save 8 1 $
+/PatternOfTheDay 8 1 $ GDIBWPatternDict `/yOrg ~ d/xOrg ~ d/PaintData ~ d/yExt
+~ d/Width ~ d/BGnd ~ d/FGnd ~ d/Height yExt RepsV mul d/mx[Width 0 0 Height 0
+0]d E build_pattern ~ !}b/pfbf{/fEOFill ~ d pfprep hbf fEOFill{O}{L}? restore}b
+/GraphInit{GDIHMatrix null eq{/SavedCTM matrix d : ADO_mxRot concat 0 0 snap +
+: 0.48 @ GDIHPatternDict ` YStep mul ~ XStep mul ~ nonzero_dsnap YStep V ~
+XStep V ~ E +S/GDIHMatrix matrix currentmatrix readonly d ; : 0.24 -0.24 +S
+GDIBWPatternDict ` Width Height E nonzero_dsnap +S/GDIBWPatternMx matrix
+currentmatrix readonly d ; ;}if}b
+%%EndResource
+%%BeginResource: file Pscript_Win_GdiObject_L2 5.0 0
+/GDIBWPatternDict 25 dict @ `/PatternType 1 d/PaintType 1 d/RepsV 1 d/RepsH 1 d
+/BBox[0 0 RepsH 1]d/TilingType 1 d/XStep 1 d/YStep 1 d/Height 8 RepsV mul d
+/Width 8 d/mx[Width 0 0 Height neg 0 Height]d/FGnd null d/BGnd null d
+/SetBGndFGnd{BGnd null ne{BGnd aload ! scol BBox aload ! 2 ^ sub ~ 3 ^ sub ~
+rf}if FGnd null ne{FGnd aload ! scol}if}b/PaintProc{` SetBGndFGnd RepsH{Width
+Height F mx PaintData imagemask Width 0 +}repeat E}b E d/mp/makepattern , d
+/build_pattern{CTMsave GDIBWPatternMx setmatrix/nupangle where{! nupangle -90
+eq{nupangle R}if}if GDIBWPatternDict @ ` Width Height ne{Width Height gt{Width
+Height V 1}{1 Height Width V}? +S}if xOrg yOrg E matrix + mp CTMrestore}b/hbf
+{setpattern}b/hf{:/fEOFill ~ d ~ ! setpattern fEOFill{O}{L}? ;}b/pbf{: !
+/fEOFill ~ d GDIBWPatternDict `/yOrg ~ d/xOrg ~ d/PaintData ~ d/OutputBPP ~ d
+/Height ~ d/Width ~ d/PaintType 1 d/PatternType 1 d/TilingType 1 d/BBox[0 0
+Width Height]d/XStep Width d/YStep Height d/mx xOrg yOrg matrix + d 20 dict @ `
+/ImageType 1 d/Width Width d/Height Height d/ImageMatrix[1 0 0 1 0 0]d
+/BitsPerComponent 8 d OutputBPP 24 eq{/Decode[0 1 0 1 0 1]d}{OutputBPP 8 eq{
+/Decode[0 1]d}{/Decode[0 1 0 1 0 1 0 1]d}?}?/DataSource{PaintData}d E/ImageDict
+~ d/PaintProc{` ImageDict image E}b & mx makepattern setpattern E fEOFill{O}{L}
+? ;}b/mask_pbf{:/fEOFill ~ d 20 dict `/yOrg ~ d/xOrg ~ d/PaintData ~ d/Height ~
+d/Width ~ d/PatternType 1 d/PaintType 2 d/TilingType 1 d/BBox[0 0 Width Height]
+d/XStep Width d/YStep Height d/mx xOrg yOrg matrix + d/PaintProc{` Width Height
+T 1 1 dtransform abs ~ abs ~ 0 0 3 -1 $ 0 0 6 array astore{PaintData}imagemask
+E}b & mx makepattern setpattern E fEOFill{O}{L}? ;}b
+%%EndResource
+end reinitialize
+/DeviceGray dup setcolorspace /colspABC exch def
+0.297 0 scol 1 Lj 1 Lc solid N 1050 5622 M 1050 5617 1046 5613 1041 5613 -c 1036 5613 1032 5617 1032 5622 -c 1032 5627 1036 5631 1041 5631 -c 1046 5631 1050 5627 1050 5622 -c C 
+: 3.016 3.016 +S K 
+; N 1050 5643 M 1050 5638 1046 5634 1041 5634 -c 1036 5634 1032 5638 1032 5643 -c 1032 5648 1036 5652 1041 5652 -c 1046 5652 1050 5648 1050 5643 -c C 
+: 3.016 3.016 +S K 
+; N 1050 5634 M 1050 5629 1046 5625 1041 5625 -c 1036 5625 1032 5629 1032 5634 -c 1032 5639 1036 5643 1041 5643 -c 1046 5643 1050 5639 1050 5634 -c C 
+: 3.016 3.016 +S K 
+; N 1050 5646 M 1050 5641 1046 5637 1041 5637 -c 1036 5637 1032 5641 1032 5646 -c 1032 5651 1036 5655 1041 5655 -c 1046 5655 1050 5651 1050 5646 -c C 
+: 3.016 3.016 +S K 
+; N 1050 5607 M 1050 5602 1046 5598 1041 5598 -c 1036 5598 1032 5602 1032 5607 -c 1032 5612 1036 5616 1041 5616 -c 1046 5616 1050 5612 1050 5607 -c C 
+: 3.016 3.016 +S K 
+; N 1050 5613 M 1050 5608 1046 5604 1041 5604 -c 1036 5604 1032 5608 1032 5613 -c 1032 5618 1036 5622 1041 5622 -c 1046 5622 1050 5618 1050 5613 -c C 
+: 3.016 3.016 +S K 
+; N 1050 5610 M 1050 5605 1046 5601 1041 5601 -c 1036 5601 1032 5605 1032 5610 -c 1032 5615 1036 5619 1041 5619 -c 1046 5619 1050 5615 1050 5610 -c C 
+: 3.016 3.016 +S K 
+; N 1050 5616 M 1050 5611 1046 5607 1041 5607 -c 1036 5607 1032 5611 1032 5616 -c 1032 5621 1036 5625 1041 5625 -c 1046 5625 1050 5621 1050 5616 -c C 
+: 3.016 3.016 +S K 
+; N 1050 5625 M 1050 5620 1046 5616 1041 5616 -c 1036 5616 1032 5620 1032 5625 -c 1032 5630 1036 5634 1041 5634 -c 1046 5634 1050 5630 1050 5625 -c C 
+: 3.016 3.016 +S K 
+; N 1050 5634 M 1050 5629 1046 5625 1041 5625 -c 1036 5625 1032 5629 1032 5634 -c 1032 5639 1036 5643 1041 5643 -c 1046 5643 1050 5639 1050 5634 -c C 
+: 3.016 3.016 +S K 
+; N 1050 5622 M 1050 5617 1046 5613 1041 5613 -c 1036 5613 1032 5617 1032 5622 -c 1032 5627 1036 5631 1041 5631 -c 1046 5631 1050 5627 1050 5622 -c C 
+: 3.016 3.016 +S K 
+; N 1050 5595 M 1050 5590 1046 5586 1041 5586 -c 1036 5586 1032 5590 1032 5595 -c 1032 5600 1036 5604 1041 5604 -c 1046 5604 1050 5600 1050 5595 -c C 
+: 3.016 3.016 +S K 
+; N 1050 5625 M 1050 5620 1046 5616 1041 5616 -c 1036 5616 1032 5620 1032 5625 -c 1032 5630 1036 5634 1041 5634 -c 1046 5634 1050 5630 1050 5625 -c C 
+: 3.016 3.016 +S K 
+; N 1050 5598 M 1050 5593 1046 5589 1041 5589 -c 1036 5589 1032 5593 1032 5598 -c 1032 5603 1036 5607 1041 5607 -c 1046 5607 1050 5603 1050 5598 -c C 
+: 3.016 3.016 +S K 
+; N 1050 5640 M 1050 5635 1046 5631 1041 5631 -c 1036 5631 1032 5635 1032 5640 -c 1032 5645 1036 5649 1041 5649 -c 1046 5649 1050 5645 1050 5640 -c C 
+: 3.016 3.016 +S K 
+; N 1050 5637 M 1050 5632 1046 5628 1041 5628 -c 1036 5628 1032 5632 1032 5637 -c 1032 5642 1036 5646 1041 5646 -c 1046 5646 1050 5642 1050 5637 -c C 
+: 3.016 3.016 +S K 
+; N 1050 5640 M 1050 5635 1046 5631 1041 5631 -c 1036 5631 1032 5635 1032 5640 -c 1032 5645 1036 5649 1041 5649 -c 1046 5649 1050 5645 1050 5640 -c C 
+: 3.016 3.016 +S K 
+; N 1050 5598 M 1050 5593 1046 5589 1041 5589 -c 1036 5589 1032 5593 1032 5598 -c 1032 5603 1036 5607 1041 5607 -c 1046 5607 1050 5603 1050 5598 -c C 
+: 3.016 3.016 +S K 
+; N 1050 5586 M 1050 5581 1046 5577 1041 5577 -c 1036 5577 1032 5581 1032 5586 -c 1032 5591 1036 5595 1041 5595 -c 1046 5595 1050 5591 1050 5586 -c C 
+: 3.016 3.016 +S K 
+; N 1050 5616 M 1050 5611 1046 5607 1041 5607 -c 1036 5607 1032 5611 1032 5616 -c 1032 5621 1036 5625 1041 5625 -c 1046 5625 1050 5621 1050 5616 -c C 
+: 3.016 3.016 +S K 
+; N 1050 5643 M 1050 5638 1046 5634 1041 5634 -c 1036 5634 1032 5638 1032 5643 -c 1032 5648 1036 5652 1041 5652 -c 1046 5652 1050 5648 1050 5643 -c C 
+: 3.016 3.016 +S K 
+; N 1050 5667 M 1050 5662 1046 5658 1041 5658 -c 1036 5658 1032 5662 1032 5667 -c 1032 5672 1036 5676 1041 5676 -c 1046 5676 1050 5672 1050 5667 -c C 
+: 3.016 3.016 +S K 
+; N 1050 5631 M 1050 5626 1046 5622 1041 5622 -c 1036 5622 1032 5626 1032 5631 -c 1032 5636 1036 5640 1041 5640 -c 1046 5640 1050 5636 1050 5631 -c C 
+: 3.016 3.016 +S K 
+; N 1050 5634 M 1050 5629 1046 5625 1041 5625 -c 1036 5625 1032 5629 1032 5634 -c 1032 5639 1036 5643 1041 5643 -c 1046 5643 1050 5639 1050 5634 -c C 
+: 3.016 3.016 +S K 
+; N 1050 5601 M 1050 5596 1046 5592 1041 5592 -c 1036 5592 1032 5596 1032 5601 -c 1032 5606 1036 5610 1041 5610 -c 1046 5610 1050 5606 1050 5601 -c C 
+: 3.016 3.016 +S K 
+; N 1050 5568 M 1050 5563 1046 5558 1041 5558 -c 1036 5558 1032 5563 1032 5567 -c 1032 5572 1036 5577 1041 5577 -c 1046 5577 1050 5572 1050 5568 -c C 
+: 3.016 3.016 +S K 
+; N 1050 5610 M 1050 5605 1046 5601 1041 5601 -c 1036 5601 1032 5605 1032 5610 -c 1032 5615 1036 5619 1041 5619 -c 1046 5619 1050 5615 1050 5610 -c C 
+: 3.016 3.016 +S K 
+; N 1050 5607 M 1050 5602 1046 5598 1041 5598 -c 1036 5598 1032 5602 1032 5607 -c 1032 5612 1036 5616 1041 5616 -c 1046 5616 1050 5612 1050 5607 -c C 
+: 3.016 3.016 +S K 
+; N 1050 5583 M 1050 5578 1046 5574 1041 5574 -c 1036 5574 1032 5578 1032 5583 -c 1032 5588 1036 5592 1041 5592 -c 1046 5592 1050 5588 1050 5583 -c C 
+: 3.016 3.016 +S K 
+; N 1050 5619 M 1050 5614 1046 5610 1041 5610 -c 1036 5610 1032 5614 1032 5619 -c 1032 5624 1036 5628 1041 5628 -c 1046 5628 1050 5624 1050 5619 -c C 
+: 3.016 3.016 +S K 
+; N 1050 5643 M 1050 5638 1046 5634 1041 5634 -c 1036 5634 1032 5638 1032 5643 -c 1032 5648 1036 5652 1041 5652 -c 1046 5652 1050 5648 1050 5643 -c C 
+: 3.016 3.016 +S K 
+; N 1050 5583 M 1050 5578 1046 5574 1041 5574 -c 1036 5574 1032 5578 1032 5583 -c 1032 5588 1036 5592 1041 5592 -c 1046 5592 1050 5588 1050 5583 -c C 
+: 3.016 3.016 +S K 
+; N 1050 5625 M 1050 5620 1046 5616 1041 5616 -c 1036 5616 1032 5620 1032 5625 -c 1032 5630 1036 5634 1041 5634 -c 1046 5634 1050 5630 1050 5625 -c C 
+: 3.016 3.016 +S K 
+; N 1050 5664 M 1050 5659 1046 5655 1041 5655 -c 1036 5655 1032 5659 1032 5664 -c 1032 5669 1036 5673 1041 5673 -c 1046 5673 1050 5669 1050 5664 -c C 
+: 3.016 3.016 +S K 
+; N 1050 5625 M 1050 5620 1046 5616 1041 5616 -c 1036 5616 1032 5620 1032 5625 -c 1032 5630 1036 5634 1041 5634 -c 1046 5634 1050 5630 1050 5625 -c C 
+: 3.016 3.016 +S K 
+; N 1050 5679 M 1050 5674 1046 5670 1041 5670 -c 1036 5670 1032 5674 1032 5679 -c 1032 5684 1036 5688 1041 5688 -c 1046 5688 1050 5684 1050 5679 -c C 
+: 3.016 3.016 +S K 
+; N 1050 5613 M 1050 5608 1046 5604 1041 5604 -c 1036 5604 1032 5608 1032 5613 -c 1032 5618 1036 5622 1041 5622 -c 1046 5622 1050 5618 1050 5613 -c C 
+: 3.016 3.016 +S K 
+; N 1050 5586 M 1050 5581 1046 5577 1041 5577 -c 1036 5577 1032 5581 1032 5586 -c 1032 5591 1036 5595 1041 5595 -c 1046 5595 1050 5591 1050 5586 -c C 
+: 3.016 3.016 +S K 
+; N 1050 5604 M 1050 5599 1046 5595 1041 5595 -c 1036 5595 1032 5599 1032 5604 -c 1032 5609 1036 5613 1041 5613 -c 1046 5613 1050 5609 1050 5604 -c C 
+: 3.016 3.016 +S K 
+; N 1050 5646 M 1050 5641 1046 5637 1041 5637 -c 1036 5637 1032 5641 1032 5646 -c 1032 5651 1036 5655 1041 5655 -c 1046 5655 1050 5651 1050 5646 -c C 
+: 3.016 3.016 +S K 
+; N 1050 5625 M 1050 5620 1046 5616 1041 5616 -c 1036 5616 1032 5620 1032 5625 -c 1032 5630 1036 5634 1041 5634 -c 1046 5634 1050 5630 1050 5625 -c C 
+: 3.016 3.016 +S K 
+; N 1050 5561 M 1050 5556 1046 5552 1041 5552 -c 1036 5552 1032 5556 1032 5561 -c 1032 5566 1036 5571 1041 5571 -c 1046 5571 1050 5566 1050 5561 -c C 
+: 3.016 3.016 +S K 
+; N 1050 5561 M 1050 5556 1046 5552 1041 5552 -c 1036 5552 1032 5556 1032 5561 -c 1032 5566 1036 5571 1041 5571 -c 1046 5571 1050 5566 1050 5561 -c C 
+: 3.016 3.016 +S K 
+; N 1050 5546 M 1050 5541 1046 5537 1041 5537 -c 1036 5537 1032 5541 1032 5546 -c 1032 5551 1036 5555 1041 5555 -c 1046 5555 1050 5551 1050 5546 -c C 
+: 3.016 3.016 +S K 
+; N 1050 5589 M 1050 5584 1046 5580 1041 5580 -c 1036 5580 1032 5584 1032 5589 -c 1032 5594 1036 5598 1041 5598 -c 1046 5598 1050 5594 1050 5589 -c C 
+: 3.016 3.016 +S K 
+; N 1050 5598 M 1050 5593 1046 5589 1041 5589 -c 1036 5589 1032 5593 1032 5598 -c 1032 5603 1036 5607 1041 5607 -c 1046 5607 1050 5603 1050 5598 -c C 
+: 3.016 3.016 +S K 
+; N 1050 5586 M 1050 5581 1046 5577 1041 5577 -c 1036 5577 1032 5581 1032 5586 -c 1032 5591 1036 5595 1041 5595 -c 1046 5595 1050 5591 1050 5586 -c C 
+: 3.016 3.016 +S K 
+; N 1050 5625 M 1050 5620 1046 5616 1041 5616 -c 1036 5616 1032 5620 1032 5625 -c 1032 5630 1036 5634 1041 5634 -c 1046 5634 1050 5630 1050 5625 -c C 
+: 3.016 3.016 +S K 
+; N 1050 5691 M 1050 5686 1046 5682 1041 5682 -c 1036 5682 1032 5686 1032 5691 -c 1032 5696 1036 5700 1041 5700 -c 1046 5700 1050 5696 1050 5691 -c C 
+: 3.016 3.016 +S K 
+; N 1050 5592 M 1050 5587 1046 5583 1041 5583 -c 1036 5583 1032 5587 1032 5592 -c 1032 5597 1036 5601 1041 5601 -c 1046 5601 1050 5597 1050 5592 -c C 
+: 3.016 3.016 +S K 
+; N 1050 5607 M 1050 5602 1046 5598 1041 5598 -c 1036 5598 1032 5602 1032 5607 -c 1032 5612 1036 5616 1041 5616 -c 1046 5616 1050 5612 1050 5607 -c C 
+: 3.016 3.016 +S K 
+; N 1050 5613 M 1050 5608 1046 5604 1041 5604 -c 1036 5604 1032 5608 1032 5613 -c 1032 5618 1036 5622 1041 5622 -c 1046 5622 1050 5618 1050 5613 -c C 
+: 3.016 3.016 +S K 
+; N 1050 5586 M 1050 5581 1046 5577 1041 5577 -c 1036 5577 1032 5581 1032 5586 -c 1032 5591 1036 5595 1041 5595 -c 1046 5595 1050 5591 1050 5586 -c C 
+: 3.016 3.016 +S K 
+; N 1050 5589 M 1050 5584 1046 5580 1041 5580 -c 1036 5580 1032 5584 1032 5589 -c 1032 5594 1036 5598 1041 5598 -c 1046 5598 1050 5594 1050 5589 -c C 
+: 3.016 3.016 +S K 
+; N 1050 5577 M 1050 5572 1046 5567 1041 5567 -c 1036 5567 1032 5572 1032 5577 -c 1032 5582 1036 5586 1041 5586 -c 1046 5586 1050 5582 1050 5577 -c C 
+: 3.016 3.016 +S K 
+; N 1050 5622 M 1050 5617 1046 5613 1041 5613 -c 1036 5613 1032 5617 1032 5622 -c 1032 5627 1036 5631 1041 5631 -c 1046 5631 1050 5627 1050 5622 -c C 
+: 3.016 3.016 +S K 
+; N 1050 5568 M 1050 5563 1046 5558 1041 5558 -c 1036 5558 1032 5563 1032 5567 -c 1032 5572 1036 5577 1041 5577 -c 1046 5577 1050 5572 1050 5568 -c C 
+: 3.016 3.016 +S K 
+; N 1050 5583 M 1050 5578 1046 5574 1041 5574 -c 1036 5574 1032 5578 1032 5583 -c 1032 5588 1036 5592 1041 5592 -c 1046 5592 1050 5588 1050 5583 -c C 
+: 3.016 3.016 +S K 
+; N 1050 5607 M 1050 5602 1046 5598 1041 5598 -c 1036 5598 1032 5602 1032 5607 -c 1032 5612 1036 5616 1041 5616 -c 1046 5616 1050 5612 1050 5607 -c C 
+: 3.016 3.016 +S K 
+; N 1050 5634 M 1050 5629 1046 5625 1041 5625 -c 1036 5625 1032 5629 1032 5634 -c 1032 5639 1036 5643 1041 5643 -c 1046 5643 1050 5639 1050 5634 -c C 
+: 3.016 3.016 +S K 
+; N 1050 5555 M 1050 5550 1046 5546 1041 5546 -c 1036 5546 1032 5550 1032 5555 -c 1032 5560 1036 5564 1041 5564 -c 1046 5564 1050 5560 1050 5555 -c C 
+: 3.016 3.016 +S K 
+; N 1050 5601 M 1050 5596 1046 5592 1041 5592 -c 1036 5592 1032 5596 1032 5601 -c 1032 5606 1036 5610 1041 5610 -c 1046 5610 1050 5606 1050 5601 -c C 
+: 3.016 3.016 +S K 
+; N 1050 5549 M 1050 5544 1046 5540 1041 5540 -c 1036 5540 1032 5544 1032 5549 -c 1032 5554 1036 5558 1041 5558 -c 1046 5558 1050 5554 1050 5549 -c C 
+: 3.016 3.016 +S K 
+; N 1050 5586 M 1050 5581 1046 5577 1041 5577 -c 1036 5577 1032 5581 1032 5586 -c 1032 5591 1036 5595 1041 5595 -c 1046 5595 1050 5591 1050 5586 -c C 
+: 3.016 3.016 +S K 
+; N 1050 5555 M 1050 5550 1046 5546 1041 5546 -c 1036 5546 1032 5550 1032 5555 -c 1032 5560 1036 5564 1041 5564 -c 1046 5564 1050 5560 1050 5555 -c C 
+: 3.016 3.016 +S K 
+; N 1050 5540 M 1050 5535 1046 5531 1041 5531 -c 1036 5531 1032 5535 1032 5540 -c 1032 5545 1036 5549 1041 5549 -c 1046 5549 1050 5545 1050 5540 -c C 
+: 3.016 3.016 +S K 
+; N 1050 5616 M 1050 5611 1046 5607 1041 5607 -c 1036 5607 1032 5611 1032 5616 -c 1032 5621 1036 5625 1041 5625 -c 1046 5625 1050 5621 1050 5616 -c C 
+: 3.016 3.016 +S K 
+; N 1050 5561 M 1050 5556 1046 5552 1041 5552 -c 1036 5552 1032 5556 1032 5561 -c 1032 5566 1036 5571 1041 5571 -c 1046 5571 1050 5566 1050 5561 -c C 
+: 3.016 3.016 +S K 
+; N 1050 5607 M 1050 5602 1046 5598 1041 5598 -c 1036 5598 1032 5602 1032 5607 -c 1032 5612 1036 5616 1041 5616 -c 1046 5616 1050 5612 1050 5607 -c C 
+: 3.016 3.016 +S K 
+; N 1050 5561 M 1050 5556 1046 5552 1041 5552 -c 1036 5552 1032 5556 1032 5561 -c 1032 5566 1036 5571 1041 5571 -c 1046 5571 1050 5566 1050 5561 -c C 
+: 3.016 3.016 +S K 
+; N 1050 5574 M 1050 5569 1046 5564 1041 5564 -c 1036 5564 1032 5569 1032 5574 -c 1032 5579 1036 5583 1041 5583 -c 1046 5583 1050 5579 1050 5574 -c C 
+: 3.016 3.016 +S K 
+; N 1050 5583 M 1050 5578 1046 5574 1041 5574 -c 1036 5574 1032 5578 1032 5583 -c 1032 5588 1036 5592 1041 5592 -c 1046 5592 1050 5588 1050 5583 -c C 
+: 3.016 3.016 +S K 
+; N 1050 5580 M 1050 5575 1046 5571 1041 5571 -c 1036 5571 1032 5575 1032 5580 -c 1032 5585 1036 5589 1041 5589 -c 1046 5589 1050 5585 1050 5580 -c C 
+: 3.016 3.016 +S K 
+; N 1050 5558 M 1050 5553 1046 5549 1041 5549 -c 1036 5549 1032 5553 1032 5558 -c 1032 5563 1036 5567 1041 5567 -c 1046 5567 1050 5563 1050 5558 -c C 
+: 3.016 3.016 +S K 
+; N 1050 5483 M 1050 5478 1046 5474 1041 5474 -c 1036 5474 1032 5478 1032 5483 -c 1032 5488 1036 5492 1041 5492 -c 1046 5492 1050 5488 1050 5483 -c C 
+: 3.016 3.016 +S K 
+; N 1050 5534 M 1050 5529 1046 5525 1041 5525 -c 1036 5525 1032 5529 1032 5534 -c 1032 5539 1036 5543 1041 5543 -c 1046 5543 1050 5539 1050 5534 -c C 
+: 3.016 3.016 +S K 
+; N 1050 5561 M 1050 5556 1046 5552 1041 5552 -c 1036 5552 1032 5556 1032 5561 -c 1032 5566 1036 5571 1041 5571 -c 1046 5571 1050 5566 1050 5561 -c C 
+: 3.016 3.016 +S K 
+; N 1050 5583 M 1050 5578 1046 5574 1041 5574 -c 1036 5574 1032 5578 1032 5583 -c 1032 5588 1036 5592 1041 5592 -c 1046 5592 1050 5588 1050 5583 -c C 
+: 3.016 3.016 +S K 
+; N 1050 5528 M 1050 5523 1046 5519 1041 5519 -c 1036 5519 1032 5523 1032 5528 -c 1032 5533 1036 5537 1041 5537 -c 1046 5537 1050 5533 1050 5528 -c C 
+: 3.016 3.016 +S K 
+; N 1050 5546 M 1050 5541 1046 5537 1041 5537 -c 1036 5537 1032 5541 1032 5546 -c 1032 5551 1036 5555 1041 5555 -c 1046 5555 1050 5551 1050 5546 -c C 
+: 3.016 3.016 +S K 
+; N 1050 5607 M 1050 5602 1046 5598 1041 5598 -c 1036 5598 1032 5602 1032 5607 -c 1032 5612 1036 5616 1041 5616 -c 1046 5616 1050 5612 1050 5607 -c C 
+: 3.016 3.016 +S K 
+; N 1050 5580 M 1050 5575 1046 5571 1041 5571 -c 1036 5571 1032 5575 1032 5580 -c 1032 5585 1036 5589 1041 5589 -c 1046 5589 1050 5585 1050 5580 -c C 
+: 3.016 3.016 +S K 
+; N 1050 5586 M 1050 5581 1046 5577 1041 5577 -c 1036 5577 1032 5581 1032 5586 -c 1032 5591 1036 5595 1041 5595 -c 1046 5595 1050 5591 1050 5586 -c C 
+: 3.016 3.016 +S K 
+; N 1050 5598 M 1050 5593 1046 5589 1041 5589 -c 1036 5589 1032 5593 1032 5598 -c 1032 5603 1036 5607 1041 5607 -c 1046 5607 1050 5603 1050 5598 -c C 
+: 3.016 3.016 +S K 
+; N 1050 5561 M 1050 5556 1046 5552 1041 5552 -c 1036 5552 1032 5556 1032 5561 -c 1032 5566 1036 5571 1041 5571 -c 1046 5571 1050 5566 1050 5561 -c C 
+: 3.016 3.016 +S K 
+; N 1050 5583 M 1050 5578 1046 5574 1041 5574 -c 1036 5574 1032 5578 1032 5583 -c 1032 5588 1036 5592 1041 5592 -c 1046 5592 1050 5588 1050 5583 -c C 
+: 3.016 3.016 +S K 
+; N 1050 5543 M 1050 5538 1046 5534 1041 5534 -c 1036 5534 1032 5538 1032 5543 -c 1032 5548 1036 5552 1041 5552 -c 1046 5552 1050 5548 1050 5543 -c C 
+: 3.016 3.016 +S K 
+; N 1050 5507 M 1050 5502 1046 5498 1041 5498 -c 1036 5498 1032 5502 1032 5507 -c 1032 5512 1036 5516 1041 5516 -c 1046 5516 1050 5512 1050 5507 -c C 
+: 3.016 3.016 +S K 
+; N 1050 5586 M 1050 5581 1046 5577 1041 5577 -c 1036 5577 1032 5581 1032 5586 -c 1032 5591 1036 5595 1041 5595 -c 1046 5595 1050 5591 1050 5586 -c C 
+: 3.016 3.016 +S K 
+; N 1050 5586 M 1050 5581 1046 5577 1041 5577 -c 1036 5577 1032 5581 1032 5586 -c 1032 5591 1036 5595 1041 5595 -c 1046 5595 1050 5591 1050 5586 -c C 
+: 3.016 3.016 +S K 
+; N 1050 5592 M 1050 5587 1046 5583 1041 5583 -c 1036 5583 1032 5587 1032 5592 -c 1032 5597 1036 5601 1041 5601 -c 1046 5601 1050 5597 1050 5592 -c C 
+: 3.016 3.016 +S K 
+; N 1050 5640 M 1050 5635 1046 5631 1041 5631 -c 1036 5631 1032 5635 1032 5640 -c 1032 5645 1036 5649 1041 5649 -c 1046 5649 1050 5645 1050 5640 -c C 
+: 3.016 3.016 +S K 
+; N 1050 5604 M 1050 5599 1046 5595 1041 5595 -c 1036 5595 1032 5599 1032 5604 -c 1032 5609 1036 5613 1041 5613 -c 1046 5613 1050 5609 1050 5604 -c C 
+: 3.016 3.016 +S K 
+; N 1050 5646 M 1050 5641 1046 5637 1041 5637 -c 1036 5637 1032 5641 1032 5646 -c 1032 5651 1036 5655 1041 5655 -c 1046 5655 1050 5651 1050 5646 -c C 
+: 3.016 3.016 +S K 
+; N 1050 5583 M 1050 5578 1046 5574 1041 5574 -c 1036 5574 1032 5578 1032 5583 -c 1032 5588 1036 5592 1041 5592 -c 1046 5592 1050 5588 1050 5583 -c C 
+: 3.016 3.016 +S K 
+; N 1050 5583 M 1050 5578 1046 5574 1041 5574 -c 1036 5574 1032 5578 1032 5583 -c 1032 5588 1036 5592 1041 5592 -c 1046 5592 1050 5588 1050 5583 -c C 
+: 3.016 3.016 +S K 
+; N 1050 5555 M 1050 5550 1046 5546 1041 5546 -c 1036 5546 1032 5550 1032 5555 -c 1032 5560 1036 5564 1041 5564 -c 1046 5564 1050 5560 1050 5555 -c C 
+: 3.016 3.016 +S K 
+; N 1050 5583 M 1050 5578 1046 5574 1041 5574 -c 1036 5574 1032 5578 1032 5583 -c 1032 5588 1036 5592 1041 5592 -c 1046 5592 1050 5588 1050 5583 -c C 
+: 3.016 3.016 +S K 
+; N 1050 5558 M 1050 5553 1046 5549 1041 5549 -c 1036 5549 1032 5553 1032 5558 -c 1032 5563 1036 5567 1041 5567 -c 1046 5567 1050 5563 1050 5558 -c C 
+: 3.016 3.016 +S K 
+; N 1050 5604 M 1050 5599 1046 5595 1041 5595 -c 1036 5595 1032 5599 1032 5604 -c 1032 5609 1036 5613 1041 5613 -c 1046 5613 1050 5609 1050 5604 -c C 
+: 3.016 3.016 +S K 
+; N 1125 5528 M 1125 5523 1121 5519 1116 5519 -c 1111 5519 1107 5523 1107 5528 -c 1107 5533 1111 5537 1116 5537 -c 1121 5537 1125 5533 1125 5528 -c C 
+: 3.016 3.016 +S K 
+; N 1125 5543 M 1125 5538 1121 5534 1116 5534 -c 1111 5534 1107 5538 1107 5543 -c 1107 5548 1111 5552 1116 5552 -c 1121 5552 1125 5548 1125 5543 -c C 
+: 3.016 3.016 +S K 
+; N 1125 5540 M 1125 5535 1121 5531 1116 5531 -c 1111 5531 1107 5535 1107 5540 -c 1107 5545 1111 5549 1116 5549 -c 1121 5549 1125 5545 1125 5540 -c C 
+: 3.016 3.016 +S K 
+; N 1125 5564 M 1125 5559 1121 5555 1116 5555 -c 1111 5555 1107 5559 1107 5564 -c 1107 5569 1111 5574 1116 5574 -c 1121 5574 1125 5569 1125 5564 -c C 
+: 3.016 3.016 +S K 
+; N 1125 5513 M 1125 5508 1121 5504 1116 5504 -c 1111 5504 1107 5508 1107 5513 -c 1107 5518 1111 5522 1116 5522 -c 1121 5522 1125 5518 1125 5513 -c C 
+: 3.016 3.016 +S K 
+; N 1125 5495 M 1125 5490 1121 5486 1116 5486 -c 1111 5486 1107 5490 1107 5495 -c 1107 5500 1111 5504 1116 5504 -c 1121 5504 1125 5500 1125 5495 -c C 
+: 3.016 3.016 +S K 
+; N 1125 5513 M 1125 5508 1121 5504 1116 5504 -c 1111 5504 1107 5508 1107 5513 -c 1107 5518 1111 5522 1116 5522 -c 1121 5522 1125 5518 1125 5513 -c C 
+: 3.016 3.016 +S K 
+; N 1125 5519 M 1125 5514 1121 5510 1116 5510 -c 1111 5510 1107 5514 1107 5519 -c 1107 5524 1111 5528 1116 5528 -c 1121 5528 1125 5524 1125 5519 -c C 
+: 3.016 3.016 +S K 
+; N 1125 5519 M 1125 5514 1121 5510 1116 5510 -c 1111 5510 1107 5514 1107 5519 -c 1107 5524 1111 5528 1116 5528 -c 1121 5528 1125 5524 1125 5519 -c C 
+: 3.016 3.016 +S K 
+; N 1125 5531 M 1125 5526 1121 5522 1116 5522 -c 1111 5522 1107 5526 1107 5531 -c 1107 5536 1111 5540 1116 5540 -c 1121 5540 1125 5536 1125 5531 -c C 
+: 3.016 3.016 +S K 
+; N 1125 5501 M 1125 5496 1121 5492 1116 5492 -c 1111 5492 1107 5496 1107 5501 -c 1107 5506 1111 5510 1116 5510 -c 1121 5510 1125 5506 1125 5501 -c C 
+: 3.016 3.016 +S K 
+; N 1125 5483 M 1125 5478 1121 5474 1116 5474 -c 1111 5474 1107 5478 1107 5483 -c 1107 5488 1111 5492 1116 5492 -c 1121 5492 1125 5488 1125 5483 -c C 
+: 3.016 3.016 +S K 
+; N 1125 5522 M 1125 5517 1121 5513 1116 5513 -c 1111 5513 1107 5517 1107 5522 -c 1107 5527 1111 5531 1116 5531 -c 1121 5531 1125 5527 1125 5522 -c C 
+: 3.016 3.016 +S K 
+; N 1125 5492 M 1125 5487 1121 5483 1116 5483 -c 1111 5483 1107 5487 1107 5492 -c 1107 5497 1111 5501 1116 5501 -c 1121 5501 1125 5497 1125 5492 -c C 
+: 3.016 3.016 +S K 
+; N 1125 5543 M 1125 5538 1121 5534 1116 5534 -c 1111 5534 1107 5538 1107 5543 -c 1107 5548 1111 5552 1116 5552 -c 1121 5552 1125 5548 1125 5543 -c C 
+: 3.016 3.016 +S K 
+; N 1125 5534 M 1125 5529 1121 5525 1116 5525 -c 1111 5525 1107 5529 1107 5534 -c 1107 5539 1111 5543 1116 5543 -c 1121 5543 1125 5539 1125 5534 -c C 
+: 3.016 3.016 +S K 
+; N 1125 5543 M 1125 5538 1121 5534 1116 5534 -c 1111 5534 1107 5538 1107 5543 -c 1107 5548 1111 5552 1116 5552 -c 1121 5552 1125 5548 1125 5543 -c C 
+: 3.016 3.016 +S K 
+; N 1125 5492 M 1125 5487 1121 5483 1116 5483 -c 1111 5483 1107 5487 1107 5492 -c 1107 5497 1111 5501 1116 5501 -c 1121 5501 1125 5497 1125 5492 -c C 
+: 3.016 3.016 +S K 
+; N 1125 5489 M 1125 5484 1121 5480 1116 5480 -c 1111 5480 1107 5484 1107 5489 -c 1107 5494 1111 5498 1116 5498 -c 1121 5498 1125 5494 1125 5489 -c C 
+: 3.016 3.016 +S K 
+; N 1125 5510 M 1125 5505 1121 5501 1116 5501 -c 1111 5501 1107 5505 1107 5510 -c 1107 5515 1111 5519 1116 5519 -c 1121 5519 1125 5515 1125 5510 -c C 
+: 3.016 3.016 +S K 
+; N 1125 5549 M 1125 5544 1121 5540 1116 5540 -c 1111 5540 1107 5544 1107 5549 -c 1107 5554 1111 5558 1116 5558 -c 1121 5558 1125 5554 1125 5549 -c C 
+: 3.016 3.016 +S K 
+; N 1125 5580 M 1125 5575 1121 5571 1116 5571 -c 1111 5571 1107 5575 1107 5580 -c 1107 5585 1111 5589 1116 5589 -c 1121 5589 1125 5585 1125 5580 -c C 
+: 3.016 3.016 +S K 
+; N 1125 5537 M 1125 5532 1121 5528 1116 5528 -c 1111 5528 1107 5532 1107 5537 -c 1107 5542 1111 5546 1116 5546 -c 1121 5546 1125 5542 1125 5537 -c C 
+: 3.016 3.016 +S K 
+; N 1125 5546 M 1125 5541 1121 5537 1116 5537 -c 1111 5537 1107 5541 1107 5546 -c 1107 5551 1111 5555 1116 5555 -c 1121 5555 1125 5551 1125 5546 -c C 
+: 3.016 3.016 +S K 
+; N 1125 5507 M 1125 5502 1121 5498 1116 5498 -c 1111 5498 1107 5502 1107 5507 -c 1107 5512 1111 5516 1116 5516 -c 1121 5516 1125 5512 1125 5507 -c C 
+: 3.016 3.016 +S K 
+; N 1125 5459 M 1125 5454 1121 5450 1116 5450 -c 1111 5450 1107 5454 1107 5459 -c 1107 5464 1111 5468 1116 5468 -c 1121 5468 1125 5464 1125 5459 -c C 
+: 3.016 3.016 +S K 
+; N 1125 5498 M 1125 5493 1121 5489 1116 5489 -c 1111 5489 1107 5493 1107 5498 -c 1107 5503 1111 5507 1116 5507 -c 1121 5507 1125 5503 1125 5498 -c C 
+: 3.016 3.016 +S K 
+; N 1125 5504 M 1125 5499 1121 5495 1116 5495 -c 1111 5495 1107 5499 1107 5504 -c 1107 5509 1111 5513 1116 5513 -c 1121 5513 1125 5509 1125 5504 -c C 
+: 3.016 3.016 +S K 
+; N 1125 5483 M 1125 5478 1121 5474 1116 5474 -c 1111 5474 1107 5478 1107 5483 -c 1107 5488 1111 5492 1116 5492 -c 1121 5492 1125 5488 1125 5483 -c C 
+: 3.016 3.016 +S K 
+; N 1125 5492 M 1125 5487 1121 5483 1116 5483 -c 1111 5483 1107 5487 1107 5492 -c 1107 5497 1111 5501 1116 5501 -c 1121 5501 1125 5497 1125 5492 -c C 
+: 3.016 3.016 +S K 
+; N 1125 5564 M 1125 5559 1121 5555 1116 5555 -c 1111 5555 1107 5559 1107 5564 -c 1107 5569 1111 5574 1116 5574 -c 1121 5574 1125 5569 1125 5564 -c C 
+: 3.016 3.016 +S K 
+; N 1125 5471 M 1125 5466 1121 5462 1116 5462 -c 1111 5462 1107 5466 1107 5471 -c 1107 5476 1111 5480 1116 5480 -c 1121 5480 1125 5476 1125 5471 -c C 
+: 3.016 3.016 +S K 
+; N 1125 5528 M 1125 5523 1121 5519 1116 5519 -c 1111 5519 1107 5523 1107 5528 -c 1107 5533 1111 5537 1116 5537 -c 1121 5537 1125 5533 1125 5528 -c C 
+: 3.016 3.016 +S K 
+; N 1125 5580 M 1125 5575 1121 5571 1116 5571 -c 1111 5571 1107 5575 1107 5580 -c 1107 5585 1111 5589 1116 5589 -c 1121 5589 1125 5585 1125 5580 -c C 
+: 3.016 3.016 +S K 
+; N 1125 5501 M 1125 5496 1121 5492 1116 5492 -c 1111 5492 1107 5496 1107 5501 -c 1107 5506 1111 5510 1116 5510 -c 1121 5510 1125 5506 1125 5501 -c C 
+: 3.016 3.016 +S K 
+; N 1125 5610 M 1125 5605 1121 5601 1116 5601 -c 1111 5601 1107 5605 1107 5610 -c 1107 5615 1111 5619 1116 5619 -c 1121 5619 1125 5615 1125 5610 -c C 
+: 3.016 3.016 +S K 
+; N 1125 5498 M 1125 5493 1121 5489 1116 5489 -c 1111 5489 1107 5493 1107 5498 -c 1107 5503 1111 5507 1116 5507 -c 1121 5507 1125 5503 1125 5498 -c C 
+: 3.016 3.016 +S K 
+; N 1125 5480 M 1125 5475 1121 5471 1116 5471 -c 1111 5471 1107 5475 1107 5480 -c 1107 5485 1111 5489 1116 5489 -c 1121 5489 1125 5485 1125 5480 -c C 
+: 3.016 3.016 +S K 
+; N 1125 5510 M 1125 5505 1121 5501 1116 5501 -c 1111 5501 1107 5505 1107 5510 -c 1107 5515 1111 5519 1116 5519 -c 1121 5519 1125 5515 1125 5510 -c C 
+: 3.016 3.016 +S K 
+; N 1125 5543 M 1125 5538 1121 5534 1116 5534 -c 1111 5534 1107 5538 1107 5543 -c 1107 5548 1111 5552 1116 5552 -c 1121 5552 1125 5548 1125 5543 -c C 
+: 3.016 3.016 +S K 
+; N 1125 5571 M 1125 5566 1121 5561 1116 5561 -c 1111 5561 1107 5566 1107 5571 -c 1107 5576 1111 5580 1116 5580 -c 1121 5580 1125 5576 1125 5571 -c C 
+: 3.016 3.016 +S K 
+; N 1125 5703 M 1125 5698 1121 5694 1116 5694 -c 1111 5694 1107 5698 1107 5703 -c 1107 5708 1111 5712 1116 5712 -c 1121 5712 1125 5708 1125 5703 -c C 
+: 3.016 3.016 +S K 
+; N 1125 5706 M 1125 5701 1121 5697 1116 5697 -c 1111 5697 1107 5701 1107 5706 -c 1107 5711 1111 5715 1116 5715 -c 1121 5715 1125 5711 1125 5706 -c C 
+: 3.016 3.016 +S K 
+; N 1125 5492 M 1125 5487 1121 5483 1116 5483 -c 1111 5483 1107 5487 1107 5492 -c 1107 5497 1111 5501 1116 5501 -c 1121 5501 1125 5497 1125 5492 -c C 
+: 3.016 3.016 +S K 
+; N 1125 5474 M 1125 5469 1121 5465 1116 5465 -c 1111 5465 1107 5469 1107 5474 -c 1107 5479 1111 5483 1116 5483 -c 1121 5483 1125 5479 1125 5474 -c C 
+: 3.016 3.016 +S K 
+; N 1125 5498 M 1125 5493 1121 5489 1116 5489 -c 1111 5489 1107 5493 1107 5498 -c 1107 5503 1111 5507 1116 5507 -c 1121 5507 1125 5503 1125 5498 -c C 
+: 3.016 3.016 +S K 
+; N 1125 5474 M 1125 5469 1121 5465 1116 5465 -c 1111 5465 1107 5469 1107 5474 -c 1107 5479 1111 5483 1116 5483 -c 1121 5483 1125 5479 1125 5474 -c C 
+: 3.016 3.016 +S K 
+; N 1125 5510 M 1125 5505 1121 5501 1116 5501 -c 1111 5501 1107 5505 1107 5510 -c 1107 5515 1111 5519 1116 5519 -c 1121 5519 1125 5515 1125 5510 -c C 
+: 3.016 3.016 +S K 
+; N 1125 5432 M 1125 5427 1121 5423 1116 5423 -c 1111 5423 1107 5427 1107 5432 -c 1107 5437 1111 5441 1116 5441 -c 1121 5441 1125 5437 1125 5432 -c C 
+: 3.016 3.016 +S K 
+; N 1125 5468 M 1125 5463 1121 5459 1116 5459 -c 1111 5459 1107 5463 1107 5468 -c 1107 5473 1111 5477 1116 5477 -c 1121 5477 1125 5473 1125 5468 -c C 
+: 3.016 3.016 +S K 
+; N 1125 5492 M 1125 5487 1121 5483 1116 5483 -c 1111 5483 1107 5487 1107 5492 -c 1107 5497 1111 5501 1116 5501 -c 1121 5501 1125 5497 1125 5492 -c C 
+: 3.016 3.016 +S K 
+; N 1125 5480 M 1125 5475 1121 5471 1116 5471 -c 1111 5471 1107 5475 1107 5480 -c 1107 5485 1111 5489 1116 5489 -c 1121 5489 1125 5485 1125 5480 -c C 
+: 3.016 3.016 +S K 
+; N 1125 5480 M 1125 5475 1121 5471 1116 5471 -c 1111 5471 1107 5475 1107 5480 -c 1107 5485 1111 5489 1116 5489 -c 1121 5489 1125 5485 1125 5480 -c C 
+: 3.016 3.016 +S K 
+; N 1125 5489 M 1125 5484 1121 5480 1116 5480 -c 1111 5480 1107 5484 1107 5489 -c 1107 5494 1111 5498 1116 5498 -c 1121 5498 1125 5494 1125 5489 -c C 
+: 3.016 3.016 +S K 
+; N 1125 5444 M 1125 5439 1121 5435 1116 5435 -c 1111 5435 1107 5439 1107 5444 -c 1107 5449 1111 5453 1116 5453 -c 1121 5453 1125 5449 1125 5444 -c C 
+: 3.016 3.016 +S K 
+; N 1125 5492 M 1125 5487 1121 5483 1116 5483 -c 1111 5483 1107 5487 1107 5492 -c 1107 5497 1111 5501 1116 5501 -c 1121 5501 1125 5497 1125 5492 -c C 
+: 3.016 3.016 +S K 
+; N 1125 5447 M 1125 5442 1121 5438 1116 5438 -c 1111 5438 1107 5442 1107 5447 -c 1107 5452 1111 5456 1116 5456 -c 1121 5456 1125 5452 1125 5447 -c C 
+: 3.016 3.016 +S K 
+; N 1125 5468 M 1125 5463 1121 5459 1116 5459 -c 1111 5459 1107 5463 1107 5468 -c 1107 5473 1111 5477 1116 5477 -c 1121 5477 1125 5473 1125 5468 -c C 
+: 3.016 3.016 +S K 
+; N 1125 5498 M 1125 5493 1121 5489 1116 5489 -c 1111 5489 1107 5493 1107 5498 -c 1107 5503 1111 5507 1116 5507 -c 1121 5507 1125 5503 1125 5498 -c C 
+: 3.016 3.016 +S K 
+; N 1125 5528 M 1125 5523 1121 5519 1116 5519 -c 1111 5519 1107 5523 1107 5528 -c 1107 5533 1111 5537 1116 5537 -c 1121 5537 1125 5533 1125 5528 -c C 
+: 3.016 3.016 +S K 
+; N 1125 5411 M 1125 5406 1121 5401 1116 5401 -c 1111 5401 1107 5406 1107 5411 -c 1107 5416 1111 5420 1116 5420 -c 1121 5420 1125 5416 1125 5411 -c C 
+: 3.016 3.016 +S K 
+; N 1125 5417 M 1125 5412 1121 5408 1116 5408 -c 1111 5408 1107 5412 1107 5417 -c 1107 5422 1111 5426 1116 5426 -c 1121 5426 1125 5422 1125 5417 -c C 
+: 3.016 3.016 +S K 
+; N 1125 5429 M 1125 5424 1121 5420 1116 5420 -c 1111 5420 1107 5424 1107 5429 -c 1107 5434 1111 5438 1116 5438 -c 1121 5438 1125 5434 1125 5429 -c C 
+: 3.016 3.016 +S K 
+; N 1125 5468 M 1125 5463 1121 5459 1116 5459 -c 1111 5459 1107 5463 1107 5468 -c 1107 5473 1111 5477 1116 5477 -c 1121 5477 1125 5473 1125 5468 -c C 
+: 3.016 3.016 +S K 
+; N 1125 5423 M 1125 5418 1121 5414 1116 5414 -c 1111 5414 1107 5418 1107 5423 -c 1107 5428 1111 5432 1116 5432 -c 1121 5432 1125 5428 1125 5423 -c C 
+: 3.016 3.016 +S K 
+; N 1125 5411 M 1125 5406 1121 5401 1116 5401 -c 1111 5401 1107 5406 1107 5411 -c 1107 5416 1111 5420 1116 5420 -c 1121 5420 1125 5416 1125 5411 -c C 
+: 3.016 3.016 +S K 
+; N 1125 5492 M 1125 5487 1121 5483 1116 5483 -c 1111 5483 1107 5487 1107 5492 -c 1107 5497 1111 5501 1116 5501 -c 1121 5501 1125 5497 1125 5492 -c C 
+: 3.016 3.016 +S K 
+; N 1125 5447 M 1125 5442 1121 5438 1116 5438 -c 1111 5438 1107 5442 1107 5447 -c 1107 5452 1111 5456 1116 5456 -c 1121 5456 1125 5452 1125 5447 -c C 
+: 3.016 3.016 +S K 
+; N 1125 5492 M 1125 5487 1121 5483 1116 5483 -c 1111 5483 1107 5487 1107 5492 -c 1107 5497 1111 5501 1116 5501 -c 1121 5501 1125 5497 1125 5492 -c C 
+: 3.016 3.016 +S K 
+; N 1125 5414 M 1125 5409 1121 5404 1116 5404 -c 1111 5404 1107 5409 1107 5414 -c 1107 5419 1111 5423 1116 5423 -c 1121 5423 1125 5419 1125 5414 -c C 
+: 3.016 3.016 +S K 
+; N 1125 5447 M 1125 5442 1121 5438 1116 5438 -c 1111 5438 1107 5442 1107 5447 -c 1107 5452 1111 5456 1116 5456 -c 1121 5456 1125 5452 1125 5447 -c C 
+: 3.016 3.016 +S K 
+; N 1125 5432 M 1125 5427 1121 5423 1116 5423 -c 1111 5423 1107 5427 1107 5432 -c 1107 5437 1111 5441 1116 5441 -c 1121 5441 1125 5437 1125 5432 -c C 
+: 3.016 3.016 +S K 
+; N 1125 5441 M 1125 5436 1121 5432 1116 5432 -c 1111 5432 1107 5436 1107 5441 -c 1107 5446 1111 5450 1116 5450 -c 1121 5450 1125 5446 1125 5441 -c C 
+: 3.016 3.016 +S K 
+; N 1125 5432 M 1125 5427 1121 5423 1116 5423 -c 1111 5423 1107 5427 1107 5432 -c 1107 5437 1111 5441 1116 5441 -c 1121 5441 1125 5437 1125 5432 -c C 
+: 3.016 3.016 +S K 
+; N 1125 5344 M 1125 5339 1121 5335 1116 5335 -c 1111 5335 1107 5339 1107 5344 -c 1107 5349 1111 5353 1116 5353 -c 1121 5353 1125 5349 1125 5344 -c C 
+: 3.016 3.016 +S K 
+; N 1125 5395 M 1125 5390 1121 5386 1116 5386 -c 1111 5386 1107 5390 1107 5395 -c 1107 5400 1111 5404 1116 5404 -c 1121 5404 1125 5400 1125 5395 -c C 
+: 3.016 3.016 +S K 
+; N 1125 5417 M 1125 5412 1121 5408 1116 5408 -c 1111 5408 1107 5412 1107 5417 -c 1107 5422 1111 5426 1116 5426 -c 1121 5426 1125 5422 1125 5417 -c C 
+: 3.016 3.016 +S K 
+; N 1125 5453 M 1125 5448 1121 5444 1116 5444 -c 1111 5444 1107 5448 1107 5453 -c 1107 5458 1111 5462 1116 5462 -c 1121 5462 1125 5458 1125 5453 -c C 
+: 3.016 3.016 +S K 
+; N 1125 5447 M 1125 5442 1121 5438 1116 5438 -c 1111 5438 1107 5442 1107 5447 -c 1107 5452 1111 5456 1116 5456 -c 1121 5456 1125 5452 1125 5447 -c C 
+: 3.016 3.016 +S K 
+; N 1125 5368 M 1125 5363 1121 5359 1116 5359 -c 1111 5359 1107 5363 1107 5368 -c 1107 5373 1111 5377 1116 5377 -c 1121 5377 1125 5373 1125 5368 -c C 
+: 3.016 3.016 +S K 
+; N 1125 5492 M 1125 5487 1121 5483 1116 5483 -c 1111 5483 1107 5487 1107 5492 -c 1107 5497 1111 5501 1116 5501 -c 1121 5501 1125 5497 1125 5492 -c C 
+: 3.016 3.016 +S K 
+; N 1125 5447 M 1125 5442 1121 5438 1116 5438 -c 1111 5438 1107 5442 1107 5447 -c 1107 5452 1111 5456 1116 5456 -c 1121 5456 1125 5452 1125 5447 -c C 
+: 3.016 3.016 +S K 
+; N 1125 5486 M 1125 5481 1121 5477 1116 5477 -c 1111 5477 1107 5481 1107 5486 -c 1107 5491 1111 5495 1116 5495 -c 1121 5495 1125 5491 1125 5486 -c C 
+: 3.016 3.016 +S K 
+; N 1125 5474 M 1125 5469 1121 5465 1116 5465 -c 1111 5465 1107 5469 1107 5474 -c 1107 5479 1111 5483 1116 5483 -c 1121 5483 1125 5479 1125 5474 -c C 
+: 3.016 3.016 +S K 
+; N 1125 5447 M 1125 5442 1121 5438 1116 5438 -c 1111 5438 1107 5442 1107 5447 -c 1107 5452 1111 5456 1116 5456 -c 1121 5456 1125 5452 1125 5447 -c C 
+: 3.016 3.016 +S K 
+; N 1125 5447 M 1125 5442 1121 5438 1116 5438 -c 1111 5438 1107 5442 1107 5447 -c 1107 5452 1111 5456 1116 5456 -c 1121 5456 1125 5452 1125 5447 -c C 
+: 3.016 3.016 +S K 
+; N 1125 5386 M 1125 5381 1121 5377 1116 5377 -c 1111 5377 1107 5381 1107 5386 -c 1107 5391 1111 5395 1116 5395 -c 1121 5395 1125 5391 1125 5386 -c C 
+: 3.016 3.016 +S K 
+; N 1125 5353 M 1125 5348 1121 5344 1116 5344 -c 1111 5344 1107 5348 1107 5353 -c 1107 5358 1111 5362 1116 5362 -c 1121 5362 1125 5358 1125 5353 -c C 
+: 3.016 3.016 +S K 
+; N 1125 5459 M 1125 5454 1121 5450 1116 5450 -c 1111 5450 1107 5454 1107 5459 -c 1107 5464 1111 5468 1116 5468 -c 1121 5468 1125 5464 1125 5459 -c C 
+: 3.016 3.016 +S K 
+; N 1125 5459 M 1125 5454 1121 5450 1116 5450 -c 1111 5450 1107 5454 1107 5459 -c 1107 5464 1111 5468 1116 5468 -c 1121 5468 1125 5464 1125 5459 -c C 
+: 3.016 3.016 +S K 
+; N 1125 5465 M 1125 5460 1121 5456 1116 5456 -c 1111 5456 1107 5460 1107 5465 -c 1107 5470 1111 5474 1116 5474 -c 1121 5474 1125 5470 1125 5465 -c C 
+: 3.016 3.016 +S K 
+; N 1125 5447 M 1125 5442 1121 5438 1116 5438 -c 1111 5438 1107 5442 1107 5447 -c 1107 5452 1111 5456 1116 5456 -c 1121 5456 1125 5452 1125 5447 -c C 
+: 3.016 3.016 +S K 
+; N 1125 5471 M 1125 5466 1121 5462 1116 5462 -c 1111 5462 1107 5466 1107 5471 -c 1107 5476 1111 5480 1116 5480 -c 1121 5480 1125 5476 1125 5471 -c C 
+: 3.016 3.016 +S K 
+; N 1125 5525 M 1125 5520 1121 5516 1116 5516 -c 1111 5516 1107 5520 1107 5525 -c 1107 5530 1111 5534 1116 5534 -c 1121 5534 1125 5530 1125 5525 -c C 
+: 3.016 3.016 +S K 
+; N 1125 5429 M 1125 5424 1121 5420 1116 5420 -c 1111 5420 1107 5424 1107 5429 -c 1107 5434 1111 5438 1116 5438 -c 1121 5438 1125 5434 1125 5429 -c C 
+: 3.016 3.016 +S K 
+; N 1125 5453 M 1125 5448 1121 5444 1116 5444 -c 1111 5444 1107 5448 1107 5453 -c 1107 5458 1111 5462 1116 5462 -c 1121 5462 1125 5458 1125 5453 -c C 
+: 3.016 3.016 +S K 
+; N 1125 5429 M 1125 5424 1121 5420 1116 5420 -c 1111 5420 1107 5424 1107 5429 -c 1107 5434 1111 5438 1116 5438 -c 1121 5438 1125 5434 1125 5429 -c C 
+: 3.016 3.016 +S K 
+; N 1125 5447 M 1125 5442 1121 5438 1116 5438 -c 1111 5438 1107 5442 1107 5447 -c 1107 5452 1111 5456 1116 5456 -c 1121 5456 1125 5452 1125 5447 -c C 
+: 3.016 3.016 +S K 
+; N 1125 5414 M 1125 5409 1121 5404 1116 5404 -c 1111 5404 1107 5409 1107 5414 -c 1107 5419 1111 5423 1116 5423 -c 1121 5423 1125 5419 1125 5414 -c C 
+: 3.016 3.016 +S K 
+; N 1125 5474 M 1125 5469 1121 5465 1116 5465 -c 1111 5465 1107 5469 1107 5474 -c 1107 5479 1111 5483 1116 5483 -c 1121 5483 1125 5479 1125 5474 -c C 
+: 3.016 3.016 +S K 
+; N 1153 5447 M 1153 5442 1149 5438 1144 5438 -c 1139 5438 1135 5442 1135 5447 -c 1135 5452 1139 5456 1144 5456 -c 1149 5456 1153 5452 1153 5447 -c C 
+: 3.016 3.016 +S K 
+; N 1153 5486 M 1153 5481 1149 5477 1144 5477 -c 1139 5477 1135 5481 1135 5486 -c 1135 5491 1139 5495 1144 5495 -c 1149 5495 1153 5491 1153 5486 -c C 
+: 3.016 3.016 +S K 
+; N 1153 5477 M 1153 5472 1149 5468 1144 5468 -c 1139 5468 1135 5472 1135 5477 -c 1135 5482 1139 5486 1144 5486 -c 1149 5486 1153 5482 1153 5477 -c C 
+: 3.016 3.016 +S K 
+; N 1153 5492 M 1153 5487 1149 5483 1144 5483 -c 1139 5483 1135 5487 1135 5492 -c 1135 5497 1139 5501 1144 5501 -c 1149 5501 1153 5497 1153 5492 -c C 
+: 3.016 3.016 +S K 
+; N 1153 5432 M 1153 5427 1149 5423 1144 5423 -c 1139 5423 1135 5427 1135 5432 -c 1135 5437 1139 5441 1144 5441 -c 1149 5441 1153 5437 1153 5432 -c C 
+: 3.016 3.016 +S K 
+; N 1153 5429 M 1153 5424 1149 5420 1144 5420 -c 1139 5420 1135 5424 1135 5429 -c 1135 5434 1139 5438 1144 5438 -c 1149 5438 1153 5434 1153 5429 -c C 
+: 3.016 3.016 +S K 
+; N 1153 5447 M 1153 5442 1149 5438 1144 5438 -c 1139 5438 1135 5442 1135 5447 -c 1135 5452 1139 5456 1144 5456 -c 1149 5456 1153 5452 1153 5447 -c C 
+: 3.016 3.016 +S K 
+; N 1153 5453 M 1153 5448 1149 5444 1144 5444 -c 1139 5444 1135 5448 1135 5453 -c 1135 5458 1139 5462 1144 5462 -c 1149 5462 1153 5458 1153 5453 -c C 
+: 3.016 3.016 +S K 
+; N 1153 5459 M 1153 5454 1149 5450 1144 5450 -c 1139 5450 1135 5454 1135 5459 -c 1135 5464 1139 5468 1144 5468 -c 1149 5468 1153 5464 1153 5459 -c C 
+: 3.016 3.016 +S K 
+; N 1153 5468 M 1153 5463 1149 5459 1144 5459 -c 1139 5459 1135 5463 1135 5468 -c 1135 5473 1139 5477 1144 5477 -c 1149 5477 1153 5473 1153 5468 -c C 
+: 3.016 3.016 +S K 
+; N 1153 5429 M 1153 5424 1149 5420 1144 5420 -c 1139 5420 1135 5424 1135 5429 -c 1135 5434 1139 5438 1144 5438 -c 1149 5438 1153 5434 1153 5429 -c C 
+: 3.016 3.016 +S K 
+; N 1153 5417 M 1153 5412 1149 5408 1144 5408 -c 1139 5408 1135 5412 1135 5417 -c 1135 5422 1139 5426 1144 5426 -c 1149 5426 1153 5422 1153 5417 -c C 
+: 3.016 3.016 +S K 
+; N 1153 5459 M 1153 5454 1149 5450 1144 5450 -c 1139 5450 1135 5454 1135 5459 -c 1135 5464 1139 5468 1144 5468 -c 1149 5468 1153 5464 1153 5459 -c C 
+: 3.016 3.016 +S K 
+; N 1153 5429 M 1153 5424 1149 5420 1144 5420 -c 1139 5420 1135 5424 1135 5429 -c 1135 5434 1139 5438 1144 5438 -c 1149 5438 1153 5434 1153 5429 -c C 
+: 3.016 3.016 +S K 
+; N 1153 5477 M 1153 5472 1149 5468 1144 5468 -c 1139 5468 1135 5472 1135 5477 -c 1135 5482 1139 5486 1144 5486 -c 1149 5486 1153 5482 1153 5477 -c C 
+: 3.016 3.016 +S K 
+; N 1153 5462 M 1153 5457 1149 5453 1144 5453 -c 1139 5453 1135 5457 1135 5462 -c 1135 5467 1139 5471 1144 5471 -c 1149 5471 1153 5467 1153 5462 -c C 
+: 3.016 3.016 +S K 
+; N 1153 5486 M 1153 5481 1149 5477 1144 5477 -c 1139 5477 1135 5481 1135 5486 -c 1135 5491 1139 5495 1144 5495 -c 1149 5495 1153 5491 1153 5486 -c C 
+: 3.016 3.016 +S K 
+; N 1153 5423 M 1153 5418 1149 5414 1144 5414 -c 1139 5414 1135 5418 1135 5423 -c 1135 5428 1139 5432 1144 5432 -c 1149 5432 1153 5428 1153 5423 -c C 
+: 3.016 3.016 +S K 
+; N 1153 5414 M 1153 5409 1149 5404 1144 5404 -c 1139 5404 1135 5409 1135 5414 -c 1135 5419 1139 5423 1144 5423 -c 1149 5423 1153 5419 1153 5414 -c C 
+: 3.016 3.016 +S K 
+; N 1153 5450 M 1153 5445 1149 5441 1144 5441 -c 1139 5441 1135 5445 1135 5450 -c 1135 5455 1139 5459 1144 5459 -c 1149 5459 1153 5455 1153 5450 -c C 
+: 3.016 3.016 +S K 
+; N 1153 5531 M 1153 5526 1149 5522 1144 5522 -c 1139 5522 1135 5526 1135 5531 -c 1135 5536 1139 5540 1144 5540 -c 1149 5540 1153 5536 1153 5531 -c C 
+: 3.016 3.016 +S K 
+; N 1153 5483 M 1153 5478 1149 5474 1144 5474 -c 1139 5474 1135 5478 1135 5483 -c 1135 5488 1139 5492 1144 5492 -c 1149 5492 1153 5488 1153 5483 -c C 
+: 3.016 3.016 +S K 
+; N 1153 5480 M 1153 5475 1149 5471 1144 5471 -c 1139 5471 1135 5475 1135 5480 -c 1135 5485 1139 5489 1144 5489 -c 1149 5489 1153 5485 1153 5480 -c C 
+: 3.016 3.016 +S K 
+; N 1153 5477 M 1153 5472 1149 5468 1144 5468 -c 1139 5468 1135 5472 1135 5477 -c 1135 5482 1139 5486 1144 5486 -c 1149 5486 1153 5482 1153 5477 -c C 
+: 3.016 3.016 +S K 
+; N 1153 5486 M 1153 5481 1149 5477 1144 5477 -c 1139 5477 1135 5481 1135 5486 -c 1135 5491 1139 5495 1144 5495 -c 1149 5495 1153 5491 1153 5486 -c C 
+: 3.016 3.016 +S K 
+; N 1153 5395 M 1153 5390 1149 5386 1144 5386 -c 1139 5386 1135 5390 1135 5395 -c 1135 5400 1139 5404 1144 5404 -c 1149 5404 1153 5400 1153 5395 -c C 
+: 3.016 3.016 +S K 
+; N 1153 5429 M 1153 5424 1149 5420 1144 5420 -c 1139 5420 1135 5424 1135 5429 -c 1135 5434 1139 5438 1144 5438 -c 1149 5438 1153 5434 1153 5429 -c C 
+: 3.016 3.016 +S K 
+; N 1153 5438 M 1153 5433 1149 5429 1144 5429 -c 1139 5429 1135 5433 1135 5438 -c 1135 5443 1139 5447 1144 5447 -c 1149 5447 1153 5443 1153 5438 -c C 
+: 3.016 3.016 +S K 
+; N 1153 5408 M 1153 5403 1149 5398 1144 5398 -c 1139 5398 1135 5403 1135 5407 -c 1135 5412 1139 5417 1144 5417 -c 1149 5417 1153 5412 1153 5408 -c C 
+: 3.016 3.016 +S K 
+; N 1153 5414 M 1153 5409 1149 5404 1144 5404 -c 1139 5404 1135 5409 1135 5414 -c 1135 5419 1139 5423 1144 5423 -c 1149 5423 1153 5419 1153 5414 -c C 
+: 3.016 3.016 +S K 
+; N 1153 5498 M 1153 5493 1149 5489 1144 5489 -c 1139 5489 1135 5493 1135 5498 -c 1135 5503 1139 5507 1144 5507 -c 1149 5507 1153 5503 1153 5498 -c C 
+: 3.016 3.016 +S K 
+; N 1153 5392 M 1153 5387 1149 5383 1144 5383 -c 1139 5383 1135 5387 1135 5392 -c 1135 5397 1139 5401 1144 5401 -c 1149 5401 1153 5397 1153 5392 -c C 
+: 3.016 3.016 +S K 
+; N 1153 5450 M 1153 5445 1149 5441 1144 5441 -c 1139 5441 1135 5445 1135 5450 -c 1135 5455 1139 5459 1144 5459 -c 1149 5459 1153 5455 1153 5450 -c C 
+: 3.016 3.016 +S K 
+; N 1153 5513 M 1153 5508 1149 5504 1144 5504 -c 1139 5504 1135 5508 1135 5513 -c 1135 5518 1139 5522 1144 5522 -c 1149 5522 1153 5518 1153 5513 -c C 
+: 3.016 3.016 +S K 
+; N 1153 5447 M 1153 5442 1149 5438 1144 5438 -c 1139 5438 1135 5442 1135 5447 -c 1135 5452 1139 5456 1144 5456 -c 1149 5456 1153 5452 1153 5447 -c C 
+: 3.016 3.016 +S K 
+; N 1153 5519 M 1153 5514 1149 5510 1144 5510 -c 1139 5510 1135 5514 1135 5519 -c 1135 5524 1139 5528 1144 5528 -c 1149 5528 1153 5524 1153 5519 -c C 
+: 3.016 3.016 +S K 
+; N 1153 5423 M 1153 5418 1149 5414 1144 5414 -c 1139 5414 1135 5418 1135 5423 -c 1135 5428 1139 5432 1144 5432 -c 1149 5432 1153 5428 1153 5423 -c C 
+: 3.016 3.016 +S K 
+; N 1153 5408 M 1153 5403 1149 5398 1144 5398 -c 1139 5398 1135 5403 1135 5407 -c 1135 5412 1139 5417 1144 5417 -c 1149 5417 1153 5412 1153 5408 -c C 
+: 3.016 3.016 +S K 
+; N 1153 5383 M 1153 5378 1149 5374 1144 5374 -c 1139 5374 1135 5378 1135 5383 -c 1135 5388 1139 5392 1144 5392 -c 1149 5392 1153 5388 1153 5383 -c C 
+: 3.016 3.016 +S K 
+; N 1153 5480 M 1153 5475 1149 5471 1144 5471 -c 1139 5471 1135 5475 1135 5480 -c 1135 5485 1139 5489 1144 5489 -c 1149 5489 1153 5485 1153 5480 -c C 
+: 3.016 3.016 +S K 
+; N 1153 5474 M 1153 5469 1149 5465 1144 5465 -c 1139 5465 1135 5469 1135 5474 -c 1135 5479 1139 5483 1144 5483 -c 1149 5483 1153 5479 1153 5474 -c C 
+: 3.016 3.016 +S K 
+; N 1153 5465 M 1153 5460 1149 5456 1144 5456 -c 1139 5456 1135 5460 1135 5465 -c 1135 5470 1139 5474 1144 5474 -c 1149 5474 1153 5470 1153 5465 -c C 
+: 3.016 3.016 +S K 
+; N 1153 5389 M 1153 5384 1149 5380 1144 5380 -c 1139 5380 1135 5384 1135 5389 -c 1135 5394 1139 5398 1144 5398 -c 1149 5398 1153 5394 1153 5389 -c C 
+: 3.016 3.016 +S K 
+; N 1153 5420 M 1153 5415 1149 5411 1144 5411 -c 1139 5411 1135 5415 1135 5420 -c 1135 5425 1139 5429 1144 5429 -c 1149 5429 1153 5425 1153 5420 -c C 
+: 3.016 3.016 +S K 
+; N 1153 5401 M 1153 5396 1149 5392 1144 5392 -c 1139 5392 1135 5396 1135 5401 -c 1135 5406 1139 5411 1144 5411 -c 1149 5411 1153 5406 1153 5401 -c C 
+: 3.016 3.016 +S K 
+; N 1153 5404 M 1153 5399 1149 5395 1144 5395 -c 1139 5395 1135 5399 1135 5404 -c 1135 5409 1139 5414 1144 5414 -c 1149 5414 1153 5409 1153 5404 -c C 
+: 3.016 3.016 +S K 
+; N 1153 5389 M 1153 5384 1149 5380 1144 5380 -c 1139 5380 1135 5384 1135 5389 -c 1135 5394 1139 5398 1144 5398 -c 1149 5398 1153 5394 1153 5389 -c C 
+: 3.016 3.016 +S K 
+; N 1153 5450 M 1153 5445 1149 5441 1144 5441 -c 1139 5441 1135 5445 1135 5450 -c 1135 5455 1139 5459 1144 5459 -c 1149 5459 1153 5455 1153 5450 -c C 
+: 3.016 3.016 +S K 
+; N 1153 5344 M 1153 5339 1149 5335 1144 5335 -c 1139 5335 1135 5339 1135 5344 -c 1135 5349 1139 5353 1144 5353 -c 1149 5353 1153 5349 1153 5344 -c C 
+: 3.016 3.016 +S K 
+; N 1153 5380 M 1153 5375 1149 5371 1144 5371 -c 1139 5371 1135 5375 1135 5380 -c 1135 5385 1139 5389 1144 5389 -c 1149 5389 1153 5385 1153 5380 -c C 
+: 3.016 3.016 +S K 
+; N 1153 5401 M 1153 5396 1149 5392 1144 5392 -c 1139 5392 1135 5396 1135 5401 -c 1135 5406 1139 5411 1144 5411 -c 1149 5411 1153 5406 1153 5401 -c C 
+: 3.016 3.016 +S K 
+; N 1153 5414 M 1153 5409 1149 5404 1144 5404 -c 1139 5404 1135 5409 1135 5414 -c 1135 5419 1139 5423 1144 5423 -c 1149 5423 1153 5419 1153 5414 -c C 
+: 3.016 3.016 +S K 
+; N 1153 5401 M 1153 5396 1149 5392 1144 5392 -c 1139 5392 1135 5396 1135 5401 -c 1135 5406 1139 5411 1144 5411 -c 1149 5411 1153 5406 1153 5401 -c C 
+: 3.016 3.016 +S K 
+; N 1153 5408 M 1153 5403 1149 5398 1144 5398 -c 1139 5398 1135 5403 1135 5407 -c 1135 5412 1139 5417 1144 5417 -c 1149 5417 1153 5412 1153 5408 -c C 
+: 3.016 3.016 +S K 
+; N 1153 5350 M 1153 5345 1149 5341 1144 5341 -c 1139 5341 1135 5345 1135 5350 -c 1135 5355 1139 5359 1144 5359 -c 1149 5359 1153 5355 1153 5350 -c C 
+: 3.016 3.016 +S K 
+; N 1153 5414 M 1153 5409 1149 5404 1144 5404 -c 1139 5404 1135 5409 1135 5414 -c 1135 5419 1139 5423 1144 5423 -c 1149 5423 1153 5419 1153 5414 -c C 
+: 3.016 3.016 +S K 
+; N 1153 5374 M 1153 5369 1149 5365 1144 5365 -c 1139 5365 1135 5369 1135 5374 -c 1135 5379 1139 5383 1144 5383 -c 1149 5383 1153 5379 1153 5374 -c C 
+: 3.016 3.016 +S K 
+; N 1153 5398 M 1153 5393 1149 5389 1144 5389 -c 1139 5389 1135 5393 1135 5398 -c 1135 5403 1139 5408 1144 5408 -c 1149 5408 1153 5403 1153 5398 -c C 
+: 3.016 3.016 +S K 
+; N 1153 5417 M 1153 5412 1149 5408 1144 5408 -c 1139 5408 1135 5412 1135 5417 -c 1135 5422 1139 5426 1144 5426 -c 1149 5426 1153 5422 1153 5417 -c C 
+: 3.016 3.016 +S K 
+; N 1153 5453 M 1153 5448 1149 5444 1144 5444 -c 1139 5444 1135 5448 1135 5453 -c 1135 5458 1139 5462 1144 5462 -c 1149 5462 1153 5458 1153 5453 -c C 
+: 3.016 3.016 +S K 
+; N 1153 5308 M 1153 5303 1149 5299 1144 5299 -c 1139 5299 1135 5303 1135 5308 -c 1135 5313 1139 5317 1144 5317 -c 1149 5317 1153 5313 1153 5308 -c C 
+: 3.016 3.016 +S K 
+; N 1153 5401 M 1153 5396 1149 5392 1144 5392 -c 1139 5392 1135 5396 1135 5401 -c 1135 5406 1139 5411 1144 5411 -c 1149 5411 1153 5406 1153 5401 -c C 
+: 3.016 3.016 +S K 
+; N 1153 5350 M 1153 5345 1149 5341 1144 5341 -c 1139 5341 1135 5345 1135 5350 -c 1135 5355 1139 5359 1144 5359 -c 1149 5359 1153 5355 1153 5350 -c C 
+: 3.016 3.016 +S K 
+; N 1153 5395 M 1153 5390 1149 5386 1144 5386 -c 1139 5386 1135 5390 1135 5395 -c 1135 5400 1139 5404 1144 5404 -c 1149 5404 1153 5400 1153 5395 -c C 
+: 3.016 3.016 +S K 
+; N 1153 5329 M 1153 5324 1149 5320 1144 5320 -c 1139 5320 1135 5324 1135 5329 -c 1135 5334 1139 5338 1144 5338 -c 1149 5338 1153 5334 1153 5329 -c C 
+: 3.016 3.016 +S K 
+; N 1153 5347 M 1153 5342 1149 5338 1144 5338 -c 1139 5338 1135 5342 1135 5347 -c 1135 5352 1139 5356 1144 5356 -c 1149 5356 1153 5352 1153 5347 -c C 
+: 3.016 3.016 +S K 
+; N 1153 5414 M 1153 5409 1149 5404 1144 5404 -c 1139 5404 1135 5409 1135 5414 -c 1135 5419 1139 5423 1144 5423 -c 1149 5423 1153 5419 1153 5414 -c C 
+: 3.016 3.016 +S K 
+; N 1153 5365 M 1153 5360 1149 5356 1144 5356 -c 1139 5356 1135 5360 1135 5365 -c 1135 5370 1139 5374 1144 5374 -c 1149 5374 1153 5370 1153 5365 -c C 
+: 3.016 3.016 +S K 
+; N 1153 5420 M 1153 5415 1149 5411 1144 5411 -c 1139 5411 1135 5415 1135 5420 -c 1135 5425 1139 5429 1144 5429 -c 1149 5429 1153 5425 1153 5420 -c C 
+: 3.016 3.016 +S K 
+; N 1153 5335 M 1153 5330 1149 5326 1144 5326 -c 1139 5326 1135 5330 1135 5335 -c 1135 5340 1139 5344 1144 5344 -c 1149 5344 1153 5340 1153 5335 -c C 
+: 3.016 3.016 +S K 
+; N 1153 5365 M 1153 5360 1149 5356 1144 5356 -c 1139 5356 1135 5360 1135 5365 -c 1135 5370 1139 5374 1144 5374 -c 1149 5374 1153 5370 1153 5365 -c C 
+: 3.016 3.016 +S K 
+; N 1153 5347 M 1153 5342 1149 5338 1144 5338 -c 1139 5338 1135 5342 1135 5347 -c 1135 5352 1139 5356 1144 5356 -c 1149 5356 1153 5352 1153 5347 -c C 
+: 3.016 3.016 +S K 
+; N 1153 5359 M 1153 5354 1149 5350 1144 5350 -c 1139 5350 1135 5354 1135 5359 -c 1135 5364 1139 5368 1144 5368 -c 1149 5368 1153 5364 1153 5359 -c C 
+: 3.016 3.016 +S K 
+; N 1153 5329 M 1153 5324 1149 5320 1144 5320 -c 1139 5320 1135 5324 1135 5329 -c 1135 5334 1139 5338 1144 5338 -c 1149 5338 1153 5334 1153 5329 -c C 
+: 3.016 3.016 +S K 
+; N 1153 5251 M 1153 5246 1149 5241 1144 5241 -c 1139 5241 1135 5246 1135 5251 -c 1135 5256 1139 5260 1144 5260 -c 1149 5260 1153 5256 1153 5251 -c C 
+: 3.016 3.016 +S K 
+; N 1153 5308 M 1153 5303 1149 5299 1144 5299 -c 1139 5299 1135 5303 1135 5308 -c 1135 5313 1139 5317 1144 5317 -c 1149 5317 1153 5313 1153 5308 -c C 
+: 3.016 3.016 +S K 
+; N 1153 5323 M 1153 5318 1149 5314 1144 5314 -c 1139 5314 1135 5318 1135 5323 -c 1135 5328 1139 5332 1144 5332 -c 1149 5332 1153 5328 1153 5323 -c C 
+: 3.016 3.016 +S K 
+; N 1153 5371 M 1153 5366 1149 5362 1144 5362 -c 1139 5362 1135 5366 1135 5371 -c 1135 5376 1139 5380 1144 5380 -c 1149 5380 1153 5376 1153 5371 -c C 
+: 3.016 3.016 +S K 
+; N 1153 5353 M 1153 5348 1149 5344 1144 5344 -c 1139 5344 1135 5348 1135 5353 -c 1135 5358 1139 5362 1144 5362 -c 1149 5362 1153 5358 1153 5353 -c C 
+: 3.016 3.016 +S K 
+; N 1153 5284 M 1153 5279 1149 5275 1144 5275 -c 1139 5275 1135 5279 1135 5284 -c 1135 5289 1139 5293 1144 5293 -c 1149 5293 1153 5289 1153 5284 -c C 
+: 3.016 3.016 +S K 
+; N 1153 5408 M 1153 5403 1149 5398 1144 5398 -c 1139 5398 1135 5403 1135 5407 -c 1135 5412 1139 5417 1144 5417 -c 1149 5417 1153 5412 1153 5408 -c C 
+: 3.016 3.016 +S K 
+; N 1153 5371 M 1153 5366 1149 5362 1144 5362 -c 1139 5362 1135 5366 1135 5371 -c 1135 5376 1139 5380 1144 5380 -c 1149 5380 1153 5376 1153 5371 -c C 
+: 3.016 3.016 +S K 
+; N 1153 5417 M 1153 5412 1149 5408 1144 5408 -c 1139 5408 1135 5412 1135 5417 -c 1135 5422 1139 5426 1144 5426 -c 1149 5426 1153 5422 1153 5417 -c C 
+: 3.016 3.016 +S K 
+; N 1153 5398 M 1153 5393 1149 5389 1144 5389 -c 1139 5389 1135 5393 1135 5398 -c 1135 5403 1139 5408 1144 5408 -c 1149 5408 1153 5403 1153 5398 -c C 
+: 3.016 3.016 +S K 
+; N 1153 5371 M 1153 5366 1149 5362 1144 5362 -c 1139 5362 1135 5366 1135 5371 -c 1135 5376 1139 5380 1144 5380 -c 1149 5380 1153 5376 1153 5371 -c C 
+: 3.016 3.016 +S K 
+; N 1153 5371 M 1153 5366 1149 5362 1144 5362 -c 1139 5362 1135 5366 1135 5371 -c 1135 5376 1139 5380 1144 5380 -c 1149 5380 1153 5376 1153 5371 -c C 
+: 3.016 3.016 +S K 
+; N 1153 5296 M 1153 5291 1149 5287 1144 5287 -c 1139 5287 1135 5291 1135 5296 -c 1135 5301 1139 5305 1144 5305 -c 1149 5305 1153 5301 1153 5296 -c C 
+: 3.016 3.016 +S K 
+; N 1153 5251 M 1153 5246 1149 5241 1144 5241 -c 1139 5241 1135 5246 1135 5251 -c 1135 5256 1139 5260 1144 5260 -c 1149 5260 1153 5256 1153 5251 -c C 
+: 3.016 3.016 +S K 
+; N 1153 5368 M 1153 5363 1149 5359 1144 5359 -c 1139 5359 1135 5363 1135 5368 -c 1135 5373 1139 5377 1144 5377 -c 1149 5377 1153 5373 1153 5368 -c C 
+: 3.016 3.016 +S K 
+; N 1153 5377 M 1153 5372 1149 5368 1144 5368 -c 1139 5368 1135 5372 1135 5377 -c 1135 5382 1139 5386 1144 5386 -c 1149 5386 1153 5382 1153 5377 -c C 
+: 3.016 3.016 +S K 
+; N 1153 5374 M 1153 5369 1149 5365 1144 5365 -c 1139 5365 1135 5369 1135 5374 -c 1135 5379 1139 5383 1144 5383 -c 1149 5383 1153 5379 1153 5374 -c C 
+: 3.016 3.016 +S K 
+; N 1153 5368 M 1153 5363 1149 5359 1144 5359 -c 1139 5359 1135 5363 1135 5368 -c 1135 5373 1139 5377 1144 5377 -c 1149 5377 1153 5373 1153 5368 -c C 
+: 3.016 3.016 +S K 
+; N 1153 5389 M 1153 5384 1149 5380 1144 5380 -c 1139 5380 1135 5384 1135 5389 -c 1135 5394 1139 5398 1144 5398 -c 1149 5398 1153 5394 1153 5389 -c C 
+: 3.016 3.016 +S K 
+; N 1153 5441 M 1153 5436 1149 5432 1144 5432 -c 1139 5432 1135 5436 1135 5441 -c 1135 5446 1139 5450 1144 5450 -c 1149 5450 1153 5446 1153 5441 -c C 
+: 3.016 3.016 +S K 
+; N 1153 5329 M 1153 5324 1149 5320 1144 5320 -c 1139 5320 1135 5324 1135 5329 -c 1135 5334 1139 5338 1144 5338 -c 1149 5338 1153 5334 1153 5329 -c C 
+: 3.016 3.016 +S K 
+; N 1153 5368 M 1153 5363 1149 5359 1144 5359 -c 1139 5359 1135 5363 1135 5368 -c 1135 5373 1139 5377 1144 5377 -c 1149 5377 1153 5373 1153 5368 -c C 
+: 3.016 3.016 +S K 
+; N 1153 5335 M 1153 5330 1149 5326 1144 5326 -c 1139 5326 1135 5330 1135 5335 -c 1135 5340 1139 5344 1144 5344 -c 1149 5344 1153 5340 1153 5335 -c C 
+: 3.016 3.016 +S K 
+; N 1153 5368 M 1153 5363 1149 5359 1144 5359 -c 1139 5359 1135 5363 1135 5368 -c 1135 5373 1139 5377 1144 5377 -c 1149 5377 1153 5373 1153 5368 -c C 
+: 3.016 3.016 +S K 
+; N 1153 5323 M 1153 5318 1149 5314 1144 5314 -c 1139 5314 1135 5318 1135 5323 -c 1135 5328 1139 5332 1144 5332 -c 1149 5332 1153 5328 1153 5323 -c C 
+: 3.016 3.016 +S K 
+; N 1153 5383 M 1153 5378 1149 5374 1144 5374 -c 1139 5374 1135 5378 1135 5383 -c 1135 5388 1139 5392 1144 5392 -c 1149 5392 1153 5388 1153 5383 -c C 
+: 3.016 3.016 +S K 
+; N 1282 5389 M 1282 5384 1278 5380 1273 5380 -c 1268 5380 1264 5384 1264 5389 -c 1264 5394 1268 5398 1273 5398 -c 1278 5398 1282 5394 1282 5389 -c C 
+: 3.016 3.016 +S K 
+; N 1282 5420 M 1282 5415 1278 5411 1273 5411 -c 1268 5411 1264 5415 1264 5420 -c 1264 5425 1268 5429 1273 5429 -c 1278 5429 1282 5425 1282 5420 -c C 
+: 3.016 3.016 +S K 
+; N 1282 5404 M 1282 5399 1278 5395 1273 5395 -c 1268 5395 1264 5399 1264 5404 -c 1264 5409 1268 5414 1273 5414 -c 1278 5414 1282 5409 1282 5404 -c C 
+: 3.016 3.016 +S K 
+; N 1282 5426 M 1282 5421 1278 5417 1273 5417 -c 1268 5417 1264 5421 1264 5426 -c 1264 5431 1268 5435 1273 5435 -c 1278 5435 1282 5431 1282 5426 -c C 
+: 3.016 3.016 +S K 
+; N 1282 5362 M 1282 5357 1278 5353 1273 5353 -c 1268 5353 1264 5357 1264 5362 -c 1264 5367 1268 5371 1273 5371 -c 1278 5371 1282 5367 1282 5362 -c C 
+: 3.016 3.016 +S K 
+; N 1282 5368 M 1282 5363 1278 5359 1273 5359 -c 1268 5359 1264 5363 1264 5368 -c 1264 5373 1268 5377 1273 5377 -c 1278 5377 1282 5373 1282 5368 -c C 
+: 3.016 3.016 +S K 
+; N 1282 5386 M 1282 5381 1278 5377 1273 5377 -c 1268 5377 1264 5381 1264 5386 -c 1264 5391 1268 5395 1273 5395 -c 1278 5395 1282 5391 1282 5386 -c C 
+: 3.016 3.016 +S K 
+; N 1282 5404 M 1282 5399 1278 5395 1273 5395 -c 1268 5395 1264 5399 1264 5404 -c 1264 5409 1268 5414 1273 5414 -c 1278 5414 1282 5409 1282 5404 -c C 
+: 3.016 3.016 +S K 
+; N 1282 5408 M 1282 5403 1278 5398 1273 5398 -c 1268 5398 1264 5403 1264 5407 -c 1264 5412 1268 5417 1273 5417 -c 1278 5417 1282 5412 1282 5408 -c C 
+: 3.016 3.016 +S K 
+; N 1282 5404 M 1282 5399 1278 5395 1273 5395 -c 1268 5395 1264 5399 1264 5404 -c 1264 5409 1268 5414 1273 5414 -c 1278 5414 1282 5409 1282 5404 -c C 
+: 3.016 3.016 +S K 
+; N 1282 5350 M 1282 5345 1278 5341 1273 5341 -c 1268 5341 1264 5345 1264 5350 -c 1264 5355 1268 5359 1273 5359 -c 1278 5359 1282 5355 1282 5350 -c C 
+: 3.016 3.016 +S K 
+; N 1282 5389 M 1282 5384 1278 5380 1273 5380 -c 1268 5380 1264 5384 1264 5389 -c 1264 5394 1268 5398 1273 5398 -c 1278 5398 1282 5394 1282 5389 -c C 
+: 3.016 3.016 +S K 
+; N 1282 5356 M 1282 5351 1278 5347 1273 5347 -c 1268 5347 1264 5351 1264 5356 -c 1264 5361 1268 5365 1273 5365 -c 1278 5365 1282 5361 1282 5356 -c C 
+: 3.016 3.016 +S K 
+; N 1282 5404 M 1282 5399 1278 5395 1273 5395 -c 1268 5395 1264 5399 1264 5404 -c 1264 5409 1268 5414 1273 5414 -c 1278 5414 1282 5409 1282 5404 -c C 
+: 3.016 3.016 +S K 
+; N 1282 5392 M 1282 5387 1278 5383 1273 5383 -c 1268 5383 1264 5387 1264 5392 -c 1264 5397 1268 5401 1273 5401 -c 1278 5401 1282 5397 1282 5392 -c C 
+: 3.016 3.016 +S K 
+; N 1282 5411 M 1282 5406 1278 5401 1273 5401 -c 1268 5401 1264 5406 1264 5411 -c 1264 5416 1268 5420 1273 5420 -c 1278 5420 1282 5416 1282 5411 -c C 
+: 3.016 3.016 +S K 
+; N 1282 5344 M 1282 5339 1278 5335 1273 5335 -c 1268 5335 1264 5339 1264 5344 -c 1264 5349 1268 5353 1273 5353 -c 1278 5353 1282 5349 1282 5344 -c C 
+: 3.016 3.016 +S K 
+; N 1282 5329 M 1282 5324 1278 5320 1273 5320 -c 1268 5320 1264 5324 1264 5329 -c 1264 5334 1268 5338 1273 5338 -c 1278 5338 1282 5334 1282 5329 -c C 
+: 3.016 3.016 +S K 
+; N 1282 5380 M 1282 5375 1278 5371 1273 5371 -c 1268 5371 1264 5375 1264 5380 -c 1264 5385 1268 5389 1273 5389 -c 1278 5389 1282 5385 1282 5380 -c C 
+: 3.016 3.016 +S K 
+; N 1282 5411 M 1282 5406 1278 5401 1273 5401 -c 1268 5401 1264 5406 1264 5411 -c 1264 5416 1268 5420 1273 5420 -c 1278 5420 1282 5416 1282 5411 -c C 
+: 3.016 3.016 +S K 
+; N 1282 5450 M 1282 5445 1278 5441 1273 5441 -c 1268 5441 1264 5445 1264 5450 -c 1264 5455 1268 5459 1273 5459 -c 1278 5459 1282 5455 1282 5450 -c C 
+: 3.016 3.016 +S K 
+; N 1282 5408 M 1282 5403 1278 5398 1273 5398 -c 1268 5398 1264 5403 1264 5407 -c 1264 5412 1268 5417 1273 5417 -c 1278 5417 1282 5412 1282 5408 -c C 
+: 3.016 3.016 +S K 
+; N 1282 5401 M 1282 5396 1278 5392 1273 5392 -c 1268 5392 1264 5396 1264 5401 -c 1264 5406 1268 5411 1273 5411 -c 1278 5411 1282 5406 1282 5401 -c C 
+: 3.016 3.016 +S K 
+; N 1282 5365 M 1282 5360 1278 5356 1273 5356 -c 1268 5356 1264 5360 1264 5365 -c 1264 5370 1268 5374 1273 5374 -c 1278 5374 1282 5370 1282 5365 -c C 
+: 3.016 3.016 +S K 
+; N 1282 5320 M 1282 5315 1278 5311 1273 5311 -c 1268 5311 1264 5315 1264 5320 -c 1264 5325 1268 5329 1273 5329 -c 1278 5329 1282 5325 1282 5320 -c C 
+: 3.016 3.016 +S K 
+; N 1282 5347 M 1282 5342 1278 5338 1273 5338 -c 1268 5338 1264 5342 1264 5347 -c 1264 5352 1268 5356 1273 5356 -c 1278 5356 1282 5352 1282 5347 -c C 
+: 3.016 3.016 +S K 
+; N 1282 5356 M 1282 5351 1278 5347 1273 5347 -c 1268 5347 1264 5351 1264 5356 -c 1264 5361 1268 5365 1273 5365 -c 1278 5365 1282 5361 1282 5356 -c C 
+: 3.016 3.016 +S K 
+; N 1282 5323 M 1282 5318 1278 5314 1273 5314 -c 1268 5314 1264 5318 1264 5323 -c 1264 5328 1268 5332 1273 5332 -c 1278 5332 1282 5328 1282 5323 -c C 
+: 3.016 3.016 +S K 
+; N 1282 5317 M 1282 5312 1278 5308 1273 5308 -c 1268 5308 1264 5312 1264 5317 -c 1264 5322 1268 5326 1273 5326 -c 1278 5326 1282 5322 1282 5317 -c C 
+: 3.016 3.016 +S K 
+; N 1282 5408 M 1282 5403 1278 5398 1273 5398 -c 1268 5398 1264 5403 1264 5407 -c 1264 5412 1268 5417 1273 5417 -c 1278 5417 1282 5412 1282 5408 -c C 
+: 3.016 3.016 +S K 
+; N 1282 5254 M 1282 5249 1278 5244 1273 5244 -c 1268 5244 1264 5249 1264 5254 -c 1264 5259 1268 5263 1273 5263 -c 1278 5263 1282 5259 1282 5254 -c C 
+: 3.016 3.016 +S K 
+; N 1282 5377 M 1282 5372 1278 5368 1273 5368 -c 1268 5368 1264 5372 1264 5377 -c 1264 5382 1268 5386 1273 5386 -c 1278 5386 1282 5382 1282 5377 -c C 
+: 3.016 3.016 +S K 
+; N 1282 5444 M 1282 5439 1278 5435 1273 5435 -c 1268 5435 1264 5439 1264 5444 -c 1264 5449 1268 5453 1273 5453 -c 1278 5453 1282 5449 1282 5444 -c C 
+: 3.016 3.016 +S K 
+; N 1282 5368 M 1282 5363 1278 5359 1273 5359 -c 1268 5359 1264 5363 1264 5368 -c 1264 5373 1268 5377 1273 5377 -c 1278 5377 1282 5373 1282 5368 -c C 
+: 3.016 3.016 +S K 
+; N 1282 5438 M 1282 5433 1278 5429 1273 5429 -c 1268 5429 1264 5433 1264 5438 -c 1264 5443 1268 5447 1273 5447 -c 1278 5447 1282 5443 1282 5438 -c C 
+: 3.016 3.016 +S K 
+; N 1282 5329 M 1282 5324 1278 5320 1273 5320 -c 1268 5320 1264 5324 1264 5329 -c 1264 5334 1268 5338 1273 5338 -c 1278 5338 1282 5334 1282 5329 -c C 
+: 3.016 3.016 +S K 
+; N 1282 5335 M 1282 5330 1278 5326 1273 5326 -c 1268 5326 1264 5330 1264 5335 -c 1264 5340 1268 5344 1273 5344 -c 1278 5344 1282 5340 1282 5335 -c C 
+: 3.016 3.016 +S K 
+; N 1282 5356 M 1282 5351 1278 5347 1273 5347 -c 1268 5347 1264 5351 1264 5356 -c 1264 5361 1268 5365 1273 5365 -c 1278 5365 1282 5361 1282 5356 -c C 
+: 3.016 3.016 +S K 
+; N 1282 5404 M 1282 5399 1278 5395 1273 5395 -c 1268 5395 1264 5399 1264 5404 -c 1264 5409 1268 5414 1273 5414 -c 1278 5414 1282 5409 1282 5404 -c C 
+: 3.016 3.016 +S K 
+; N 1282 5389 M 1282 5384 1278 5380 1273 5380 -c 1268 5380 1264 5384 1264 5389 -c 1264 5394 1268 5398 1273 5398 -c 1278 5398 1282 5394 1282 5389 -c C 
+: 3.016 3.016 +S K 
+; N 1282 5272 M 1282 5267 1278 5263 1273 5263 -c 1268 5263 1264 5267 1264 5272 -c 1264 5277 1268 5281 1273 5281 -c 1278 5281 1282 5277 1282 5272 -c C 
+: 3.016 3.016 +S K 
+; N 1282 5275 M 1282 5270 1278 5266 1273 5266 -c 1268 5266 1264 5270 1264 5275 -c 1264 5280 1268 5284 1273 5284 -c 1278 5284 1282 5280 1282 5275 -c C 
+: 3.016 3.016 +S K 
+; N 1282 5311 M 1282 5306 1278 5302 1273 5302 -c 1268 5302 1264 5306 1264 5311 -c 1264 5316 1268 5320 1273 5320 -c 1278 5320 1282 5316 1282 5311 -c C 
+: 3.016 3.016 +S K 
+; N 1282 5308 M 1282 5303 1278 5299 1273 5299 -c 1268 5299 1264 5303 1264 5308 -c 1264 5313 1268 5317 1273 5317 -c 1278 5317 1282 5313 1282 5308 -c C 
+: 3.016 3.016 +S K 
+; N 1282 5323 M 1282 5318 1278 5314 1273 5314 -c 1268 5314 1264 5318 1264 5323 -c 1264 5328 1268 5332 1273 5332 -c 1278 5332 1282 5328 1282 5323 -c C 
+: 3.016 3.016 +S K 
+; N 1282 5305 M 1282 5300 1278 5296 1273 5296 -c 1268 5296 1264 5300 1264 5305 -c 1264 5310 1268 5314 1273 5314 -c 1278 5314 1282 5310 1282 5305 -c C 
+: 3.016 3.016 +S K 
+; N 1282 5368 M 1282 5363 1278 5359 1273 5359 -c 1268 5359 1264 5363 1264 5368 -c 1264 5373 1268 5377 1273 5377 -c 1278 5377 1282 5373 1282 5368 -c C 
+: 3.016 3.016 +S K 
+; N 1282 5251 M 1282 5246 1278 5241 1273 5241 -c 1268 5241 1264 5246 1264 5251 -c 1264 5256 1268 5260 1273 5260 -c 1278 5260 1282 5256 1282 5251 -c C 
+: 3.016 3.016 +S K 
+; N 1282 5290 M 1282 5285 1278 5281 1273 5281 -c 1268 5281 1264 5285 1264 5290 -c 1264 5295 1268 5299 1273 5299 -c 1278 5299 1282 5295 1282 5290 -c C 
+: 3.016 3.016 +S K 
+; N 1282 5338 M 1282 5333 1278 5329 1273 5329 -c 1268 5329 1264 5333 1264 5338 -c 1264 5343 1268 5347 1273 5347 -c 1278 5347 1282 5343 1282 5338 -c C 
+: 3.016 3.016 +S K 
+; N 1282 5320 M 1282 5315 1278 5311 1273 5311 -c 1268 5311 1264 5315 1264 5320 -c 1264 5325 1268 5329 1273 5329 -c 1278 5329 1282 5325 1282 5320 -c C 
+: 3.016 3.016 +S K 
+; N 1282 5317 M 1282 5312 1278 5308 1273 5308 -c 1268 5308 1264 5312 1264 5317 -c 1264 5322 1268 5326 1273 5326 -c 1278 5326 1282 5322 1282 5317 -c C 
+: 3.016 3.016 +S K 
+; N 1282 5311 M 1282 5306 1278 5302 1273 5302 -c 1268 5302 1264 5306 1264 5311 -c 1264 5316 1268 5320 1273 5320 -c 1278 5320 1282 5316 1282 5311 -c C 
+: 3.016 3.016 +S K 
+; N 1282 5244 M 1282 5239 1278 5235 1273 5235 -c 1268 5235 1264 5239 1264 5244 -c 1264 5249 1268 5254 1273 5254 -c 1278 5254 1282 5249 1282 5244 -c C 
+: 3.016 3.016 +S K 
+; N 1282 5329 M 1282 5324 1278 5320 1273 5320 -c 1268 5320 1264 5324 1264 5329 -c 1264 5334 1268 5338 1273 5338 -c 1278 5338 1282 5334 1282 5329 -c C 
+: 3.016 3.016 +S K 
+; N 1282 5296 M 1282 5291 1278 5287 1273 5287 -c 1268 5287 1264 5291 1264 5296 -c 1264 5301 1268 5305 1273 5305 -c 1278 5305 1282 5301 1282 5296 -c C 
+: 3.016 3.016 +S K 
+; N 1282 5314 M 1282 5309 1278 5305 1273 5305 -c 1268 5305 1264 5309 1264 5314 -c 1264 5319 1268 5323 1273 5323 -c 1278 5323 1282 5319 1282 5314 -c C 
+: 3.016 3.016 +S K 
+; N 1282 5329 M 1282 5324 1278 5320 1273 5320 -c 1268 5320 1264 5324 1264 5329 -c 1264 5334 1268 5338 1273 5338 -c 1278 5338 1282 5334 1282 5329 -c C 
+: 3.016 3.016 +S K 
+; N 1282 5371 M 1282 5366 1278 5362 1273 5362 -c 1268 5362 1264 5366 1264 5371 -c 1264 5376 1268 5380 1273 5380 -c 1278 5380 1282 5376 1282 5371 -c C 
+: 3.016 3.016 +S K 
+; N 1282 5199 M 1282 5194 1278 5190 1273 5190 -c 1268 5190 1264 5194 1264 5199 -c 1264 5204 1268 5208 1273 5208 -c 1278 5208 1282 5204 1282 5199 -c C 
+: 3.016 3.016 +S K 
+; N 1282 5308 M 1282 5303 1278 5299 1273 5299 -c 1268 5299 1264 5303 1264 5308 -c 1264 5313 1268 5317 1273 5317 -c 1278 5317 1282 5313 1282 5308 -c C 
+: 3.016 3.016 +S K 
+; N 1282 5244 M 1282 5239 1278 5235 1273 5235 -c 1268 5235 1264 5239 1264 5244 -c 1264 5249 1268 5254 1273 5254 -c 1278 5254 1282 5249 1282 5244 -c C 
+: 3.016 3.016 +S K 
+; N 1282 5299 M 1282 5294 1278 5290 1273 5290 -c 1268 5290 1264 5294 1264 5299 -c 1264 5304 1268 5308 1273 5308 -c 1278 5308 1282 5304 1282 5299 -c C 
+: 3.016 3.016 +S K 
+; N 1282 5217 M 1282 5212 1278 5208 1273 5208 -c 1268 5208 1264 5212 1264 5217 -c 1264 5222 1268 5226 1273 5226 -c 1278 5226 1282 5222 1282 5217 -c C 
+: 3.016 3.016 +S K 
+; N 1282 5320 M 1282 5315 1278 5311 1273 5311 -c 1268 5311 1264 5315 1264 5320 -c 1264 5325 1268 5329 1273 5329 -c 1278 5329 1282 5325 1282 5320 -c C 
+: 3.016 3.016 +S K 
+; N 1282 5296 M 1282 5291 1278 5287 1273 5287 -c 1268 5287 1264 5291 1264 5296 -c 1264 5301 1268 5305 1273 5305 -c 1278 5305 1282 5301 1282 5296 -c C 
+: 3.016 3.016 +S K 
+; N 1282 5329 M 1282 5324 1278 5320 1273 5320 -c 1268 5320 1264 5324 1264 5329 -c 1264 5334 1268 5338 1273 5338 -c 1278 5338 1282 5334 1282 5329 -c C 
+: 3.016 3.016 +S K 
+; N 1282 5241 M 1282 5236 1278 5232 1273 5232 -c 1268 5232 1264 5236 1264 5241 -c 1264 5246 1268 5251 1273 5251 -c 1278 5251 1282 5246 1282 5241 -c C 
+: 3.016 3.016 +S K 
+; N 1282 5217 M 1282 5212 1278 5208 1273 5208 -c 1268 5208 1264 5212 1264 5217 -c 1264 5222 1268 5226 1273 5226 -c 1278 5226 1282 5222 1282 5217 -c C 
+: 3.016 3.016 +S K 
+; N 1282 5263 M 1282 5258 1278 5254 1273 5254 -c 1268 5254 1264 5258 1264 5263 -c 1264 5268 1268 5272 1273 5272 -c 1278 5272 1282 5268 1282 5263 -c C 
+: 3.016 3.016 +S K 
+; N 1282 5229 M 1282 5224 1278 5220 1273 5220 -c 1268 5220 1264 5224 1264 5229 -c 1264 5234 1268 5238 1273 5238 -c 1278 5238 1282 5234 1282 5229 -c C 
+: 3.016 3.016 +S K 
+; N 1282 5263 M 1282 5258 1278 5254 1273 5254 -c 1268 5254 1264 5258 1264 5263 -c 1264 5268 1268 5272 1273 5272 -c 1278 5272 1282 5268 1282 5263 -c C 
+: 3.016 3.016 +S K 
+; N 1282 5235 M 1282 5230 1278 5226 1273 5226 -c 1268 5226 1264 5230 1264 5235 -c 1264 5240 1268 5244 1273 5244 -c 1278 5244 1282 5240 1282 5235 -c C 
+: 3.016 3.016 +S K 
+; N 1282 5145 M 1282 5140 1278 5136 1273 5136 -c 1268 5136 1264 5140 1264 5145 -c 1264 5150 1268 5154 1273 5154 -c 1278 5154 1282 5150 1282 5145 -c C 
+: 3.016 3.016 +S K 
+; N 1282 5193 M 1282 5188 1278 5184 1273 5184 -c 1268 5184 1264 5188 1264 5193 -c 1264 5198 1268 5202 1273 5202 -c 1278 5202 1282 5198 1282 5193 -c C 
+: 3.016 3.016 +S K 
+; N 1282 5254 M 1282 5249 1278 5244 1273 5244 -c 1268 5244 1264 5249 1264 5254 -c 1264 5259 1268 5263 1273 5263 -c 1278 5263 1282 5259 1282 5254 -c C 
+: 3.016 3.016 +S K 
+; N 1282 5260 M 1282 5255 1278 5251 1273 5251 -c 1268 5251 1264 5255 1264 5260 -c 1264 5265 1268 5269 1273 5269 -c 1278 5269 1282 5265 1282 5260 -c C 
+: 3.016 3.016 +S K 
+; N 1282 5248 M 1282 5243 1278 5238 1273 5238 -c 1268 5238 1264 5243 1264 5248 -c 1264 5253 1268 5257 1273 5257 -c 1278 5257 1282 5253 1282 5248 -c C 
+: 3.016 3.016 +S K 
+; N 1282 5169 M 1282 5164 1278 5160 1273 5160 -c 1268 5160 1264 5164 1264 5169 -c 1264 5174 1268 5178 1273 5178 -c 1278 5178 1282 5174 1282 5169 -c C 
+: 3.016 3.016 +S K 
+; N 1282 5308 M 1282 5303 1278 5299 1273 5299 -c 1268 5299 1264 5303 1264 5308 -c 1264 5313 1268 5317 1273 5317 -c 1278 5317 1282 5313 1282 5308 -c C 
+: 3.016 3.016 +S K 
+; N 1282 5254 M 1282 5249 1278 5244 1273 5244 -c 1268 5244 1264 5249 1264 5254 -c 1264 5259 1268 5263 1273 5263 -c 1278 5263 1282 5259 1282 5254 -c C 
+: 3.016 3.016 +S K 
+; N 1282 5329 M 1282 5324 1278 5320 1273 5320 -c 1268 5320 1264 5324 1264 5329 -c 1264 5334 1268 5338 1273 5338 -c 1278 5338 1282 5334 1282 5329 -c C 
+: 3.016 3.016 +S K 
+; N 1282 5311 M 1282 5306 1278 5302 1273 5302 -c 1268 5302 1264 5306 1264 5311 -c 1264 5316 1268 5320 1273 5320 -c 1278 5320 1282 5316 1282 5311 -c C 
+: 3.016 3.016 +S K 
+; N 1282 5269 M 1282 5264 1278 5260 1273 5260 -c 1268 5260 1264 5264 1264 5269 -c 1264 5274 1268 5278 1273 5278 -c 1278 5278 1282 5274 1282 5269 -c C 
+: 3.016 3.016 +S K 
+; N 1282 5290 M 1282 5285 1278 5281 1273 5281 -c 1268 5281 1264 5285 1264 5290 -c 1264 5295 1268 5299 1273 5299 -c 1278 5299 1282 5295 1282 5290 -c C 
+: 3.016 3.016 +S K 
+; N 1282 5178 M 1282 5173 1278 5169 1273 5169 -c 1268 5169 1264 5173 1264 5178 -c 1264 5183 1268 5187 1273 5187 -c 1278 5187 1282 5183 1282 5178 -c C 
+: 3.016 3.016 +S K 
+; N 1282 5157 M 1282 5152 1278 5148 1273 5148 -c 1268 5148 1264 5152 1264 5157 -c 1264 5162 1268 5166 1273 5166 -c 1278 5166 1282 5162 1282 5157 -c C 
+: 3.016 3.016 +S K 
+; N 1282 5009 M 1282 5004 1278 5000 1273 5000 -c 1268 5000 1264 5004 1264 5009 -c 1264 5014 1268 5018 1273 5018 -c 1278 5018 1282 5014 1282 5009 -c C 
+: 3.016 3.016 +S K 
+; N 1282 5272 M 1282 5267 1278 5263 1273 5263 -c 1268 5263 1264 5267 1264 5272 -c 1264 5277 1268 5281 1273 5281 -c 1278 5281 1282 5277 1282 5272 -c C 
+: 3.016 3.016 +S K 
+; N 1282 5272 M 1282 5267 1278 5263 1273 5263 -c 1268 5263 1264 5267 1264 5272 -c 1264 5277 1268 5281 1273 5281 -c 1278 5281 1282 5277 1282 5272 -c C 
+: 3.016 3.016 +S K 
+; N 1282 5266 M 1282 5261 1278 5257 1273 5257 -c 1268 5257 1264 5261 1264 5266 -c 1264 5271 1268 5275 1273 5275 -c 1278 5275 1282 5271 1282 5266 -c C 
+: 3.016 3.016 +S K 
+; N 1282 5296 M 1282 5291 1278 5287 1273 5287 -c 1268 5287 1264 5291 1264 5296 -c 1264 5301 1268 5305 1273 5305 -c 1278 5305 1282 5301 1282 5296 -c C 
+: 3.016 3.016 +S K 
+; N 1282 5344 M 1282 5339 1278 5335 1273 5335 -c 1268 5335 1264 5339 1264 5344 -c 1264 5349 1268 5353 1273 5353 -c 1278 5353 1282 5349 1282 5344 -c C 
+: 3.016 3.016 +S K 
+; N 1282 5223 M 1282 5218 1278 5214 1273 5214 -c 1268 5214 1264 5218 1264 5223 -c 1264 5228 1268 5232 1273 5232 -c 1278 5232 1282 5228 1282 5223 -c C 
+: 3.016 3.016 +S K 
+; N 1282 5272 M 1282 5267 1278 5263 1273 5263 -c 1268 5263 1264 5267 1264 5272 -c 1264 5277 1268 5281 1273 5281 -c 1278 5281 1282 5277 1282 5272 -c C 
+: 3.016 3.016 +S K 
+; N 1282 5229 M 1282 5224 1278 5220 1273 5220 -c 1268 5220 1264 5224 1264 5229 -c 1264 5234 1268 5238 1273 5238 -c 1278 5238 1282 5234 1282 5229 -c C 
+: 3.016 3.016 +S K 
+; N 1282 5272 M 1282 5267 1278 5263 1273 5263 -c 1268 5263 1264 5267 1264 5272 -c 1264 5277 1268 5281 1273 5281 -c 1278 5281 1282 5277 1282 5272 -c C 
+: 3.016 3.016 +S K 
+; N 1282 5217 M 1282 5212 1278 5208 1273 5208 -c 1268 5208 1264 5212 1264 5217 -c 1264 5222 1268 5226 1273 5226 -c 1278 5226 1282 5222 1282 5217 -c C 
+: 3.016 3.016 +S K 
+; N 1282 5290 M 1282 5285 1278 5281 1273 5281 -c 1268 5281 1264 5285 1264 5290 -c 1264 5295 1268 5299 1273 5299 -c 1278 5299 1282 5295 1282 5290 -c C 
+: 3.016 3.016 +S K 
+; N 1391 5326 M 1391 5321 1387 5317 1382 5317 -c 1377 5317 1373 5321 1373 5326 -c 1373 5331 1377 5335 1382 5335 -c 1387 5335 1391 5331 1391 5326 -c C 
+: 3.016 3.016 +S K 
+; N 1391 5365 M 1391 5360 1387 5356 1382 5356 -c 1377 5356 1373 5360 1373 5365 -c 1373 5370 1377 5374 1382 5374 -c 1387 5374 1391 5370 1391 5365 -c C 
+: 3.016 3.016 +S K 
+; N 1391 5335 M 1391 5330 1387 5326 1382 5326 -c 1377 5326 1373 5330 1373 5335 -c 1373 5340 1377 5344 1382 5344 -c 1387 5344 1391 5340 1391 5335 -c C 
+: 3.016 3.016 +S K 
+; N 1391 5368 M 1391 5363 1387 5359 1382 5359 -c 1377 5359 1373 5363 1373 5368 -c 1373 5373 1377 5377 1382 5377 -c 1387 5377 1391 5373 1391 5368 -c C 
+: 3.016 3.016 +S K 
+; N 1391 5323 M 1391 5318 1387 5314 1382 5314 -c 1377 5314 1373 5318 1373 5323 -c 1373 5328 1377 5332 1382 5332 -c 1387 5332 1391 5328 1391 5323 -c C 
+: 3.016 3.016 +S K 
+; N 1391 5311 M 1391 5306 1387 5302 1382 5302 -c 1377 5302 1373 5306 1373 5311 -c 1373 5316 1377 5320 1382 5320 -c 1387 5320 1391 5316 1391 5311 -c C 
+: 3.016 3.016 +S K 
+; N 1391 5302 M 1391 5297 1387 5293 1382 5293 -c 1377 5293 1373 5297 1373 5302 -c 1373 5307 1377 5311 1382 5311 -c 1387 5311 1391 5307 1391 5302 -c C 
+: 3.016 3.016 +S K 
+; N 1391 5323 M 1391 5318 1387 5314 1382 5314 -c 1377 5314 1373 5318 1373 5323 -c 1373 5328 1377 5332 1382 5332 -c 1387 5332 1391 5328 1391 5323 -c C 
+: 3.016 3.016 +S K 
+; N 1391 5374 M 1391 5369 1387 5365 1382 5365 -c 1377 5365 1373 5369 1373 5374 -c 1373 5379 1377 5383 1382 5383 -c 1387 5383 1391 5379 1391 5374 -c C 
+: 3.016 3.016 +S K 
+; N 1391 5350 M 1391 5345 1387 5341 1382 5341 -c 1377 5341 1373 5345 1373 5350 -c 1373 5355 1377 5359 1382 5359 -c 1387 5359 1391 5355 1391 5350 -c C 
+: 3.016 3.016 +S K 
+; N 1391 5284 M 1391 5279 1387 5275 1382 5275 -c 1377 5275 1373 5279 1373 5284 -c 1373 5289 1377 5293 1382 5293 -c 1387 5293 1391 5289 1391 5284 -c C 
+: 3.016 3.016 +S K 
+; N 1391 5275 M 1391 5270 1387 5266 1382 5266 -c 1377 5266 1373 5270 1373 5275 -c 1373 5280 1377 5284 1382 5284 -c 1387 5284 1391 5280 1391 5275 -c C 
+: 3.016 3.016 +S K 
+; N 1391 5326 M 1391 5321 1387 5317 1382 5317 -c 1377 5317 1373 5321 1373 5326 -c 1373 5331 1377 5335 1382 5335 -c 1387 5335 1391 5331 1391 5326 -c C 
+: 3.016 3.016 +S K 
+; N 1391 5296 M 1391 5291 1387 5287 1382 5287 -c 1377 5287 1373 5291 1373 5296 -c 1373 5301 1377 5305 1382 5305 -c 1387 5305 1391 5301 1391 5296 -c C 
+: 3.016 3.016 +S K 
+; N 1391 5344 M 1391 5339 1387 5335 1382 5335 -c 1377 5335 1373 5339 1373 5344 -c 1373 5349 1377 5353 1382 5353 -c 1387 5353 1391 5349 1391 5344 -c C 
+: 3.016 3.016 +S K 
+; N 1391 5332 M 1391 5327 1387 5323 1382 5323 -c 1377 5323 1373 5327 1373 5332 -c 1373 5337 1377 5341 1382 5341 -c 1387 5341 1391 5337 1391 5332 -c C 
+: 3.016 3.016 +S K 
+; N 1391 5350 M 1391 5345 1387 5341 1382 5341 -c 1377 5341 1373 5345 1373 5350 -c 1373 5355 1377 5359 1382 5359 -c 1387 5359 1391 5355 1391 5350 -c C 
+: 3.016 3.016 +S K 
+; N 1391 5275 M 1391 5270 1387 5266 1382 5266 -c 1377 5266 1373 5270 1373 5275 -c 1373 5280 1377 5284 1382 5284 -c 1387 5284 1391 5280 1391 5275 -c C 
+: 3.016 3.016 +S K 
+; N 1391 5278 M 1391 5273 1387 5269 1382 5269 -c 1377 5269 1373 5273 1373 5278 -c 1373 5283 1377 5287 1382 5287 -c 1387 5287 1391 5283 1391 5278 -c C 
+: 3.016 3.016 +S K 
+; N 1391 5308 M 1391 5303 1387 5299 1382 5299 -c 1377 5299 1373 5303 1373 5308 -c 1373 5313 1377 5317 1382 5317 -c 1387 5317 1391 5313 1391 5308 -c C 
+: 3.016 3.016 +S K 
+; N 1391 5314 M 1391 5309 1387 5305 1382 5305 -c 1377 5305 1373 5309 1373 5314 -c 1373 5319 1377 5323 1382 5323 -c 1387 5323 1391 5319 1391 5314 -c C 
+: 3.016 3.016 +S K 
+; N 1391 5395 M 1391 5390 1387 5386 1382 5386 -c 1377 5386 1373 5390 1373 5395 -c 1373 5400 1377 5404 1382 5404 -c 1387 5404 1391 5400 1391 5395 -c C 
+: 3.016 3.016 +S K 
+; N 1391 5374 M 1391 5369 1387 5365 1382 5365 -c 1377 5365 1373 5369 1373 5374 -c 1373 5379 1377 5383 1382 5383 -c 1387 5383 1391 5379 1391 5374 -c C 
+: 3.016 3.016 +S K 
+; N 1391 5350 M 1391 5345 1387 5341 1382 5341 -c 1377 5341 1373 5345 1373 5350 -c 1373 5355 1377 5359 1382 5359 -c 1387 5359 1391 5355 1391 5350 -c C 
+: 3.016 3.016 +S K 
+; N 1391 5314 M 1391 5309 1387 5305 1382 5305 -c 1377 5305 1373 5309 1373 5314 -c 1373 5319 1377 5323 1382 5323 -c 1387 5323 1391 5319 1391 5314 -c C 
+: 3.016 3.016 +S K 
+; N 1391 5257 M 1391 5252 1387 5248 1382 5248 -c 1377 5248 1373 5252 1373 5257 -c 1373 5262 1377 5266 1382 5266 -c 1387 5266 1391 5262 1391 5257 -c C 
+: 3.016 3.016 +S K 
+; N 1391 5275 M 1391 5270 1387 5266 1382 5266 -c 1377 5266 1373 5270 1373 5275 -c 1373 5280 1377 5284 1382 5284 -c 1387 5284 1391 5280 1391 5275 -c C 
+: 3.016 3.016 +S K 
+; N 1391 5305 M 1391 5300 1387 5296 1382 5296 -c 1377 5296 1373 5300 1373 5305 -c 1373 5310 1377 5314 1382 5314 -c 1387 5314 1391 5310 1391 5305 -c C 
+: 3.016 3.016 +S K 
+; N 1391 5263 M 1391 5258 1387 5254 1382 5254 -c 1377 5254 1373 5258 1373 5263 -c 1373 5268 1377 5272 1382 5272 -c 1387 5272 1391 5268 1391 5263 -c C 
+: 3.016 3.016 +S K 
+; N 1391 5263 M 1391 5258 1387 5254 1382 5254 -c 1377 5254 1373 5258 1373 5263 -c 1373 5268 1377 5272 1382 5272 -c 1387 5272 1391 5268 1391 5263 -c C 
+: 3.016 3.016 +S K 
+; N 1391 5359 M 1391 5354 1387 5350 1382 5350 -c 1377 5350 1373 5354 1373 5359 -c 1373 5364 1377 5368 1382 5368 -c 1387 5368 1391 5364 1391 5359 -c C 
+: 3.016 3.016 +S K 
+; N 1391 5254 M 1391 5249 1387 5244 1382 5244 -c 1377 5244 1373 5249 1373 5254 -c 1373 5259 1377 5263 1382 5263 -c 1387 5263 1391 5259 1391 5254 -c C 
+: 3.016 3.016 +S K 
+; N 1391 5311 M 1391 5306 1387 5302 1382 5302 -c 1377 5302 1373 5306 1373 5311 -c 1373 5316 1377 5320 1382 5320 -c 1387 5320 1391 5316 1391 5311 -c C 
+: 3.016 3.016 +S K 
+; N 1391 5392 M 1391 5387 1387 5383 1382 5383 -c 1377 5383 1373 5387 1373 5392 -c 1373 5397 1377 5401 1382 5401 -c 1387 5401 1391 5397 1391 5392 -c C 
+: 3.016 3.016 +S K 
+; N 1391 5323 M 1391 5318 1387 5314 1382 5314 -c 1377 5314 1373 5318 1373 5323 -c 1373 5328 1377 5332 1382 5332 -c 1387 5332 1391 5328 1391 5323 -c C 
+: 3.016 3.016 +S K 
+; N 1391 5371 M 1391 5366 1387 5362 1382 5362 -c 1377 5362 1373 5366 1373 5371 -c 1373 5376 1377 5380 1382 5380 -c 1387 5380 1391 5376 1391 5371 -c C 
+: 3.016 3.016 +S K 
+; N 1391 5260 M 1391 5255 1387 5251 1382 5251 -c 1377 5251 1373 5255 1373 5260 -c 1373 5265 1377 5269 1382 5269 -c 1387 5269 1391 5265 1391 5260 -c C 
+: 3.016 3.016 +S K 
+; N 1391 5272 M 1391 5267 1387 5263 1382 5263 -c 1377 5263 1373 5267 1373 5272 -c 1373 5277 1377 5281 1382 5281 -c 1387 5281 1391 5277 1391 5272 -c C 
+: 3.016 3.016 +S K 
+; N 1391 5302 M 1391 5297 1387 5293 1382 5293 -c 1377 5293 1373 5297 1373 5302 -c 1373 5307 1377 5311 1382 5311 -c 1387 5311 1391 5307 1391 5302 -c C 
+: 3.016 3.016 +S K 
+; N 1391 5347 M 1391 5342 1387 5338 1382 5338 -c 1377 5338 1373 5342 1373 5347 -c 1373 5352 1377 5356 1382 5356 -c 1387 5356 1391 5352 1391 5347 -c C 
+: 3.016 3.016 +S K 
+; N 1391 5193 M 1391 5188 1387 5184 1382 5184 -c 1377 5184 1373 5188 1373 5193 -c 1373 5198 1377 5202 1382 5202 -c 1387 5202 1391 5198 1391 5193 -c C 
+: 3.016 3.016 +S K 
+; N 1391 5196 M 1391 5191 1387 5187 1382 5187 -c 1377 5187 1373 5191 1373 5196 -c 1373 5201 1377 5205 1382 5205 -c 1387 5205 1391 5201 1391 5196 -c C 
+: 3.016 3.016 +S K 
+; N 1391 5254 M 1391 5249 1387 5244 1382 5244 -c 1377 5244 1373 5249 1373 5254 -c 1373 5259 1377 5263 1382 5263 -c 1387 5263 1391 5259 1391 5254 -c C 
+: 3.016 3.016 +S K 
+; N 1391 5244 M 1391 5239 1387 5235 1382 5235 -c 1377 5235 1373 5239 1373 5244 -c 1373 5249 1377 5254 1382 5254 -c 1387 5254 1391 5249 1391 5244 -c C 
+: 3.016 3.016 +S K 
+; N 1391 5269 M 1391 5264 1387 5260 1382 5260 -c 1377 5260 1373 5264 1373 5269 -c 1373 5274 1377 5278 1382 5278 -c 1387 5278 1391 5274 1391 5269 -c C 
+: 3.016 3.016 +S K 
+; N 1391 5232 M 1391 5227 1387 5223 1382 5223 -c 1377 5223 1373 5227 1373 5232 -c 1373 5237 1377 5241 1382 5241 -c 1387 5241 1391 5237 1391 5232 -c C 
+: 3.016 3.016 +S K 
+; N 1391 5293 M 1391 5288 1387 5284 1382 5284 -c 1377 5284 1373 5288 1373 5293 -c 1373 5298 1377 5302 1382 5302 -c 1387 5302 1391 5298 1391 5293 -c C 
+: 3.016 3.016 +S K 
+; N 1391 5190 M 1391 5185 1387 5181 1382 5181 -c 1377 5181 1373 5185 1373 5190 -c 1373 5195 1377 5199 1382 5199 -c 1387 5199 1391 5195 1391 5190 -c C 
+: 3.016 3.016 +S K 
+; N 1391 5217 M 1391 5212 1387 5208 1382 5208 -c 1377 5208 1373 5212 1373 5217 -c 1373 5222 1377 5226 1382 5226 -c 1387 5226 1391 5222 1391 5217 -c C 
+: 3.016 3.016 +S K 
+; N 1391 5254 M 1391 5249 1387 5244 1382 5244 -c 1377 5244 1373 5249 1373 5254 -c 1373 5259 1377 5263 1382 5263 -c 1387 5263 1391 5259 1391 5254 -c C 
+: 3.016 3.016 +S K 
+; N 1391 5251 M 1391 5246 1387 5241 1382 5241 -c 1377 5241 1373 5246 1373 5251 -c 1373 5256 1377 5260 1382 5260 -c 1387 5260 1391 5256 1391 5251 -c C 
+: 3.016 3.016 +S K 
+; N 1391 5260 M 1391 5255 1387 5251 1382 5251 -c 1377 5251 1373 5255 1373 5260 -c 1373 5265 1377 5269 1382 5269 -c 1387 5269 1391 5265 1391 5260 -c C 
+: 3.016 3.016 +S K 
+; N 1391 5235 M 1391 5230 1387 5226 1382 5226 -c 1377 5226 1373 5230 1373 5235 -c 1373 5240 1377 5244 1382 5244 -c 1387 5244 1391 5240 1391 5235 -c C 
+: 3.016 3.016 +S K 
+; N 1391 5172 M 1391 5167 1387 5163 1382 5163 -c 1377 5163 1373 5167 1373 5172 -c 1373 5177 1377 5181 1382 5181 -c 1387 5181 1391 5177 1391 5172 -c C 
+: 3.016 3.016 +S K 
+; N 1391 5263 M 1391 5258 1387 5254 1382 5254 -c 1377 5254 1373 5258 1373 5263 -c 1373 5268 1377 5272 1382 5272 -c 1387 5272 1391 5268 1391 5263 -c C 
+: 3.016 3.016 +S K 
+; N 1391 5196 M 1391 5191 1387 5187 1382 5187 -c 1377 5187 1373 5191 1373 5196 -c 1373 5201 1377 5205 1382 5205 -c 1387 5205 1391 5201 1391 5196 -c C 
+: 3.016 3.016 +S K 
+; N 1391 5229 M 1391 5224 1387 5220 1382 5220 -c 1377 5220 1373 5224 1373 5229 -c 1373 5234 1377 5238 1382 5238 -c 1387 5238 1391 5234 1391 5229 -c C 
+: 3.016 3.016 +S K 
+; N 1391 5251 M 1391 5246 1387 5241 1382 5241 -c 1377 5241 1373 5246 1373 5251 -c 1373 5256 1377 5260 1382 5260 -c 1387 5260 1391 5256 1391 5251 -c C 
+: 3.016 3.016 +S K 
+; N 1391 5296 M 1391 5291 1387 5287 1382 5287 -c 1377 5287 1373 5291 1373 5296 -c 1373 5301 1377 5305 1382 5305 -c 1387 5305 1391 5301 1391 5296 -c C 
+: 3.016 3.016 +S K 
+; N 1391 5235 M 1391 5230 1387 5226 1382 5226 -c 1377 5226 1373 5230 1373 5235 -c 1373 5240 1377 5244 1382 5244 -c 1387 5244 1391 5240 1391 5235 -c C 
+: 3.016 3.016 +S K 
+; N 1391 5151 M 1391 5146 1387 5142 1382 5142 -c 1377 5142 1373 5146 1373 5151 -c 1373 5156 1377 5160 1382 5160 -c 1387 5160 1391 5156 1391 5151 -c C 
+: 3.016 3.016 +S K 
+; N 1391 5223 M 1391 5218 1387 5214 1382 5214 -c 1377 5214 1373 5218 1373 5223 -c 1373 5228 1377 5232 1382 5232 -c 1387 5232 1391 5228 1391 5223 -c C 
+: 3.016 3.016 +S K 
+; N 1391 5133 M 1391 5128 1387 5124 1382 5124 -c 1377 5124 1373 5128 1373 5133 -c 1373 5138 1377 5142 1382 5142 -c 1387 5142 1391 5138 1391 5133 -c C 
+: 3.016 3.016 +S K 
+; N 1391 5157 M 1391 5152 1387 5148 1382 5148 -c 1377 5148 1373 5152 1373 5157 -c 1373 5162 1377 5166 1382 5166 -c 1387 5166 1391 5162 1391 5157 -c C 
+: 3.016 3.016 +S K 
+; N 1391 5238 M 1391 5233 1387 5229 1382 5229 -c 1377 5229 1373 5233 1373 5238 -c 1373 5243 1377 5248 1382 5248 -c 1387 5248 1391 5243 1391 5238 -c C 
+: 3.016 3.016 +S K 
+; N 1391 5184 M 1391 5179 1387 5175 1382 5175 -c 1377 5175 1373 5179 1373 5184 -c 1373 5189 1377 5193 1382 5193 -c 1387 5193 1391 5189 1391 5184 -c C 
+: 3.016 3.016 +S K 
+; N 1391 5251 M 1391 5246 1387 5241 1382 5241 -c 1377 5241 1373 5246 1373 5251 -c 1373 5256 1377 5260 1382 5260 -c 1387 5260 1391 5256 1391 5251 -c C 
+: 3.016 3.016 +S K 
+; N 1391 5226 M 1391 5221 1387 5217 1382 5217 -c 1377 5217 1373 5221 1373 5226 -c 1373 5231 1377 5235 1382 5235 -c 1387 5235 1391 5231 1391 5226 -c C 
+: 3.016 3.016 +S K 
+; N 1391 5175 M 1391 5170 1387 5166 1382 5166 -c 1377 5166 1373 5170 1373 5175 -c 1373 5180 1377 5184 1382 5184 -c 1387 5184 1391 5180 1391 5175 -c C 
+: 3.016 3.016 +S K 
+; N 1391 5154 M 1391 5149 1387 5145 1382 5145 -c 1377 5145 1373 5149 1373 5154 -c 1373 5159 1377 5163 1382 5163 -c 1387 5163 1391 5159 1391 5154 -c C 
+: 3.016 3.016 +S K 
+; N 1391 5193 M 1391 5188 1387 5184 1382 5184 -c 1377 5184 1373 5188 1373 5193 -c 1373 5198 1377 5202 1382 5202 -c 1387 5202 1391 5198 1391 5193 -c C 
+: 3.016 3.016 +S K 
+; N 1391 5154 M 1391 5149 1387 5145 1382 5145 -c 1377 5145 1373 5149 1373 5154 -c 1373 5159 1377 5163 1382 5163 -c 1387 5163 1391 5159 1391 5154 -c C 
+: 3.016 3.016 +S K 
+; N 1391 5063 M 1391 5058 1387 5054 1382 5054 -c 1377 5054 1373 5058 1373 5063 -c 1373 5068 1377 5072 1382 5072 -c 1387 5072 1391 5068 1391 5063 -c C 
+: 3.016 3.016 +S K 
+; N 1391 5115 M 1391 5110 1387 5106 1382 5106 -c 1377 5106 1373 5110 1373 5115 -c 1373 5120 1377 5124 1382 5124 -c 1387 5124 1391 5120 1391 5115 -c C 
+: 3.016 3.016 +S K 
+; N 1391 5133 M 1391 5128 1387 5124 1382 5124 -c 1377 5124 1373 5128 1373 5133 -c 1373 5138 1377 5142 1382 5142 -c 1387 5142 1391 5138 1391 5133 -c C 
+: 3.016 3.016 +S K 
+; N 1391 5184 M 1391 5179 1387 5175 1382 5175 -c 1377 5175 1373 5179 1373 5184 -c 1373 5189 1377 5193 1382 5193 -c 1387 5193 1391 5189 1391 5184 -c C 
+: 3.016 3.016 +S K 
+; N 1391 5166 M 1391 5161 1387 5157 1382 5157 -c 1377 5157 1373 5161 1373 5166 -c 1373 5171 1377 5175 1382 5175 -c 1387 5175 1391 5171 1391 5166 -c C 
+: 3.016 3.016 +S K 
+; N 1391 5036 M 1391 5031 1387 5027 1382 5027 -c 1377 5027 1373 5031 1373 5036 -c 1373 5041 1377 5045 1382 5045 -c 1387 5045 1391 5041 1391 5036 -c C 
+: 3.016 3.016 +S K 
+; N 1391 5260 M 1391 5255 1387 5251 1382 5251 -c 1377 5251 1373 5255 1373 5260 -c 1373 5265 1377 5269 1382 5269 -c 1387 5269 1391 5265 1391 5260 -c C 
+: 3.016 3.016 +S K 
+; N 1391 5199 M 1391 5194 1387 5190 1382 5190 -c 1377 5190 1373 5194 1373 5199 -c 1373 5204 1377 5208 1382 5208 -c 1387 5208 1391 5204 1391 5199 -c C 
+: 3.016 3.016 +S K 
+; N 1391 5254 M 1391 5249 1387 5244 1382 5244 -c 1377 5244 1373 5249 1373 5254 -c 1373 5259 1377 5263 1382 5263 -c 1387 5263 1391 5259 1391 5254 -c C 
+: 3.016 3.016 +S K 
+; N 1391 5235 M 1391 5230 1387 5226 1382 5226 -c 1377 5226 1373 5230 1373 5235 -c 1373 5240 1377 5244 1382 5244 -c 1387 5244 1391 5240 1391 5235 -c C 
+: 3.016 3.016 +S K 
+; N 1391 5190 M 1391 5185 1387 5181 1382 5181 -c 1377 5181 1373 5185 1373 5190 -c 1373 5195 1377 5199 1382 5199 -c 1387 5199 1391 5195 1391 5190 -c C 
+: 3.016 3.016 +S K 
+; N 1391 5205 M 1391 5200 1387 5196 1382 5196 -c 1377 5196 1373 5200 1373 5205 -c 1373 5210 1377 5214 1382 5214 -c 1387 5214 1391 5210 1391 5205 -c C 
+: 3.016 3.016 +S K 
+; N 1391 5100 M 1391 5095 1387 5091 1382 5091 -c 1377 5091 1373 5095 1373 5100 -c 1373 5105 1377 5109 1382 5109 -c 1387 5109 1391 5105 1391 5100 -c C 
+: 3.016 3.016 +S K 
+; N 1391 5084 M 1391 5079 1387 5075 1382 5075 -c 1377 5075 1373 5079 1373 5084 -c 1373 5089 1377 5094 1382 5094 -c 1387 5094 1391 5089 1391 5084 -c C 
+: 3.016 3.016 +S K 
+; N 1391 5196 M 1391 5191 1387 5187 1382 5187 -c 1377 5187 1373 5191 1373 5196 -c 1373 5201 1377 5205 1382 5205 -c 1387 5205 1391 5201 1391 5196 -c C 
+: 3.016 3.016 +S K 
+; N 1391 5181 M 1391 5176 1387 5172 1382 5172 -c 1377 5172 1373 5176 1373 5181 -c 1373 5186 1377 5190 1382 5190 -c 1387 5190 1391 5186 1391 5181 -c C 
+: 3.016 3.016 +S K 
+; N 1391 5208 M 1391 5203 1387 5199 1382 5199 -c 1377 5199 1373 5203 1373 5208 -c 1373 5213 1377 5217 1382 5217 -c 1387 5217 1391 5213 1391 5208 -c C 
+: 3.016 3.016 +S K 
+; N 1391 5184 M 1391 5179 1387 5175 1382 5175 -c 1377 5175 1373 5179 1373 5184 -c 1373 5189 1377 5193 1382 5193 -c 1387 5193 1391 5189 1391 5184 -c C 
+: 3.016 3.016 +S K 
+; N 1391 5226 M 1391 5221 1387 5217 1382 5217 -c 1377 5217 1373 5221 1373 5226 -c 1373 5231 1377 5235 1382 5235 -c 1387 5235 1391 5231 1391 5226 -c C 
+: 3.016 3.016 +S K 
+; N 1391 5272 M 1391 5267 1387 5263 1382 5263 -c 1377 5263 1373 5267 1373 5272 -c 1373 5277 1377 5281 1382 5281 -c 1387 5281 1391 5277 1391 5272 -c C 
+: 3.016 3.016 +S K 
+; N 1391 5151 M 1391 5146 1387 5142 1382 5142 -c 1377 5142 1373 5146 1373 5151 -c 1373 5156 1377 5160 1382 5160 -c 1387 5160 1391 5156 1391 5151 -c C 
+: 3.016 3.016 +S K 
+; N 1391 5199 M 1391 5194 1387 5190 1382 5190 -c 1377 5190 1373 5194 1373 5199 -c 1373 5204 1377 5208 1382 5208 -c 1387 5208 1391 5204 1391 5199 -c C 
+: 3.016 3.016 +S K 
+; N 1391 5169 M 1391 5164 1387 5160 1382 5160 -c 1377 5160 1373 5164 1373 5169 -c 1373 5174 1377 5178 1382 5178 -c 1387 5178 1391 5174 1391 5169 -c C 
+: 3.016 3.016 +S K 
+; N 1391 5190 M 1391 5185 1387 5181 1382 5181 -c 1377 5181 1373 5185 1373 5190 -c 1373 5195 1377 5199 1382 5199 -c 1387 5199 1391 5195 1391 5190 -c C 
+: 3.016 3.016 +S K 
+; N 1391 5151 M 1391 5146 1387 5142 1382 5142 -c 1377 5142 1373 5146 1373 5151 -c 1373 5156 1377 5160 1382 5160 -c 1387 5160 1391 5156 1391 5151 -c C 
+: 3.016 3.016 +S K 
+; N 1391 5211 M 1391 5206 1387 5202 1382 5202 -c 1377 5202 1373 5206 1373 5211 -c 1373 5216 1377 5220 1382 5220 -c 1387 5220 1391 5216 1391 5211 -c C 
+: 3.016 3.016 +S K 
+; N 1400 5326 M 1400 5321 1396 5317 1391 5317 -c 1386 5317 1382 5321 1382 5326 -c 1382 5331 1386 5335 1391 5335 -c 1396 5335 1400 5331 1400 5326 -c C 
+: 3.016 3.016 +S K 
+; N 1400 5356 M 1400 5351 1396 5347 1391 5347 -c 1386 5347 1382 5351 1382 5356 -c 1382 5361 1386 5365 1391 5365 -c 1396 5365 1400 5361 1400 5356 -c C 
+: 3.016 3.016 +S K 
+; N 1400 5341 M 1400 5336 1396 5332 1391 5332 -c 1386 5332 1382 5336 1382 5341 -c 1382 5346 1386 5350 1391 5350 -c 1396 5350 1400 5346 1400 5341 -c C 
+: 3.016 3.016 +S K 
+; N 1400 5368 M 1400 5363 1396 5359 1391 5359 -c 1386 5359 1382 5363 1382 5368 -c 1382 5373 1386 5377 1391 5377 -c 1396 5377 1400 5373 1400 5368 -c C 
+: 3.016 3.016 +S K 
+; N 1400 5290 M 1400 5285 1396 5281 1391 5281 -c 1386 5281 1382 5285 1382 5290 -c 1382 5295 1386 5299 1391 5299 -c 1396 5299 1400 5295 1400 5290 -c C 
+: 3.016 3.016 +S K 
+; N 1400 5284 M 1400 5279 1396 5275 1391 5275 -c 1386 5275 1382 5279 1382 5284 -c 1382 5289 1386 5293 1391 5293 -c 1396 5293 1400 5289 1400 5284 -c C 
+: 3.016 3.016 +S K 
+; N 1400 5305 M 1400 5300 1396 5296 1391 5296 -c 1386 5296 1382 5300 1382 5305 -c 1382 5310 1386 5314 1391 5314 -c 1396 5314 1400 5310 1400 5305 -c C 
+: 3.016 3.016 +S K 
+; N 1400 5580 M 1400 5575 1396 5571 1391 5571 -c 1386 5571 1382 5575 1382 5580 -c 1382 5585 1386 5589 1391 5589 -c 1396 5589 1400 5585 1400 5580 -c C 
+: 3.016 3.016 +S K 
+; N 1400 5374 M 1400 5369 1396 5365 1391 5365 -c 1386 5365 1382 5369 1382 5374 -c 1382 5379 1386 5383 1391 5383 -c 1396 5383 1400 5379 1400 5374 -c C 
+: 3.016 3.016 +S K 
+; N 1400 5350 M 1400 5345 1396 5341 1391 5341 -c 1386 5341 1382 5345 1382 5350 -c 1382 5355 1386 5359 1391 5359 -c 1396 5359 1400 5355 1400 5350 -c C 
+: 3.016 3.016 +S K 
+; N 1400 5287 M 1400 5282 1396 5278 1391 5278 -c 1386 5278 1382 5282 1382 5287 -c 1382 5292 1386 5296 1391 5296 -c 1396 5296 1400 5292 1400 5287 -c C 
+: 3.016 3.016 +S K 
+; N 1400 5272 M 1400 5267 1396 5263 1391 5263 -c 1386 5263 1382 5267 1382 5272 -c 1382 5277 1386 5281 1391 5281 -c 1396 5281 1400 5277 1400 5272 -c C 
+: 3.016 3.016 +S K 
+; N 1400 5329 M 1400 5324 1396 5320 1391 5320 -c 1386 5320 1382 5324 1382 5329 -c 1382 5334 1386 5338 1391 5338 -c 1396 5338 1400 5334 1400 5329 -c C 
+: 3.016 3.016 +S K 
+; N 1400 5299 M 1400 5294 1396 5290 1391 5290 -c 1386 5290 1382 5294 1382 5299 -c 1382 5304 1386 5308 1391 5308 -c 1396 5308 1400 5304 1400 5299 -c C 
+: 3.016 3.016 +S K 
+; N 1400 5332 M 1400 5327 1396 5323 1391 5323 -c 1386 5323 1382 5327 1382 5332 -c 1382 5337 1386 5341 1391 5341 -c 1396 5341 1400 5337 1400 5332 -c C 
+: 3.016 3.016 +S K 
+; N 1400 5332 M 1400 5327 1396 5323 1391 5323 -c 1386 5323 1382 5327 1382 5332 -c 1382 5337 1386 5341 1391 5341 -c 1396 5341 1400 5337 1400 5332 -c C 
+: 3.016 3.016 +S K 
+; N 1400 5359 M 1400 5354 1396 5350 1391 5350 -c 1386 5350 1382 5354 1382 5359 -c 1382 5364 1386 5368 1391 5368 -c 1396 5368 1400 5364 1400 5359 -c C 
+: 3.016 3.016 +S K 
+; N 1400 5272 M 1400 5267 1396 5263 1391 5263 -c 1386 5263 1382 5267 1382 5272 -c 1382 5277 1386 5281 1391 5281 -c 1396 5281 1400 5277 1400 5272 -c C 
+: 3.016 3.016 +S K 
+; N 1400 5281 M 1400 5276 1396 5272 1391 5272 -c 1386 5272 1382 5276 1382 5281 -c 1382 5286 1386 5290 1391 5290 -c 1396 5290 1400 5286 1400 5281 -c C 
+: 3.016 3.016 +S K 
+; N 1400 5311 M 1400 5306 1396 5302 1391 5302 -c 1386 5302 1382 5306 1382 5311 -c 1382 5316 1386 5320 1391 5320 -c 1396 5320 1400 5316 1400 5311 -c C 
+: 3.016 3.016 +S K 
+; N 1400 5329 M 1400 5324 1396 5320 1391 5320 -c 1386 5320 1382 5324 1382 5329 -c 1382 5334 1386 5338 1391 5338 -c 1396 5338 1400 5334 1400 5329 -c C 
+: 3.016 3.016 +S K 
+; N 1400 5389 M 1400 5384 1396 5380 1391 5380 -c 1386 5380 1382 5384 1382 5389 -c 1382 5394 1386 5398 1391 5398 -c 1396 5398 1400 5394 1400 5389 -c C 
+: 3.016 3.016 +S K 
+; N 1400 5356 M 1400 5351 1396 5347 1391 5347 -c 1386 5347 1382 5351 1382 5356 -c 1382 5361 1386 5365 1391 5365 -c 1396 5365 1400 5361 1400 5356 -c C 
+: 3.016 3.016 +S K 
+; N 1400 5341 M 1400 5336 1396 5332 1391 5332 -c 1386 5332 1382 5336 1382 5341 -c 1382 5346 1386 5350 1391 5350 -c 1396 5350 1400 5346 1400 5341 -c C 
+: 3.016 3.016 +S K 
+; N 1400 5305 M 1400 5300 1396 5296 1391 5296 -c 1386 5296 1382 5300 1382 5305 -c 1382 5310 1386 5314 1391 5314 -c 1396 5314 1400 5310 1400 5305 -c C 
+: 3.016 3.016 +S K 
+; N 1400 5251 M 1400 5246 1396 5241 1391 5241 -c 1386 5241 1382 5246 1382 5251 -c 1382 5256 1386 5260 1391 5260 -c 1396 5260 1400 5256 1400 5251 -c C 
+: 3.016 3.016 +S K 
+; N 1400 5275 M 1400 5270 1396 5266 1391 5266 -c 1386 5266 1382 5270 1382 5275 -c 1382 5280 1386 5284 1391 5284 -c 1396 5284 1400 5280 1400 5275 -c C 
+: 3.016 3.016 +S K 
+; N 1400 5296 M 1400 5291 1396 5287 1391 5287 -c 1386 5287 1382 5291 1382 5296 -c 1382 5301 1386 5305 1391 5305 -c 1396 5305 1400 5301 1400 5296 -c C 
+: 3.016 3.016 +S K 
+; N 1400 5260 M 1400 5255 1396 5251 1391 5251 -c 1386 5251 1382 5255 1382 5260 -c 1382 5265 1386 5269 1391 5269 -c 1396 5269 1400 5265 1400 5260 -c C 
+: 3.016 3.016 +S K 
+; N 1400 5254 M 1400 5249 1396 5244 1391 5244 -c 1386 5244 1382 5249 1382 5254 -c 1382 5259 1386 5263 1391 5263 -c 1396 5263 1400 5259 1400 5254 -c C 
+: 3.016 3.016 +S K 
+; N 1400 5356 M 1400 5351 1396 5347 1391 5347 -c 1386 5347 1382 5351 1382 5356 -c 1382 5361 1386 5365 1391 5365 -c 1396 5365 1400 5361 1400 5356 -c C 
+: 3.016 3.016 +S K 
+; N 1400 5257 M 1400 5252 1396 5248 1391 5248 -c 1386 5248 1382 5252 1382 5257 -c 1382 5262 1386 5266 1391 5266 -c 1396 5266 1400 5262 1400 5257 -c C 
+: 3.016 3.016 +S K 
+; N 1400 5314 M 1400 5309 1396 5305 1391 5305 -c 1386 5305 1382 5309 1382 5314 -c 1382 5319 1386 5323 1391 5323 -c 1396 5323 1400 5319 1400 5314 -c C 
+: 3.016 3.016 +S K 
+; N 1400 5401 M 1400 5396 1396 5392 1391 5392 -c 1386 5392 1382 5396 1382 5401 -c 1382 5406 1386 5411 1391 5411 -c 1396 5411 1400 5406 1400 5401 -c C 
+: 3.016 3.016 +S K 
+; N 1400 5317 M 1400 5312 1396 5308 1391 5308 -c 1386 5308 1382 5312 1382 5317 -c 1382 5322 1386 5326 1391 5326 -c 1396 5326 1400 5322 1400 5317 -c C 
+: 3.016 3.016 +S K 
+; N 1400 5377 M 1400 5372 1396 5368 1391 5368 -c 1386 5368 1382 5372 1382 5377 -c 1382 5382 1386 5386 1391 5386 -c 1396 5386 1400 5382 1400 5377 -c C 
+: 3.016 3.016 +S K 
+; N 1400 5266 M 1400 5261 1396 5257 1391 5257 -c 1386 5257 1382 5261 1382 5266 -c 1382 5271 1386 5275 1391 5275 -c 1396 5275 1400 5271 1400 5266 -c C 
+: 3.016 3.016 +S K 
+; N 1400 5281 M 1400 5276 1396 5272 1391 5272 -c 1386 5272 1382 5276 1382 5281 -c 1382 5286 1386 5290 1391 5290 -c 1396 5290 1400 5286 1400 5281 -c C 
+: 3.016 3.016 +S K 
+; N 1400 5293 M 1400 5288 1396 5284 1391 5284 -c 1386 5284 1382 5288 1382 5293 -c 1382 5298 1386 5302 1391 5302 -c 1396 5302 1400 5298 1400 5293 -c C 
+: 3.016 3.016 +S K 
+; N 1400 5341 M 1400 5336 1396 5332 1391 5332 -c 1386 5332 1382 5336 1382 5341 -c 1382 5346 1386 5350 1391 5350 -c 1396 5350 1400 5346 1400 5341 -c C 
+: 3.016 3.016 +S K 
+; N 1400 5193 M 1400 5188 1396 5184 1391 5184 -c 1386 5184 1382 5188 1382 5193 -c 1382 5198 1386 5202 1391 5202 -c 1396 5202 1400 5198 1400 5193 -c C 
+: 3.016 3.016 +S K 
+; N 1400 5205 M 1400 5200 1396 5196 1391 5196 -c 1386 5196 1382 5200 1382 5205 -c 1382 5210 1386 5214 1391 5214 -c 1396 5214 1400 5210 1400 5205 -c C 
+: 3.016 3.016 +S K 
+; N 1400 5257 M 1400 5252 1396 5248 1391 5248 -c 1386 5248 1382 5252 1382 5257 -c 1382 5262 1386 5266 1391 5266 -c 1396 5266 1400 5262 1400 5257 -c C 
+: 3.016 3.016 +S K 
+; N 1400 5241 M 1400 5236 1396 5232 1391 5232 -c 1386 5232 1382 5236 1382 5241 -c 1382 5246 1386 5251 1391 5251 -c 1396 5251 1400 5246 1400 5241 -c C 
+: 3.016 3.016 +S K 
+; N 1400 5260 M 1400 5255 1396 5251 1391 5251 -c 1386 5251 1382 5255 1382 5260 -c 1382 5265 1386 5269 1391 5269 -c 1396 5269 1400 5265 1400 5260 -c C 
+: 3.016 3.016 +S K 
+; N 1400 5229 M 1400 5224 1396 5220 1391 5220 -c 1386 5220 1382 5224 1382 5229 -c 1382 5234 1386 5238 1391 5238 -c 1396 5238 1400 5234 1400 5229 -c C 
+: 3.016 3.016 +S K 
+; N 1400 5311 M 1400 5306 1396 5302 1391 5302 -c 1386 5302 1382 5306 1382 5311 -c 1382 5316 1386 5320 1391 5320 -c 1396 5320 1400 5316 1400 5311 -c C 
+: 3.016 3.016 +S K 
+; N 1400 5175 M 1400 5170 1396 5166 1391 5166 -c 1386 5166 1382 5170 1382 5175 -c 1382 5180 1386 5184 1391 5184 -c 1396 5184 1400 5180 1400 5175 -c C 
+: 3.016 3.016 +S K 
+; N 1400 5220 M 1400 5215 1396 5211 1391 5211 -c 1386 5211 1382 5215 1382 5220 -c 1382 5225 1386 5229 1391 5229 -c 1396 5229 1400 5225 1400 5220 -c C 
+: 3.016 3.016 +S K 
+; N 1400 5257 M 1400 5252 1396 5248 1391 5248 -c 1386 5248 1382 5252 1382 5257 -c 1382 5262 1386 5266 1391 5266 -c 1396 5266 1400 5262 1400 5257 -c C 
+: 3.016 3.016 +S K 
+; N 1400 5254 M 1400 5249 1396 5244 1391 5244 -c 1386 5244 1382 5249 1382 5254 -c 1382 5259 1386 5263 1391 5263 -c 1396 5263 1400 5259 1400 5254 -c C 
+: 3.016 3.016 +S K 
+; N 1400 5254 M 1400 5249 1396 5244 1391 5244 -c 1386 5244 1382 5249 1382 5254 -c 1382 5259 1386 5263 1391 5263 -c 1396 5263 1400 5259 1400 5254 -c C 
+: 3.016 3.016 +S K 
+; N 1400 5232 M 1400 5227 1396 5223 1391 5223 -c 1386 5223 1382 5227 1382 5232 -c 1382 5237 1386 5241 1391 5241 -c 1396 5241 1400 5237 1400 5232 -c C 
+: 3.016 3.016 +S K 
+; N 1400 5160 M 1400 5155 1396 5151 1391 5151 -c 1386 5151 1382 5155 1382 5160 -c 1382 5165 1386 5169 1391 5169 -c 1396 5169 1400 5165 1400 5160 -c C 
+: 3.016 3.016 +S K 
+; N 1400 5251 M 1400 5246 1396 5241 1391 5241 -c 1386 5241 1382 5246 1382 5251 -c 1382 5256 1386 5260 1391 5260 -c 1396 5260 1400 5256 1400 5251 -c C 
+: 3.016 3.016 +S K 
+; N 1400 5211 M 1400 5206 1396 5202 1391 5202 -c 1386 5202 1382 5206 1382 5211 -c 1382 5216 1386 5220 1391 5220 -c 1396 5220 1400 5216 1400 5211 -c C 
+: 3.016 3.016 +S K 
+; N 1400 5238 M 1400 5233 1396 5229 1391 5229 -c 1386 5229 1382 5233 1382 5238 -c 1382 5243 1386 5248 1391 5248 -c 1396 5248 1400 5243 1400 5238 -c C 
+: 3.016 3.016 +S K 
+; N 1400 5251 M 1400 5246 1396 5241 1391 5241 -c 1386 5241 1382 5246 1382 5251 -c 1382 5256 1386 5260 1391 5260 -c 1396 5260 1400 5256 1400 5251 -c C 
+: 3.016 3.016 +S K 
+; N 1400 5302 M 1400 5297 1396 5293 1391 5293 -c 1386 5293 1382 5297 1382 5302 -c 1382 5307 1386 5311 1391 5311 -c 1396 5311 1400 5307 1400 5302 -c C 
+: 3.016 3.016 +S K 
+; N 1400 5145 M 1400 5140 1396 5136 1391 5136 -c 1386 5136 1382 5140 1382 5145 -c 1382 5150 1386 5154 1391 5154 -c 1396 5154 1400 5150 1400 5145 -c C 
+: 3.016 3.016 +S K 
+; N 1400 5235 M 1400 5230 1396 5226 1391 5226 -c 1386 5226 1382 5230 1382 5235 -c 1382 5240 1386 5244 1391 5244 -c 1396 5244 1400 5240 1400 5235 -c C 
+: 3.016 3.016 +S K 
+; N 1400 5154 M 1400 5149 1396 5145 1391 5145 -c 1386 5145 1382 5149 1382 5154 -c 1382 5159 1386 5163 1391 5163 -c 1396 5163 1400 5159 1400 5154 -c C 
+: 3.016 3.016 +S K 
+; N 1400 5217 M 1400 5212 1396 5208 1391 5208 -c 1386 5208 1382 5212 1382 5217 -c 1382 5222 1386 5226 1391 5226 -c 1396 5226 1400 5222 1400 5217 -c C 
+: 3.016 3.016 +S K 
+; N 1400 5127 M 1400 5122 1396 5118 1391 5118 -c 1386 5118 1382 5122 1382 5127 -c 1382 5132 1386 5136 1391 5136 -c 1396 5136 1400 5132 1400 5127 -c C 
+: 3.016 3.016 +S K 
+; N 1400 5154 M 1400 5149 1396 5145 1391 5145 -c 1386 5145 1382 5149 1382 5154 -c 1382 5159 1386 5163 1391 5163 -c 1396 5163 1400 5159 1400 5154 -c C 
+: 3.016 3.016 +S K 
+; N 1400 5235 M 1400 5230 1396 5226 1391 5226 -c 1386 5226 1382 5230 1382 5235 -c 1382 5240 1386 5244 1391 5244 -c 1396 5244 1400 5240 1400 5235 -c C 
+: 3.016 3.016 +S K 
+; N 1400 5187 M 1400 5182 1396 5178 1391 5178 -c 1386 5178 1382 5182 1382 5187 -c 1382 5192 1386 5196 1391 5196 -c 1396 5196 1400 5192 1400 5187 -c C 
+: 3.016 3.016 +S K 
+; N 1400 5251 M 1400 5246 1396 5241 1391 5241 -c 1386 5241 1382 5246 1382 5251 -c 1382 5256 1386 5260 1391 5260 -c 1396 5260 1400 5256 1400 5251 -c C 
+: 3.016 3.016 +S K 
+; N 1400 5220 M 1400 5215 1396 5211 1391 5211 -c 1386 5211 1382 5215 1382 5220 -c 1382 5225 1386 5229 1391 5229 -c 1396 5229 1400 5225 1400 5220 -c C 
+: 3.016 3.016 +S K 
+; N 1400 5205 M 1400 5200 1396 5196 1391 5196 -c 1386 5196 1382 5200 1382 5205 -c 1382 5210 1386 5214 1391 5214 -c 1396 5214 1400 5210 1400 5205 -c C 
+: 3.016 3.016 +S K 
+; N 1400 5154 M 1400 5149 1396 5145 1391 5145 -c 1386 5145 1382 5149 1382 5154 -c 1382 5159 1386 5163 1391 5163 -c 1396 5163 1400 5159 1400 5154 -c C 
+: 3.016 3.016 +S K 
+; N 1400 5190 M 1400 5185 1396 5181 1391 5181 -c 1386 5181 1382 5185 1382 5190 -c 1382 5195 1386 5199 1391 5199 -c 1396 5199 1400 5195 1400 5190 -c C 
+: 3.016 3.016 +S K 
+; N 1400 5151 M 1400 5146 1396 5142 1391 5142 -c 1386 5142 1382 5146 1382 5151 -c 1382 5156 1386 5160 1391 5160 -c 1396 5160 1400 5156 1400 5151 -c C 
+: 3.016 3.016 +S K 
+; N 1400 5060 M 1400 5055 1396 5051 1391 5051 -c 1386 5051 1382 5055 1382 5060 -c 1382 5065 1386 5069 1391 5069 -c 1396 5069 1400 5065 1400 5060 -c C 
+: 3.016 3.016 +S K 
+; N 1400 5112 M 1400 5107 1396 5103 1391 5103 -c 1386 5103 1382 5107 1382 5112 -c 1382 5117 1386 5121 1391 5121 -c 1396 5121 1400 5117 1400 5112 -c C 
+: 3.016 3.016 +S K 
+; N 1400 5133 M 1400 5128 1396 5124 1391 5124 -c 1386 5124 1382 5128 1382 5133 -c 1382 5138 1386 5142 1391 5142 -c 1396 5142 1400 5138 1400 5133 -c C 
+: 3.016 3.016 +S K 
+; N 1400 5172 M 1400 5167 1396 5163 1391 5163 -c 1386 5163 1382 5167 1382 5172 -c 1382 5177 1386 5181 1391 5181 -c 1396 5181 1400 5177 1400 5172 -c C 
+: 3.016 3.016 +S K 
+; N 1400 5160 M 1400 5155 1396 5151 1391 5151 -c 1386 5151 1382 5155 1382 5160 -c 1382 5165 1386 5169 1391 5169 -c 1396 5169 1400 5165 1400 5160 -c C 
+: 3.016 3.016 +S K 
+; N 1400 5075 M 1400 5070 1396 5066 1391 5066 -c 1386 5066 1382 5070 1382 5075 -c 1382 5080 1386 5084 1391 5084 -c 1396 5084 1400 5080 1400 5075 -c C 
+: 3.016 3.016 +S K 
+; N 1400 5235 M 1400 5230 1396 5226 1391 5226 -c 1386 5226 1382 5230 1382 5235 -c 1382 5240 1386 5244 1391 5244 -c 1396 5244 1400 5240 1400 5235 -c C 
+: 3.016 3.016 +S K 
+; N 1400 5447 M 1400 5442 1396 5438 1391 5438 -c 1386 5438 1382 5442 1382 5447 -c 1382 5452 1386 5456 1391 5456 -c 1396 5456 1400 5452 1400 5447 -c C 
+: 3.016 3.016 +S K 
+; N 1400 5275 M 1400 5270 1396 5266 1391 5266 -c 1386 5266 1382 5270 1382 5275 -c 1382 5280 1386 5284 1391 5284 -c 1396 5284 1400 5280 1400 5275 -c C 
+: 3.016 3.016 +S K 
+; N 1400 5190 M 1400 5185 1396 5181 1391 5181 -c 1386 5181 1382 5185 1382 5190 -c 1382 5195 1386 5199 1391 5199 -c 1396 5199 1400 5195 1400 5190 -c C 
+: 3.016 3.016 +S K 
+; N 1400 5220 M 1400 5215 1396 5211 1391 5211 -c 1386 5211 1382 5215 1382 5220 -c 1382 5225 1386 5229 1391 5229 -c 1396 5229 1400 5225 1400 5220 -c C 
+: 3.016 3.016 +S K 
+; N 1400 5103 M 1400 5098 1396 5094 1391 5094 -c 1386 5094 1382 5098 1382 5103 -c 1382 5108 1386 5112 1391 5112 -c 1396 5112 1400 5108 1400 5103 -c C 
+: 3.016 3.016 +S K 
+; N 1400 5078 M 1400 5073 1396 5069 1391 5069 -c 1386 5069 1382 5073 1382 5078 -c 1382 5083 1386 5088 1391 5088 -c 1396 5088 1400 5083 1400 5078 -c C 
+: 3.016 3.016 +S K 
+; N 1400 5208 M 1400 5203 1396 5199 1391 5199 -c 1386 5199 1382 5203 1382 5208 -c 1382 5213 1386 5217 1391 5217 -c 1396 5217 1400 5213 1400 5208 -c C 
+: 3.016 3.016 +S K 
+; N 1400 5205 M 1400 5200 1396 5196 1391 5196 -c 1386 5196 1382 5200 1382 5205 -c 1382 5210 1386 5214 1391 5214 -c 1396 5214 1400 5210 1400 5205 -c C 
+: 3.016 3.016 +S K 
+; N 1400 5211 M 1400 5206 1396 5202 1391 5202 -c 1386 5202 1382 5206 1382 5211 -c 1382 5216 1386 5220 1391 5220 -c 1396 5220 1400 5216 1400 5211 -c C 
+: 3.016 3.016 +S K 
+; N 1400 5190 M 1400 5185 1396 5181 1391 5181 -c 1386 5181 1382 5185 1382 5190 -c 1382 5195 1386 5199 1391 5199 -c 1396 5199 1400 5195 1400 5190 -c C 
+: 3.016 3.016 +S K 
+; N 1400 5229 M 1400 5224 1396 5220 1391 5220 -c 1386 5220 1382 5224 1382 5229 -c 1382 5234 1386 5238 1391 5238 -c 1396 5238 1400 5234 1400 5229 -c C 
+: 3.016 3.016 +S K 
+; N 1400 5284 M 1400 5279 1396 5275 1391 5275 -c 1386 5275 1382 5279 1382 5284 -c 1382 5289 1386 5293 1391 5293 -c 1396 5293 1400 5289 1400 5284 -c C 
+: 3.016 3.016 +S K 
+; N 1400 5151 M 1400 5146 1396 5142 1391 5142 -c 1386 5142 1382 5146 1382 5151 -c 1382 5156 1386 5160 1391 5160 -c 1396 5160 1400 5156 1400 5151 -c C 
+: 3.016 3.016 +S K 
+; N 1400 5211 M 1400 5206 1396 5202 1391 5202 -c 1386 5202 1382 5206 1382 5211 -c 1382 5216 1386 5220 1391 5220 -c 1396 5220 1400 5216 1400 5211 -c C 
+: 3.016 3.016 +S K 
+; N 1400 5166 M 1400 5161 1396 5157 1391 5157 -c 1386 5157 1382 5161 1382 5166 -c 1382 5171 1386 5175 1391 5175 -c 1396 5175 1400 5171 1400 5166 -c C 
+: 3.016 3.016 +S K 
+; N 1400 5205 M 1400 5200 1396 5196 1391 5196 -c 1386 5196 1382 5200 1382 5205 -c 1382 5210 1386 5214 1391 5214 -c 1396 5214 1400 5210 1400 5205 -c C 
+: 3.016 3.016 +S K 
+; N 1400 5151 M 1400 5146 1396 5142 1391 5142 -c 1386 5142 1382 5146 1382 5151 -c 1382 5156 1386 5160 1391 5160 -c 1396 5160 1400 5156 1400 5151 -c C 
+: 3.016 3.016 +S K 
+; N 1400 5223 M 1400 5218 1396 5214 1391 5214 -c 1386 5214 1382 5218 1382 5223 -c 1382 5228 1386 5232 1391 5232 -c 1396 5232 1400 5228 1400 5223 -c C 
+: 3.016 3.016 +S K 
+; 0 0 scol N 295 6099 M 1771 6099 I : 3.016 3.016 +S K 
+; N 295 6099 M 295 6126 I : 3.016 3.016 +S K 
+; N 507 6099 M 507 6126 I : 3.016 3.016 +S K 
+; N 715 6099 M 715 6126 I : 3.016 3.016 +S K 
+; N 926 6099 M 926 6126 I : 3.016 3.016 +S K 
+; N 1138 6099 M 1138 6126 I : 3.016 3.016 +S K 
+; N 1349 6099 M 1349 6126 I : 3.016 3.016 +S K 
+; N 1560 6099 M 1560 6126 I : 3.016 3.016 +S K 
+; N 1771 6099 M 1771 6126 I : 3.016 3.016 +S K 
+; Pscript_WinNT_Incr begin
+%%BeginResource: file Pscript_Text 5.0 0
+/TextInit{TextInitialised? not{/Pscript_Windows_Font & d/TextInitialised? T d
+/fM[1 0 0 1 0 0]d/mFM matrix d/iMat[1 0 0.212557 1 0 0]d}if}b/copyfont{1 ^
+length add dict `{1 ^/FID ne{d}{! !}?}forall & E}b/EncodeDict 11 dict d/bullets
+{{/bullet}repeat}b/rF{3 copyfont @ ` ~ EncodeDict ~ get/Encoding ~ 3 ^/0 eq{&
+/CharStrings known{CharStrings/Eth known not{! EncodeDict/ANSIEncodingOld get}
+if}if}if d E}b/mF{@ 7 1 $ findfont ~{@/Encoding get @ StandardEncoding eq{! T}{
+{ISOLatin1Encoding}stopped{! F}{eq}?{T}{@ ` T 32 1 127{Encoding 1 ^ get
+StandardEncoding 3 -1 $ get eq and}for E}?}?}{F}?{1 ^ ~ rF}{0 copyfont}? 6 -2 $
+! ! ~ !/pd_charset @ where{~ get 128 eq{@ FDV 2 copy get @ length array copy
+put pd_CoverFCRange}if}{!}? 2 ^ ~ definefont fM 5 4 -1 $ put fM 4 0 put fM
+makefont Pscript_Windows_Font 3 1 $ put}b/sLT{: Lw -M currentpoint snap M 0 - 0
+Lc K ;}b/xUP null d/yUP null d/uW null d/xSP null d/ySP null d/sW null d/sSU{N
+/uW ~ d/yUP ~ d/xUP ~ d}b/sU{xUP yUP uW sLT}b/sST{N/sW ~ d/ySP ~ d/xSP ~ d}b/sT
+{xSP ySP sW sLT}b/sR{: + R 0 0 M}b/sRxy{: matrix astore concat 0 0 M}b/eR/; , d
+/AddOrigFP{{&/FontInfo known{&/FontInfo get length 6 add}{6}? dict `
+/WinPitchAndFamily ~ d/WinCharSet ~ d/OrigFontType ~ d/OrigFontStyle ~ d
+/OrigFontName ~ d & E/FontInfo ~ d}{! ! ! ! !}?}b/mFS{makefont
+Pscript_Windows_Font 3 1 $ put}b/mF42D{0 copyfont `/FontName ~ d 2 copy ~ sub 1
+add dict `/.notdef 0 d 2 copy 1 ~{@ 3 ^ sub Encoding ~ get ~ d}for & E
+/CharStrings ~ d ! ! & @ E/FontName get ~ definefont}b/mF42{15 dict ` @ 4 1 $
+FontName ~ d/FontType 0 d/FMapType 2 d/FontMatrix[1 0 0 1 0 0]d 1 ^ 254 add 255
+idiv @ array/Encoding ~ d 0 1 3 -1 $ 1 sub{@ Encoding 3 1 $ put}for/FDepVector
+Encoding length array d/CharStrings 2 dict `/.notdef 0 d & E d 0 1 Encoding
+length 1 sub{@ @ 10 lt{! FontName length 1 add string}{100 lt{FontName length 2
+add string}{FontName length 3 add string}?}? @ 0 FontName @ length string cvs
+putinterval @ 3 -1 $ @ 4 1 $ 3 string cvs FontName length ~ putinterval cvn 1 ^
+256 mul @ 255 add 3 -1 $ 4 ^ findfont mF42D FDepVector 3 1 $ put}for & @ E
+/FontName get ~ definefont ! ! ! mF}b/mF_OTF_V{~ ! ~ ! 4 -1 $ ! findfont 2 ^ ~
+definefont fM @ @ 4 6 -1 $ neg put 5 0 put 90 matrix R matrix concatmatrix
+makefont Pscript_Windows_Font 3 1 $ put}b/mF_TTF_V{3{~ !}repeat 3 -1 $ !
+findfont 1 ^ ~ definefont Pscript_Windows_Font 3 1 $ put}b/UmF{L2?
+{Pscript_Windows_Font ~ undef}{!}?}b/UmF42{@ findfont/FDepVector get{/FontName
+get undefinefont}forall undefinefont}b
+%%EndResource
+end reinitialize
+Pscript_WinNT_Incr begin
+%%BeginResource: file Pscript_Encoding256 5.0 0
+/CharCol256Encoding[/.notdef/breve/caron/dotaccent/dotlessi/fi/fl/fraction
+/hungarumlaut/Lslash/lslash/minus/ogonek/ring/Zcaron/zcaron/.notdef/.notdef
+/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef
+/.notdef/.notdef/.notdef/.notdef/.notdef/space/exclam/quotedbl/numbersign
+/dollar/percent/ampersand/quotesingle/parenleft/parenright/asterisk/plus/comma
+/hyphen/period/slash/zero/one/two/three/four/five/six/seven/eight/nine/colon
+/semicolon/less/equal/greater/question/at/A/B/C/D/E/F/G/H/I/J/K/L/M/N/O/P/Q/R/S
+/T/U/V/W/X/Y/Z/bracketleft/backslash/bracketright/asciicircum/underscore/grave
+/a/b/c/d/e/f/g/h/i/j/k/l/m/n/o/p/q/r/s/t/u/v/w/x/y/z/braceleft/bar/braceright
+/asciitilde/.notdef/Euro/.notdef/quotesinglbase/florin/quotedblbase/ellipsis
+/dagger/daggerdbl/circumflex/perthousand/Scaron/guilsinglleft/OE/.notdef
+/.notdef/.notdef/.notdef/quoteleft/quoteright/quotedblleft/quotedblright/bullet
+/endash/emdash/tilde/trademark/scaron/guilsinglright/oe/.notdef/.notdef
+/Ydieresis/.notdef/exclamdown/cent/sterling/currency/yen/brokenbar/section
+/dieresis/copyright/ordfeminine/guillemotleft/logicalnot/.notdef/registered
+/macron/degree/plusminus/twosuperior/threesuperior/acute/mu/paragraph
+/periodcentered/cedilla/onesuperior/ordmasculine/guillemotright/onequarter
+/onehalf/threequarters/questiondown/Agrave/Aacute/Acircumflex/Atilde/Adieresis
+/Aring/AE/Ccedilla/Egrave/Eacute/Ecircumflex/Edieresis/Igrave/Iacute
+/Icircumflex/Idieresis/Eth/Ntilde/Ograve/Oacute/Ocircumflex/Otilde/Odieresis
+/multiply/Oslash/Ugrave/Uacute/Ucircumflex/Udieresis/Yacute/Thorn/germandbls
+/agrave/aacute/acircumflex/atilde/adieresis/aring/ae/ccedilla/egrave/eacute
+/ecircumflex/edieresis/igrave/iacute/icircumflex/idieresis/eth/ntilde/ograve
+/oacute/ocircumflex/otilde/odieresis/divide/oslash/ugrave/uacute/ucircumflex
+/udieresis/yacute/thorn/ydieresis]def EncodeDict/256 CharCol256Encoding put
+%%EndResource
+end reinitialize
+
+%%IncludeResource: font Helvetica
+Pscript_WinNT_Incr begin
+%%BeginResource: file Pscript_Win_Euro_L2 5.0 0
+/UseT3EuroFont{/currentdistillerparams where{pop currentdistillerparams
+/CoreDistVersion get 4000 le}{false}ifelse}bind def/NewEuroT3Font?{dup/FontType
+get 3 eq{dup/EuroFont known exch/BaseFont known and}{pop false}ifelse}bind def
+/T1FontHasEuro{dup/CharStrings known not{dup NewEuroT3Font?{dup/EuroGlyphName
+get exch/EuroFont get/CharStrings get exch known{true}{false}ifelse}{pop false}
+ifelse}{dup/FontType get 1 eq{/CharStrings get/Euro known}{dup/InfoDict known{
+/InfoDict get/Euro known}{/CharStrings get/Euro known}ifelse}ifelse}ifelse}bind
+def/FontHasEuro{findfont dup/Blend known{pop true}{T1FontHasEuro}ifelse}bind
+def/EuroEncodingIdx 1 def/EuroFontHdr{12 dict begin/FontInfo 10 dict dup begin
+/version(001.000)readonly def/Notice(Copyright (c)1999 Adobe Systems
+Incorporated. All Rights Reserved.)readonly def/FullName(Euro)readonly def
+/FamilyName(Euro)readonly def/Weight(Regular)readonly def/isFixedPitch false
+def/ItalicAngle 0 def/UnderlinePosition -100 def/UnderlineThickness 50 def end
+readonly def/FontName/Euro def/Encoding 256 array 0 1 255{1 index exch/.notdef
+put}for def/PaintType 0 def/FontType 1 def/FontMatrix[0.001 0 0 0.001 0 0]def
+/FontBBox{-25 -23 1500 804}readonly def currentdict end dup/Private 20 dict dup
+begin/ND{def}def/NP{put}def/lenIV -1 def/RD{string currentfile exch
+readhexstring pop}def/-|{string currentfile exch readstring pop}executeonly def
+/|-{def}executeonly def/|{put}executeonly def/BlueValues[-20 0 706 736 547 572]
+|-/OtherBlues[-211 -203]|-/BlueScale 0.0312917 def/MinFeature{16 16}|-/StdHW
+[60]|-/StdVW[71]|-/ForceBold false def/password 5839 def/Erode{8.5 dup 3 -1
+roll 0.1 mul exch 0.5 sub mul cvi sub dup mul 71 0 dtransform dup mul exch dup
+mul add le{pop pop 1.0 1.0}{pop pop 0.0 1.5}ifelse}def/OtherSubrs[{}{}{}
+{systemdict/internaldict known not{pop 3}{1183615869 systemdict/internaldict
+get exec dup/startlock known{/startlock get exec}{dup/strtlck known{/strtlck
+get exec}{pop 3}ifelse}ifelse}ifelse}executeonly]|-/Subrs 5 array dup 0
+<8E8B0C100C110C110C210B>put dup 1<8B8C0C100B>put dup 2<8B8D0C100B>put dup 3<0B>
+put dup 4<8E8C8E0C100C110A0B>put |- 2 index/CharStrings 256 dict dup begin
+/.notdef<8b8b0d0e>def end end put put dup/FontName get exch definefont pop}bind
+def/AddEuroGlyph{2 index exch EuroEncodingIdx 1 eq{EuroFontHdr}if systemdict
+begin/Euro findfont dup dup/Encoding get 5 1 roll/Private get begin/CharStrings
+get dup 3 index known{pop pop pop pop end end}{begin 1 index exch def end end
+end EuroEncodingIdx dup 1 add/EuroEncodingIdx exch def exch put}ifelse}bind def
+/GetNewXUID{currentdict/XUID known{[7 XUID aload pop]true}{currentdict/UniqueID
+known{[7 UniqueID]true}{false}ifelse}ifelse}bind def/BuildT3EuroFont{exch 16
+dict begin dup/FontName exch def findfont dup/Encoding get/Encoding exch def
+dup length 1 add dict copy dup/FID undef begin dup dup/FontName exch def
+/Encoding 256 array 0 1 255{1 index exch/.notdef put}for def GetNewXUID{/XUID
+exch def}if currentdict end definefont pop/BaseFont exch findfont 1000
+scalefont def/EuroFont exch findfont 1000 scalefont def pop/EuroGlyphName exch
+def/FontType 3 def/FontMatrix[.001 0 0 .001 0 0]def/FontBBox BaseFont/FontBBox
+get def/Char 1 string def/BuildChar{exch dup begin/Encoding get 1 index get
+/Euro eq{BaseFont T1FontHasEuro{false}{true}ifelse}{false}ifelse{EuroFont
+setfont pop userdict/Idx 0 put EuroFont/Encoding get{EuroGlyphName eq{exit}
+{userdict/Idx Idx 1 add put}ifelse}forall userdict/Idx get}{dup dup Encoding
+exch get BaseFont/Encoding get 3 1 roll put BaseFont setfont}ifelse Char 0 3 -1
+roll put Char stringwidth newpath 0 0 moveto Char true charpath flattenpath
+pathbbox setcachedevice 0 0 moveto Char show end}bind def currentdict end dup
+/FontName get exch definefont pop}bind def/AddEuroToT1Font{dup findfont dup
+length 10 add dict copy dup/FID undef begin/EuroFont 3 -1 roll findfont 1000
+scalefont def CharStrings dup length 1 add dict copy begin/Euro{EuroFont
+setfont pop EuroGBBox aload pop setcachedevice 0 0 moveto EuroGName glyphshow}
+bind def currentdict end/CharStrings exch def GetNewXUID{/XUID exch def}if 3 1
+roll/EuroGBBox exch def/EuroGName exch def currentdict end definefont pop}bind
+def/BuildNewFont{UseT3EuroFont{BuildT3EuroFont}{pop AddEuroToT1Font}ifelse}bind
+def/UseObliqueEuro{findfont/FontMatrix get dup 2 get 0 eq exch dup 0 get exch 3
+get eq and UseT3EuroFont or}bind def
+%%EndResource
+end reinitialize
+7500 VM?
+/Helvetica FontHasEuro not
+{
+/Euro.Helvetica
+ [556 0 24 -19 541 703 ] 
+<A3F8C00DD4E90378DA01F779D301F808D301F904DA01F899F908156CB447AD338B08FB2D
+8B372B7BFB37085806724305D30644075B06724305DA06A0FB36E035F7218B08E08BCDB7
+939208EE077A71405E418B083F8B4CCE84F108F76506A3D305FB8306D207F79C06A3D305
+FBB10692E2B7E8F28B08E08BBE62A45A08090E>
+AddEuroGlyph
+/Euro /Helvetica /Helvetica-Copy BuildNewFont
+} if
+F /F0 0 /256 T /Helvetica mF 
+/F0S30 F0 [48.297 0 0 -48.297 0 0 ] mFS
+F0S30 Ji 
+282 6211 M (0)S 
+480 6211 M (50)[27  0]xS 
+674 6211 M (100)[28 27  0]xS 
+886 6211 M (150)[27 27  0]xS 
+1097 6211 M (200)[27 27  0]xS 
+1308 6211 M (250)[28 27  0]xS 
+1520 6211 M (300)[27 27  0]xS 
+1731 6211 M (350)[27 27  0]xS 
+N 235 6044 M 235 4737 I : 3.016 3.016 +S K 
+; N 235 6044 M 208 6044 I : 3.016 3.016 +S K 
+; N 235 5782 M 208 5782 I : 3.016 3.016 +S K 
+; N 235 5522 M 208 5522 I : 3.016 3.016 +S K 
+; N 235 5260 M 208 5260 I : 3.016 3.016 +S K 
+; N 235 4997 M 208 4997 I : 3.016 3.016 +S K 
+; N 235 4737 M 208 4737 I : 3.016 3.016 +S K 
+; /F0S00IFFFFFFCF F0 [0 -48.297 -48.297 0 0 0 ] mFS
+F0S00IFFFFFFCF Ji 
+175 6059 M (0)S 
+175 5796 M (1)S 
+175 5536 M (2)S 
+175 5274 M (3)S 
+175 5011 M (4)S 
+175 4751 M (5)S 
+N 235 6099 M 1829 6099 I 1829 4683 I 235 4683 I 235 6099 I : 3.016 3.016 +S K 
+; 
+%%IncludeResource: font Helvetica-Bold
+7500 VM?
+/Helvetica-Bold FontHasEuro not
+{
+/Euro.Helvetica-Bold
+ [556 0 12 -19 563 710 ] 
+<97F8C00DDBF7240378F70401F774EA01F803EA01F8EAF70401F8BBF9011571B141BE278B
+08FB278B303173FB32085906642C05DB0676078B828C828B82086206632C05E506A8FB3A
+EC3EF71B8B08C18BC192B9A908F71407676C54754C8B083B8B6ED483C508F72C06B3EA05
+FB5E06BB07F77106B3EA05FB91069AE5B2B9CC8B08C98BB26FA17408A07691828F830809
+0E>
+AddEuroGlyph
+/Euro /Helvetica-Bold /Helvetica-Bold-Copy BuildNewFont
+} if
+F /F1 0 /256 T /Helvetica-Bold mF 
+/F1S39YFFFFFFC6 F1 [57.352 0 0 -57.355 0 0 ] mFS
+F1S39YFFFFFFC6 Ji 
+867 4590 M (Location [5])[37 36 33 33 18 15 37 36 15 18 33  0]xS 
+F0S30 Ji 
+896 6326 M (D)S 
+933 6326 M (a)S  960 6326 M (y)S  981 6326 M (s)S  1005 6326 M ( )S  1017 6326 M (\()S  1032 6326 M (J)S  1056 6326 M (u)S  1081 6326 M (l)S  1090 6326 M (i)S  1102 6326 M (a)S  1129 6326 M (n)S  1153 6326 M (\))S  
+F0S00IFFFFFFCF Ji 
+60 5580 M (Diameter \(Inches\))[-36 -12 -27 -40 -27 -12 -27 -15 -12 -15 -12 -28 -24 -27 -27 -24  0]yS 
+0.746 0 scol N 1011 6044 M 1011 4737 I : 3.016 3.016 +S K 
+; N 1086 6044 M 1086 4737 I : 3.016 3.016 +S K 
+; N 1162 6044 M 1162 4737 I : 3.016 3.016 +S K 
+; N 1240 6044 M 1240 4737 I : 3.016 3.016 +S K 
+; N 1316 6044 M 1316 4737 I : 3.016 3.016 +S K 
+; N 1391 6044 M 1391 4737 I : 3.016 3.016 +S K 
+; 0.59 0 scol 3 Lw N 295 6044 M 310 6044 I 326 6044 I 338 6044 I 353 6044 I 368 6044 I 383 6041 I 398 6041 I 413 6041 I 428 6041 I 443 6041 I 458 6041 I 470 6038 I 486 6038 I 501 6038 I 516 6035 I 531 6035 I 546 6035 I 561 6032 I 576 6032 I 591 6029 I 603 6026 I 618 6023 I 633 6020 I 649 6017 I 664 6014 I 679 6011 I 694 6005 I 709 5999 I 724 5993 I 736 5987 I 751 5978 I 766 5972 I 781 5960 I 796 5951 I 812 5939 I 827 5927 I 842 5912 I 857 5897 I 869 5878 I 884 5860 I 899 5839 I 914 5818 I 929 5797 I 944 5773 I 959 5749 I 975 5721 I 990 5694 I 1002 5667 I 1017 5640 I 1032 5613 I 1047 5586 I 1062 5558 I 1077 5534 I 1092 5507 I 1107 5483 I 1122 5459 I 1135 5438 I 1150 5417 I 1165 5398 I 1180 5380 I 1195 5365 I 1210 5350 I 1225 5335 I 1240 5323 I 1255 5314 I 1267 5302 I 1282 5293 I 1298 5287 I 1313 5278 I 1328 5272 I 1343 5266 I 1358 5263 I 1373 5257 I 1388 5254 I 1400 5251 I 1415 5248 I 1430 5244 I 1445 5241 I 1461 5238 I 1476 5238 I 1491 5235 I 1506 5235 I 1521 5232 I 1533 5232 I 1548 5232 I 1563 5229 I 1578 5229 I 1593 5229 I 1608 5229 I 1624 5229 I 1639 5226 I 1654 5226 I 1666 5226 I 1681 5226 I 1696 5226 I 1711 5226 I 1726 5226 I 1741 5226 I 1756 5226 I 1771 5226 I : 3.016 3.016 +S K 
+; 0 0 scol 2 Lw N 1041 5598 M 1041 5598 I 1041 5598 I 1041 5598 I 1041 5598 I 1041 5598 I 1041 5598 I 1041 5598 I 1041 5598 I 1041 5598 I 1041 5598 I 1041 5598 I 1041 5598 I 1041 5598 I 1041 5598 I 1041 5598 I 1041 5598 I 1041 5598 I 1041 5598 I 1041 5598 I 1041 5598 I 1041 5598 I 1041 5598 I 1041 5598 I 1041 5598 I 1041 5598 I 1041 5598 I 1041 5598 I 1041 5598 I 1041 5598 I 1041 5598 I 1041 5598 I 1041 5598 I 1041 5598 I 1041 5598 I 1041 5598 I 1041 5598 I 1041 5598 I 1041 5598 I 1041 5598 I 1041 5598 I 1041 5598 I 1041 5598 I 1041 5598 I 1041 5598 I 1041 5598 I 1041 5598 I 1041 5598 I 1041 5598 I 1041 5598 I 1041 5598 I 1041 5598 I 1041 5598 I 1041 5598 I 1041 5598 I 1041 5598 I 1041 5598 I 1041 5598 I 1041 5598 I 1041 5598 I 1041 5598 I 1041 5598 I 1041 5598 I 1041 5598 I 1041 5598 I 1041 5598 I 1041 5598 I 1041 5598 I 1041 5598 I 1041 5598 I 1041 5598 I 1041 5598 I 1041 5598 I 1041 5598 I 1041 5598 I 1041 5598 I 1041 5598 I 1041 5598 I 1041 5598 I 1041 5598 I 1041 5598 I 1041 5598 I 1041 5598 I 1041 5598 I 1041 5598 I 1041 5598 I 1041 5598 I 1041 5598 I 1041 5598 I 1041 5598 I 1041 5598 I 1041 5598 I 1041 5598 I 1041 5598 I 1041 5598 I 1041 5598 I 1041 5598 I 1041 5598 I 1041 5598 I 1041 5598 I 1116 5468 I 1116 5468 I 1116 5468 I 1116 5468 I 1116 5468 I 1116 5468 I 1116 5468 I 1116 5468 I 1116 5468 I 1116 5468 I 1116 5468 I 1116 5468 I 1116 5468 I 1116 5468 I 1116 5468 I 1116 5468 I 1116 5468 I 1116 5468 I 1116 5468 I 1116 5468 I 1116 5468 I 1116 5468 I 1116 5468 I 1116 5468 I 1116 5468 I 1116 5468 I 1116 5468 I 1116 5468 I 1116 5468 I 1116 5468 I 1116 5468 I 1116 5468 I 1116 5468 I 1116 5468 I 1116 5468 I 1116 5468 I 1116 5468 I 1116 5468 I 1116 5468 I 1116 5468 I 1116 5468 I 1116 5468 I 1116 5468 I 1116 5468 I 1116 5468 I 1116 5468 I 1116 5468 I 1116 5468 I 1116 5468 I 1116 5468 I 1116 5468 I 1116 5468 I 1116 5468 I 1116 5468 I 1116 5468 I 1116 5468 I 1116 5468 I 1116 5468 I 1116 5468 I 1116 5468 I 1116 5468 I 1116 5468 I 1116 5468 I 1116 5468 I 1116 5468 I 1116 5468 I 1116 5468 I 1116 5468 I 1116 5468 I 1116 5468 I 1116 5468 I 1116 5468 I 1116 5468 I 1116 5468 I 1116 5468 I 1116 5468 I 1116 5468 I 1116 5468 I 1116 5468 I 1116 5468 I 1116 5468 I 1116 5468 I 1116 5468 I 1116 5468 I 1116 5468 I 1116 5468 I 1116 5468 I 1116 5468 I 1116 5468 I 1116 5468 I 1116 5468 I 1116 5468 I 1116 5468 I 1116 5468 I 1116 5468 I 1116 5468 I 1116 5468 I 1116 5468 I 1116 5468 I 1116 5468 I 1144 5432 I 1144 5432 I 1144 5432 I 1144 5432 I 1144 5432 I 1144 5432 I 1144 5432 I 1144 5432 I 1144 5432 I 1144 5432 I 1144 5432 I 1144 5432 I 1144 5432 I 1144 5432 I 1144 5432 I 1144 5432 I 1144 5432 I 1144 5432 I 1144 5432 I 1144 5432 I 1144 5432 I 1144 5432 I 1144 5432 I 1144 5432 I 1144 5432 I 1144 5432 I 1144 5432 I 1144 5432 I 1144 5432 I 1144 5432 I 1144 5432 I 1144 5432 I 1144 5432 I 1144 5432 I 1144 5432 I 1144 5432 I 1144 5432 I 1144 5432 I 1144 5432 I 1144 5432 I 1144 5432 I 1144 5432 I 1144 5432 I 1144 5432 I 1144 5432 I 1144 5432 I 1144 5432 I 1144 5432 I 1144 5432 I 1144 5432 I 1144 5432 I 1144 5432 I 1144 5432 I 1144 5432 I 1144 5432 I 1144 5432 I 1144 5432 I 1144 5432 I 1144 5432 I 1144 5432 I 1144 5432 I 1144 5432 I 1144 5432 I 1144 5432 I 1144 5432 I 1144 5432 I 1144 5432 I 1144 5432 I 1144 5432 I 1144 5432 I 1144 5432 I 1144 5432 I 1144 5432 I 1144 5432 I 1144 5432 I 1144 5432 I 1144 5432 I 1144 5432 I 1144 5432 I 1144 5432 I 1144 5432 I 1144 5432 I 1144 5432 I 1144 5432 I 1144 5432 I 1144 5432 I 1144 5432 I 1144 5432 I 1144 5432 I 1144 5432 I 1144 5432 I 1144 5432 I 1144 5432 I 1144 5432 I 1144 5432 I 1144 5432 I 1144 5432 I 1144 5432 I 1144 5432 I 1144 5432 I 1273 5299 I 1273 5299 I 1273 5299 I 1273 5299 I 1273 5299 I 1273 5299 I 1273 5299 I 1273 5299 I 1273 5299 I 1273 5299 I 1273 5299 I 1273 5299 I 1273 5299 I 1273 5299 I 1273 5299 I 1273 5299 I 1273 5299 I 1273 5299 I 1273 5299 I 1273 5299 I 1273 5299 I 1273 5299 I 1273 5299 I 1273 5299 I 1273 5299 I 1273 5299 I 1273 5299 I 1273 5299 I 1273 5299 I 1273 5299 I 1273 5299 I 1273 5299 I 1273 5299 I 1273 5299 I 1273 5299 I 1273 5299 I 1273 5299 I 1273 5299 I 1273 5299 I 1273 5299 I 1273 5299 I 1273 5299 I 1273 5299 I 1273 5299 I 1273 5299 I 1273 5299 I 1273 5299 I 1273 5299 I 1273 5299 I 1273 5299 I 1273 5299 I 1273 5299 I 1273 5299 I 1273 5299 I 1273 5299 I 1273 5299 I 1273 5299 I 1273 5299 I 1273 5299 I 1273 5299 I 1273 5299 I 1273 5299 I 1273 5299 I 1273 5299 I 1273 5299 I 1273 5299 I 1273 5299 I 1273 5299 I 1273 5299 I 1273 5299 I 1273 5299 I 1273 5299 I 1273 5299 I 1273 5299 I 1273 5299 I 1273 5299 I 1273 5299 I 1273 5299 I 1273 5299 I 1273 5299 I 1273 5299 I 1273 5299 I 1273 5299 I 1273 5299 I 1273 5299 I 1273 5299 I 1273 5299 I 1273 5299 I 1273 5299 I 1273 5299 I 1273 5299 I 1273 5299 I 1273 5299 I 1273 5299 I 1273 5299 I 1273 5299 I 1273 5299 I 1273 5299 I 1273 5299 I 1273 5299 I 1382 5254 I 1382 5254 I 1382 5254 I 1382 5254 I 1382 5254 I 1382 5254 I 1382 5254 I 1382 5254 I 1382 5254 I 1382 5254 I 1382 5254 I 1382 5254 I 1382 5254 I 1382 5254 I 1382 5254 I 1382 5254 I 1382 5254 I 1382 5254 I 1382 5254 I 1382 5254 I 1382 5254 I 1382 5254 I 1382 5254 I 1382 5254 I 1382 5254 I 1382 5254 I 1382 5254 I 1382 5254 I 1382 5254 I 1382 5254 I 1382 5254 I 1382 5254 I 1382 5254 I 1382 5254 I 1382 5254 I 1382 5254 I 1382 5254 I 1382 5254 I 1382 5254 I 1382 5254 I 1382 5254 I 1382 5254 I 1382 5254 I 1382 5254 I 1382 5254 I 1382 5254 I 1382 5254 I 1382 5254 I 1382 5254 I 1382 5254 I 1382 5254 I 1382 5254 I 1382 5254 I 1382 5254 I 1382 5254 I 1382 5254 I 1382 5254 I 1382 5254 I 1382 5254 I 1382 5254 I 1382 5254 I 1382 5254 I 1382 5254 I 1382 5254 I 1382 5254 I 1382 5254 I 1382 5254 I 1382 5254 I 1382 5254 I 1382 5254 I 1382 5254 I 1382 5254 I 1382 5254 I 1382 5254 I 1382 5254 I 1382 5254 I 1382 5254 I 1382 5254 I 1382 5254 I 1382 5254 I 1382 5254 I 1382 5254 I 1382 5254 I 1382 5254 I 1382 5254 I 1382 5254 I 1382 5254 I 1382 5254 I 1382 5254 I 1382 5254 I 1382 5254 I 1382 5254 I 1382 5254 I 1382 5254 I 1382 5254 I 1382 5254 I 1382 5254 I 1382 5254 I 1382 5254 I 1382 5254 I 1391 5251 I 1391 5251 I 1391 5251 I 1391 5251 I 1391 5251 I 1391 5251 I 1391 5251 I 1391 5251 I 1391 5251 I 1391 5251 I 1391 5251 I 1391 5251 I 1391 5251 I 1391 5251 I 1391 5251 I 1391 5251 I 1391 5251 I 1391 5251 I 1391 5251 I 1391 5251 I 1391 5251 I 1391 5251 I 1391 5251 I 1391 5251 I 1391 5251 I 1391 5251 I 1391 5251 I 1391 5251 I 1391 5251 I 1391 5251 I 1391 5251 I 1391 5251 I 1391 5251 I 1391 5251 I 1391 5251 I 1391 5251 I 1391 5251 I 1391 5251 I 1391 5251 I 1391 5251 I 1391 5251 I 1391 5251 I 1391 5251 I 1391 5251 I 1391 5251 I 1391 5251 I 1391 5251 I 1391 5251 I 1391 5251 I 1391 5251 I 1391 5251 I 1391 5251 I 1391 5251 I 1391 5251 I 1391 5251 I 1391 5251 I 1391 5251 I 1391 5251 I 1391 5251 I 1391 5251 I 1391 5251 I 1391 5251 I 1391 5251 I 1391 5251 I 1391 5251 I 1391 5251 I 1391 5251 I 1391 5251 I 1391 5251 I 1391 5251 I 1391 5251 I 1391 5251 I 1391 5251 I 1391 5251 I 1391 5251 I 1391 5251 I 1391 5251 I 1391 5251 I 1391 5251 I 1391 5251 I 1391 5251 I 1391 5251 I 1391 5251 I 1391 5251 I 1391 5251 I 1391 5251 I 1391 5251 I 1391 5251 I 1391 5251 I 1391 5251 I 1391 5251 I 1391 5251 I 1391 5251 I 1391 5251 I 1391 5251 I 1391 5251 I 1391 5251 I 1391 5251 I 1391 5251 I 1391 5251 I : 3.016 3.016 +S K 
+; LH
+(%%[Page: 1]%%) = 
+%%PageTrailer
+
+%%Trailer
+%%BoundingBox: 13 13 599 780
+%%DocumentNeededResources: 
+%%+ font Helvetica
+%%+ font Helvetica-Bold
+%%DocumentSuppliedResources: 
+%%+ procset Pscript_WinNT_ErrorHandler 5.0 0
+%%+ procset Pscript_FatalError 5.0 0
+%%+ procset Pscript_Win_Basic 5.0 0
+%%+ procset Pscript_Win_Utils_L2 5.0 0
+%%+ procset Pscript_Win_GdiObject 5.0 0
+%%+ procset Pscript_Win_GdiObject_L2 5.0 0
+%%+ procset Pscript_Text 5.0 0
+%%+ procset Pscript_Encoding256 5.0 0
+%%+ procset Pscript_Win_Euro_L2 5.0 0
+Pscript_WinNT_Incr dup /terminate get exec
+ehsave restore
+%%Pages: 1
+(%%[LastPage]%%) = 
+%%EOF
+%-12345X@PJL EOJ
+%-12345X

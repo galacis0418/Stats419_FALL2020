@@ -1,0 +1,505 @@
+% cJASguide.tex
+% v4.4 released October 2008
+
+\documentclass[useAMS]{cJAS2e}
+
+%%%%%%%%%%%%%%%%%%%%%  monte adds %%%%%%%%%%%%%%%
+%\usepackage{lscape}
+\usepackage{pdflscape}
+\usepackage{multirow}
+\usepackage{tabularx,tabulary}
+\usepackage{arydshln}
+
+\usepackage{subfig}  % subfloat
+\usepackage{units}  %% nicefrac
+
+\usepackage{undertilde}  %% \undertilde{} and \tilde{}  %% under and over
+\newcommand{\undertilde}[1]{\utilde{#1}}
+
+
+\DeclareGraphicsExtensions{.png}
+\usepackage{moreverb}
+\usepackage{verbatim}
+
+\def\inprob{\,{\buildrel p \over \longrightarrow}\,}
+\def\eqdist{\,{\buildrel d \over =}\,}
+\def\indist{\,{\buildrel d \over \longrightarrow}\,}
+\def\eqdist{\,{\buildrel d \over =}\,}
+\def\isDist{\,{\buildrel {\ } \over \sim}\,}
+\def\IIDdist{\,{\buildrel iid \over \sim}\,}
+\def\iseq{\,{\buildrel ? \over =}\,}
+\def\asymdist{\,{\buildrel a \over \sim}\,}
+\def\approxdist{\,{\buildrel \cdot \over \sim}\,}
+
+\usepackage{setspace}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{extramarks}
+\usepackage{chngpage}
+\usepackage{soul,color}
+\usepackage{graphicx,float,wrapfig}
+\usepackage{todonotes}
+
+% \todo[color=green!40]{And a green note}
+% http://www.tex.ac.uk/CTAN/macros/latex/contrib/todonotes/todonotes.pdf
+
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+
+\newcommand{\added}[1]{\textcolor{blue}{#1}}
+\newcommand{\changed}[1]{\textcolor{red}{#1}}
+\newcommand{\removed}[1]{\textcolor{gray}{#1}}
+
+\newcommand{\reviewer}[1]{\todo[color=green!40, size=\tiny]{#1}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+\doi{10.1080/0266476YYxxxxxxxx}
+\issn{1360-0532}
+\issnp{0233-1934}
+\jvol{00} \jnum{00} \jyear{2011} \jmonth{February}
+\publisher{Dasgupta and Shaffer}
+
+\markboth{Nairanjana Dasgupta and Monte J. Shaffer}{Journal of Applied Statistics}
+
+
+
+
+\articletype{RESEARCH ARTICLE}
+
+\title{Many-to-one Comparison of Nonlinear Growth Curves for Washington's Red Delicious Apple}
+
+\author{Nairanjana Dasgupta$^{\rm a}$$^{\ast}$\thanks{$^\ast$Corresponding author. Email: dasgupta@wsu.edu
+\vspace{6pt}} and Monte J. Shaffer$^{\rm b}$\\\vspace{6pt}  $^{\rm a}${\em{Professor, Department of Statistics, Washington State University, Pullman WA, 99164-3144}}; $^{\rm b}${\em{Postdoctoral Research Fellow,  McGuire Center for Entrepreneurship, University of Arizona, Tucson AZ 85721-0108}}\\\vspace{6pt}\received{January 2012 [rev. 1]} }
+
+
+
+\maketitle
+
+\begin{abstract}
+In this article we are interested in comparing growth curves for the red delicious apple in several locations to that of a reference site.  Although such multiple comparisons are common for linear models, statistical techniques for nonlinear models are not prolific.  We theoretically derive a test statistic considering the issues of sample size and design points. Under equal sample sizes and same design points our test statistic is based on the  maximum of an equi-correlated multivariate chi-square distribution.  Under unequal sample sizes and design points we derive a general correlation structure, and then utilize the multivariate normal distribution to numerically compute critical points for the maximum of the multivariate chi-square.  We apply this statistical technique to compare the growth of Red Delicious apples \changed{at six locations to a reference site} in the state of Washington in 2009.  Finally, we perform simulations to verify the performance of our proposed procedure for Type I error and marginal power.  Our proposed method performs well in regard to both.
+
+\bigskip
+
+\begin{keywords}multiple comparisons to control; multivariate chi-square distribution; nonlinear growth curves; Richard's curve; simulated critical points
+\end{keywords}\bigskip
+
+\end{abstract}
+
+
+\section{Introduction}\label{sec:intro}
+The state of Washington is a leading agricultural state and grows over half of the apples produced in the U.S. annually. Of all the apples it produces, Washington is most recognized for its Red Delicious apple.  It is one of the big export crops for the state of Washington.  It has long been of interest of growers and horticulturists to understand the growth pattern of apples.  As a result, the Washington Tree Fruit Commission is collecting data over the next three years to model the growth of Washington's Red Delicious apple.  The data set used in this manuscript was collected between May and August 2009.  The data were collected at a reference \reviewer{\textbf{(R3: \P \ 1)} In the footnote, we briefly discuss the choice of Naches as the referent.} site\footnote{\added {Naches is a small, agrarian town where large quantities of tree-fruit are commercially grown:  mostly apples, pears, cherries, and peaches.  Naches is located in central Washington in the heart of Yakima valley, along the Naches River (a tributary of the Columbia River).  Working with the Washington Tree Fruit Research, we chose Naches as the reference site during the design of the experiment.  Based on this choice, appropriate resources were allocated to the Naches site enabling more frequent (see Table \ref{tbl:results-1}) apple-growth observations. }} (Naches) and six other research stations across the state (Omak, Chelan, Orondo, Wenatchee, Royal City, Wapato), see Figure~\ref{fig-wa-apples}.  One of the initial questions asked was: is there a difference in the growth pattern for the six sites to that of the reference site?
+
+
+
+%This will allow the Commission to plan out strategies for data collection over the next two years.
+
+\begin{figure}[h!]		
+		\begin{center}	
+    \includegraphics[width=0.8\textwidth]{graphics/AppleMap_trim.pdf}
+  \end{center}
+  \caption{\textbf{Multiple comparison of growth}:  Are there differences in growth patterns at the six research stations (labeled 1-6) compared to the reference cite (labeled L)?}
+  \label{fig-wa-apples}
+\end{figure}
+
+ Apple growth has been studied extensively using several different units of analysis and many different types of models.  Studies in photosynthesis \citep{Blanke:1992}, the root stock \citep{Abbott:1960,Zeller:1991,Pawlicki:1995,Kelner:2000}, the tree growth itself \citep{Seems:1986}, the fruit load on tree architecture \citep{Kelner:2000,Costes:2006}, and the entire orchard system \citep{Hester:2003} all relate to the final output of apple sizes and yields \citep{Welte:1990}.   There have been temperature studies \citep{Johnson:1986} relating to the importance of rest \citep{Champagnat:1989,Cook:2005}, blossoming \citep{Fulford:1966a,Fulford:1966b} of fruit buds \citep{Landsberg:1974} with early-season temperatures \citep{Austin:1999}, and other temperature measures \citep{Tromp:1994}.  Understanding final sizes and yields are complicated because there are so many different ways to model the growth of the apple, and depending on the practices at a given orchard, there may be variability in outcomes.
+
+Our data comprises of repeated diameter measurements from bloom to harvest for a sample of Red Delicious apples at the seven different locations. \changed{Research has shown that this} diameter depends on cell count, volume, and density \citep{Coombe:1976,Wu:1999}.  Diameter growth, in general, has been described as a sigmoidal or double sigmoid growth curve \citep{Lakso:1995}.
+
+\section{Statistical precedence}\label{sec:sbg}
+The study of growth in the biological sciences is the foundation of mathematical statistics.  From the studies of crop variation by R.A. Fisher \citep*{Fisher:1963}, to the human characteristic studies of Karl Pearson \citep{Pearson:1902,Pearson:1906}, most statistical techniques have been developed to understand and study growth. Early work on growth curves was very descriptive in nature focusing on cross-tabular comparisons of key variables such as age, gender, and height on weight \citep{Hacker:1944}.   Potthoff \citet{Potthoff:1964} developed a generalized multivariate analysis of variance (MANOVA) model to solve basic ``Growth Curve Problems" including tests to compare the growth of two groups (males and females) using ``m"-parameter polynomial models and the expectation of the growth outcome(s).  This generalized form has been demonstrated to be very robust \citep{Potthoff:1964,Rao:1965,Lee:1974,Baksalary:1978,Verbyla:1986,Verbyla:1988,Fujikoshi:1991}, and relies on F-tests to determine the order of the polynomial to consider and to compare an unrestricted effects-model (e.g., gender effect, could be multivariate) to a restricted model (all parameters are equal to some common vector of parameters).  Such analysis addresses fundamental aspects of multiple comparison \citep{ONeill:1971,Einot:1975,Hsu:1996}; however, there is a need for more sophisticated multiple comparison techniques to compare groups simultaneously.
+
+The literature comparing growth curves is not as prolific.  Royen \citet{Royen:1984} discussed a method for comparing several polynomials. Heckman and Zemar \citet{Heckman:2000} describe a nonparametric technique that address shapes and groups simultaneously.  Dasgupta et al. \citet{Dasgupta:2000} focus on comparing several logistic regression curves.  Another heuristic multiple-comparison approach has been developed by Bretz et al. \citet{Bretz:2005}.  They describe a technique to search among various generalized models (mostly nonlinear) to identify a best model that explains optimal dosages across treatments while controlling for ``family-wise error rates"  using critical values simulated from a multivariate \emph{t} distribution \citep{Genz:2004}.
+
+
+% Finally, we offer a numeric computation to define critical points for an unequal design frame.
+
+\section{Our contribution}\label{sec:our}
+In this article, we introduce a general multiple comparison technique for nonlinear models.  Specific to the study of apple growth, we apply this technique to a three-parameter  \changed{variation of the nonlinear model} known as the Richards' Curve \citep{Richards:1959}, yet we derive a test statistic that can be applied to any $k$-parameter nonlinear model.  Similary, we emphasize that we apply this technique specifically to compare 6 locations to a reference site; however, this technique can be applied to any $L-1$ multiple comparisons (locations, treatments, etc.) to a referent.  Additionally, we provide methods of calculating the test statistic based on the number of \changed{actual observations at any particular site}.  In the real world, the execution of a design is not always ideal, as circumstances prevent simultaneous measurement, apples fall off the tree, etc.  Our approach accounts for such a reality.
+
+
+
+\section{Model Specification}\label{sec:growth}
+
+Many sigmoid growth functions are available to model apple growth.  In this research, we \changed{choose to utilize} a three-parameter \added{variation} of the  Richards' Curve \citep{Richards:1959} to model apple growth: 
+
+\begin{equation}\label{eqn:richards3-location}
+	Y_{ji} = f(X_{ji};\undertilde{\Theta}_{i}) = f(X_{ji};\beta_i,\delta_i,\tau_i) = \frac{\beta_i}{\left(1 +  e^{- \delta_i (X_{ji}-\tau_i)} \right)}
+\end{equation}
+
+\noindent where $Y_{ji}$ represents the growth of the \changed{apple's ($j$)} diameter (in inches) for location $i$ at time $X_{ji}$.
+
+
+
+Generally, the nonlinear model is fit using various observations at specific points in time ($X_{ji}$) for a given location.  For example, 100 apples may be measured at 6 different points in time to give a total sample size of 600 observations for a specific location.  Another location, however, may sample 100 apples measured at 9 design points, and these 9 points may or may not be different that the 6 design points for the first location.  We describe this phenomenon in this form $X_{n_j,s}$ where $n_j$ is the number of observations at a given design point and $s$ is the number of design points.  From this, the number of observations for a location is defined as $N_i = \sum_{j=1}^s n_j$.  The last two columns of Table \ref{tbl:results-1} describes details regarding the design points (Julian days when data are collected)  and number of fruit collected at each site.
+
+
+\added{We choose \reviewer{\textbf{(R1: \P \ 4-5)} In the paragraph, we briefly discuss our model selection, the parameters of this model, and nonlinearity issues.} this model for several reasons.  First, the parameters have conceptual meaning to the apple growers:  the maximum apple size ($\beta$), its growth rate ($\delta$), and the time of maximum growth ($\tau$).  Second, this three-parameter model assumes: that at time $X_{ji}=0$ the apple's size is zero;  growth is symmetric around its inflection point ($X_{ji}=\tau_i$); the carrying capacity represents the maximum apple size; and this model form would allow for accomodating other factors by including more parameter .  Third, this specific variation of the Richard's curve is a reasonably-behaved\footnote{\added{Ratkowsky \citet{Ratkowsky:1990} defines the full Richard's model parameterization as a ``particular unfortunate model because not only is its parameter-effects (PE) nonlinearity high but so too is its intrinsic (IN) nonlinearity" due to its overgenerality (see p. 47).  The three-parameter variation we chose is defined to be ``one of the most versatile and useful models" as this symmetric model having good estimation properties of $\tau$ and a finite upper asymptote (see 5.3.2 on p. 128).}  } nonlinear model.}  
+
+\changed{Based on our model selection, the} parameter vector $\Theta$ for each location $i$ is
+
+\begin{equation}\label{eqn:params3-location}
+\undertilde{\Theta}_{i} = \left( \begin{array}{c} {\beta}_i \\  {\delta}_i \\ {\tau}_i \end{array} \right),
+\end{equation}
+
+\noindent which defines a $k=3$ parameter model; 
+
+
+
+\added{We estimate our parameter vector using the Gauss-Newton method \reviewer{\textbf{(R1: \P \ 4-5)} In the paragraph, we briefly discuss the method to estimate the nonlinear model.} to get our Least Square estimate vector for each location as $\undertilde{\hat{\Theta}}_{i}$.  We define the $\text{var}(\undertilde{\hat{\Theta}}_{i}) = \Sigma_i$.  The form of $\Sigma_i$ depends upon the method\footnote{\added{These estimates have desirable properties, in the sense that they are asymptotically unbiased, consistent with Ratkowsky \citet{Ratkowsky:1990}.  Other methods will produce similar results, with some variations to the form of $\Sigma_i$.  Specifically we use the function {\tt nls} within the statistical program {\tt R} to fit the nonlinear model.}} of implementation for computing the nonlinear model.  For this data, our $\Sigma_i$ is defined as:}
+
+\begin{equation}\label{eqn:sigma-i}
+\Sigma_{i} = \sigma^2 (D_i'D_i)^{-1}
+\end{equation}
+
+\noindent where $D_i$ is the matrix of partial first derivatives of Equation \eqref{eqn:richards3-location} with respect to the parameters $\undertilde{\Theta}_{i}$:
+
+
+\begin{equation}\label{eqn:defineD}
+	D_i = \left[ \begin{array}{ccc} b_{1i} & d_{1i} & t_{1i} \\ b_{2i} & d_{2i} & t_{2i} \\ b_{3i} & d_{3i} & t_{3i} \\ \vdots & \vdots & \vdots \\ b_{{N_i}i} & d_{{N_i}i} & t_{{N_i}i} \\  \end{array} \right] \qquad \text{where} \qquad
+	\begin{array}{ccccc}	b_{ji} &=& \frac{\partial Y_i}{\partial \beta_i}	&=& \frac{1}{1+e^{- \delta_i(X_{ji}-\tau_i)}} \\  \\	 d_{ji} &=& \frac{\partial Y_i}{\partial \delta_i}	&=& \frac{- \beta_i(X_{ji}-\tau_i) e^{- \delta_i(X_{ji}-\tau_i)}}{ \left[1+e^{- \delta_i(X_{ji}-\tau_i)} \right]^2 } \\  \\	t_{ji} &=& \frac{\partial Y_i}{\partial \tau_i}	&=& \frac{- \beta_i \delta_i e^{- \delta_i(X_{ji}-\tau_i)}}{ \left[1+e^{- \delta_i(X_{ji}-\tau_i)} \right]^2 } \\ \end{array}
+\end{equation}
+
+
+Hence,
+
+\begin{equation}\label{eqn:defineDD}
+	D_i'D_i = \left[ \begin{array}{ccc} \sum_{j=1}^{N_i} b_{ji}^2 & \sum_{j=1}^{N_i} b_{ji}d_{ji} & \sum_{j=1}^{N_i} b_{ji}t_{ji} \\  & \sum_{j=1}^{N_i} d_{ji}^2 & \sum_{j=1}^{N_i} d_{ji}t_{ji} \\   &   & \sum_{j=1}^{N_i} t_{ji}^2  \end{array} \right]
+\end{equation}
+
+
+\noindent  In Table \ref{tbl:results-1} we report the model fit for the parameters at each location and the corresponding Variance-Covariance structure of the parameter estimates.
+
+\newpage
+\begin{landscape}
+	\begin{table}[h!]
+	  \begin{center}
+	    \scalebox{0.70}{	\input{tables/results-1} }
+	  \end{center}
+		\caption{\textbf{Data Results}:  Locations, Parameter Estimates, and Design Frame}
+		\label{tbl:results-1}
+	\end{table}
+\end{landscape}
+
+\section{Hypothesis, Test Statistic and Critical Values}\label{sec:mc-control}
+
+The formal hypothesis is that all of the comparison sites are equivalent to the reference site, with the alternative being at least one is different from the reference site.  We outline a test that is based on both the modeled parameters for each location and the corresponding Variance-Covariance structure.
+
+\begin{equation}\label{eqn:hypotheses}
+	\begin{split}
+	H_0: \undertilde{\Theta}_i 		&=	\undertilde{\Theta}_L	\mbox{   } \forall \mbox{ } i = 1, 2, \ldots, L-1	\\
+	H_a: \undertilde{\Theta}_i		&\neq	\undertilde{\Theta}_L	\mbox{   } \exists \mbox{ } i = 1, 2, \ldots, L-1
+	\end{split}
+\end{equation}
+
+From Equations \eqref{eqn:sigma-i}, \eqref{eqn:defineD}, and \eqref{eqn:defineDD}, we identify that $\Sigma_i$ depends on: the design points $X_{ji}$, the sample size $N_i$, and the parameter values.  Hence, to address statistical considerations with this form of the covariance matrix, we enumerate three cases:  (Case I) when the sample sizes for the treatments (e.g., comparison sites) are equal; (Case Ia) when the sample sizes for the treatments are equal but unequal from the control (e.g., reference site); and (Case II) when the sample sizes for the treatments are unequal.
+
+\subsection*{\underline{Case I}: Same Design Points and Equal Sample Sizes}
+
+Under the null hypothesis as described in Equation \eqref{eqn:hypotheses}, $\Sigma_1 = \Sigma_2 = \ldots = \Sigma_{L-1} = \Sigma_L \text{ iff } X_{ji}=X_j \text{ \  } \forall \text{ \  } i \text{ and } N_1 = N_2 = \ldots = N_{L-1} = N_L$.  Therefore, for Case I,
+
+\begin{equation}\label{eqn:case-i-sigma}
+	\Sigma_1 = \Sigma_2 = \ldots = \Sigma_{L-1} = \Sigma_L .
+\end{equation}
+
+
+\noindent Here, using the multivariate form of the central limit theorem, recalling that $\Sigma_i=\Sigma$ is a function of $N_i=N$ derived from Equations \eqref{eqn:sigma-i}-\eqref{eqn:defineDD}, we know that
+
+\begin{equation}\label{eqn:case-i-central}
+	\lim_{N \to \infty} \left(\hat{\Theta}_i - \Theta_i \right) \indist N(0,\Sigma) ,
+\end{equation}
+
+
+\noindent and
+
+\begin{equation}\label{eqn:case-i-central-1}
+	\left( \begin{array}{c}  \left(\hat{\Theta}_1 - \Theta_1 \right) \\   \left(\hat{\Theta}_2 - \Theta_2 \right) \\ \vdots \\  \left(\hat{\Theta}_{L-1} - \Theta_{L-1} \right) \\   \left(\hat{\Theta}_{L} - \Theta_{L} \right) \end{array} \right)  \indist N \left(\left( \begin{array}{c} \mathbf{0} \\ \mathbf{0} \\ \vdots \\ \mathbf{0} \\ \mathbf{0} \end{array} \right),\left( \begin{array}{cccccc} \Sigma & 0 & 0 & \cdots & 0 & 0 \\ 0 & \Sigma & 0 & \cdots & 0 & 0 \\ \vdots & \vdots & \vdots & \ddots & \vdots & \vdots \\ 0 & 0 & 0 & \cdots & \Sigma & 0 \\ 0 & 0 & 0 & \cdots & 0 & \Sigma   \end{array} \right) \right);
+\end{equation}
+
+\noindent therefore, under the null hypothesis
+
+\begin{equation}\label{eqn:case-i-central-2}
+	\left(
+		\begin{array}{c}
+			\left(\hat{\Theta}_1 - \hat{\Theta}_L \right) \\
+			\left(\hat{\Theta}_2 - \hat{\Theta}_L  \right) \\
+			\vdots \\
+			\left(\hat{\Theta}_{L-2} - \hat{\Theta}_L \right) \\
+			\left(\hat{\Theta}_{L-1} - \hat{\Theta}_L  \right)
+		\end{array}
+	\right)  \indist N
+	\left(	\left(
+		\begin{array}{c}
+			\mathbf{0} \\
+			\mathbf{0} \\
+			\vdots \\
+			\mathbf{0} \\
+			\mathbf{0}
+		\end{array}
+		\right),
+		\left(
+		\begin{array}{cccccc}
+			2\Sigma & \Sigma & \Sigma & \cdots & \Sigma & \Sigma \\
+			\Sigma & 2\Sigma & \Sigma & \cdots & \Sigma & \Sigma \\
+			\vdots & \vdots & \vdots & \ddots & \vdots & \vdots \\
+			\Sigma & \Sigma & \Sigma & \cdots & 2\Sigma & \Sigma \\
+			\Sigma & \Sigma & \Sigma & \cdots & \Sigma & 2\Sigma
+		\end{array}
+		\right)
+	\right)
+\end{equation}
+
+\noindent where the Variance-Covariance matrix in Equation \eqref{eqn:case-i-central-2} can be written as
+
+
+\begin{equation}\label{eqn:case-i-cov}
+	\left[ \begin{array}{ccccc}H & \rho H & \rho H & \cdots & \rho H \\ \rho H &H & \rho H & \cdots & \rho H \\ \vdots & \vdots & \vdots & \ddots & \vdots \\ \rho H & \rho H & \rho H & \cdots &H \\\end{array}\right]
+\end{equation}
+
+\noindent where $H = 2 \Sigma$ and $\rho = \frac{1}{2} I_{k \times k}$.
+
+\noindent The resulting test statistic is defined as
+
+\begin{equation}\label{eqn:case-i-max}
+	M_U = max(U_1,U_2,\ldots,U_{L-1})
+\end{equation}
+
+\noindent where
+
+\begin{equation}\label{eqn:case-i-location}
+	U_i = (\hat{\Theta}_i - \hat{\Theta}_L)' H^{-1} (\hat{\Theta}_i - \hat{\Theta}_L)
+\end{equation}
+
+Since $(U_1,U_2,\ldots,U_{L-1})$ follow a multivariate chi-square distribution with dependence parameter $\rho$ (see Royen \citet{Royen:1984} and Dasgupta and Spurrier \citet{Dasgupta:1997}), the critical value $c$ is defined as
+
+\begin{equation}\label{eqn:case-i-critical}
+	P(M_U > c \ | \ H_0) = \alpha
+\end{equation}
+We use critical points based on the maximum order statistic of the multivariate chi-square.  Appropriate tables have been defined by Dasgupta \citet{Dasgupta:1996}; appropriate {\tt R} code to generate critical values is available\footnote{\added{The code to compute the exact and simulated critical values using {\tt R} requires the library {\tt mvtnorm} and is available online {\tiny{\tt http://www.mshaffer.com/research/R-code/R-mvchi.txt}}. For code to apply this technique (including the {\tt nls} model fitting), please contact the first author.}} from the authors.
+
+\subsection*{\underline{Case Ia}: Same Design Points and Unequal Sample Sizes for Control}
+
+Here we have the same design points for all $L$ groups ($X_1,X_2,\ldots,X_d$).  At each design point ($X_j$), $n_i$ observations are allocated to the ($L-1$) treatment groups and $m_i$ observations are allocated for the control group, $L$, such that $m_i = r n_i$.
+
+\begin{equation}\label{eqn:case-ii-samples}
+	\sum_{i=1}^s n_i = N
+\end{equation}
+
+\begin{equation}\label{eqn:case-ii-samplesM}
+	\sum_{i=1}^s m_i = M
+\end{equation}
+
+\noindent where $M = rN$.  In this situation $D_i = D$ for $i = 1,2,\ldots,L-1$ and $D_L = rD$.  Hence
+
+\begin{equation}\label{eqn:case-ii-MSE}
+	\Sigma_L = \sigma^2(D_L'D_L)^{-1}=r^{-1}(D'D)^{-1}\sigma^2 = \frac{1}{r}\Sigma
+\end{equation}
+
+\noindent Following the same logic as in Equations \eqref{eqn:case-i-central} and \eqref{eqn:case-i-central-1}, Equation \eqref{eqn:case-i-central-2} updates to
+
+\begin{equation}\label{eqn:case-ii-central}
+	\left(
+		\begin{array}{c}
+			\left(\hat{\Theta}_1 - \hat{\Theta}_L \right) \\
+			\left(\hat{\Theta}_2 - \hat{\Theta}_L  \right) \\
+			\vdots \\
+			\left(\hat{\Theta}_{L-2} - \hat{\Theta}_L \right) \\
+			\left(\hat{\Theta}_{L-1} - \hat{\Theta}_L  \right)
+		\end{array}
+	\right)  \indist N
+	\left(	\left(
+		\begin{array}{c}
+			\mathbf{0} \\
+			\mathbf{0} \\
+			\vdots \\
+			\mathbf{0} \\
+			\mathbf{0}
+		\end{array}
+		\right),
+		\left(
+		\begin{array}{cccccc}
+			\Sigma_L+\Sigma & \Sigma_L & \Sigma_L & \cdots & \Sigma_L & \Sigma_L \\
+			\Sigma_L & \Sigma_L+\Sigma & \Sigma_L & \cdots & \Sigma_L & \Sigma_L \\
+			\vdots & \vdots & \vdots & \ddots & \vdots & \vdots \\
+			\Sigma_L & \Sigma_L & \Sigma_L & \cdots & \Sigma_L+\Sigma & \Sigma_L \\
+			\Sigma_L & \Sigma_L & \Sigma_L & \cdots & \Sigma_L & \Sigma_L+\Sigma
+		\end{array}
+		\right)
+	\right),
+\end{equation}
+
+\noindent and the Variance-Covariance matrix has the same form described in Equation \eqref{eqn:case-i-cov}.  As a result, the test statistic and critical points are derived in the same manner where now $H = \frac{1+r}{r} \Sigma$ and $\rho = \frac{1}{1+r}I_{k \times k}$.
+
+\subsection*{\underline{Case II}: Different Design Points and Unequal Sample Sizes (Most General Case)}
+
+Here we consider the situation similar to our apple data where we have unequal sample sizes and/or design points.  This is the most general case.  From Equation \eqref{eqn:sigma-i} it is evident that if $X_{ji} \neq X_j$ for all locations $i=1,2,\ldots,L-1,L$, or if $N_i \neq N$ for all locations $i=1,2,\ldots,L-1,L$ then $\Sigma_i$ which depends on $X_{ji}$ and $N_i$ through $D_i$ will not be the same under the null hypothesis.  Again, following the logic of Equations \eqref{eqn:case-i-central},\eqref{eqn:case-i-central-1}, Equation \eqref{eqn:case-ii-central} updates to
+
+\begin{equation}\label{eqn:case-iii-central}
+	\left(
+		\begin{array}{c}
+			\left(\hat{\Theta}_1 - \hat{\Theta}_L \right) \\
+			\left(\hat{\Theta}_2 - \hat{\Theta}_L  \right) \\
+			\vdots \\
+			\left(\hat{\Theta}_{L-2} - \hat{\Theta}_L \right) \\
+			\left(\hat{\Theta}_{L-1} - \hat{\Theta}_L  \right)
+		\end{array}
+	\right)  \indist N
+	\left(	\left(
+		\begin{array}{c}
+			\mathbf{0} \\
+			\mathbf{0} \\
+			\vdots \\
+			\mathbf{0} \\
+			\mathbf{0}
+		\end{array}
+		\right),
+		\left(
+		\begin{array}{cccccc}
+			\Sigma_L+\Sigma_1 & \Sigma_L & \Sigma_L & \cdots & \Sigma_L & \Sigma_L \\
+			\Sigma_L & \Sigma_L+\Sigma_2 & \Sigma_L & \cdots & \Sigma_L & \Sigma_L \\
+			\vdots & \vdots & \vdots & \ddots & \vdots & \vdots \\
+			\Sigma_L & \Sigma_L & \Sigma_L & \cdots & \Sigma_L+\Sigma_{L-2} & \Sigma_L \\
+			\Sigma_L & \Sigma_L & \Sigma_L & \cdots & \Sigma_L & \Sigma_L+\Sigma_{L-1}
+		\end{array}
+		\right)
+	\right)
+\end{equation}
+
+Writing the Variance-Covariance matrix as in Equation \eqref{eqn:case-i-central-2} we now defined $H$ most generally as $H_{ii} = \Sigma_i + \Sigma_L$; the dependence parameter $\rho$ now becomes a dependence matrix $R$.  The test statistic for this case is defined as
+
+\begin{equation}\label{eqn:case-iii-max}
+	M_V = max(V_1,V_2,\ldots,V_{L-1})
+\end{equation}
+
+\noindent where
+
+\begin{equation}\label{eqn:case-iii-location}
+	V_i = (\hat{\Theta}_i - \hat{\Theta}_L)' H_{ii}^{-1} (\hat{\Theta}_i - \hat{\Theta}_L)
+\end{equation}
+
+Now $(V_1,V_2,\ldots,V_{L-1})$ follow a multivariate chi-square distribution with dependence matrix $R$.  To delineate the form of $R$ we need to define $B_i$ such that $B_i' B_i = \Sigma_i + \Sigma_L$.  Hence,
+
+\begin{equation}\label{eqn:case-iii-R}
+		\left[
+		\begin{array}{cccccc}
+			I & R_{21} & R_{31} & \cdots & R_{(L-2)1} & R_{(L-1)1} \\
+			R_{12} & I & R_{32} & \cdots & R_{(L-2)2} & R_{(L-1)2} \\
+			\vdots & \vdots & \vdots & \ddots & \vdots & \vdots \\
+			R_{1(L-2)} & R_{2(L-2)} & R_{3(L-2)} & \cdots & I & R_{(L-1)(L-2)} \\
+			R_{1(L-1)} & R_{2(L-1)} & R_{3(L-1)} & \cdots & R_{(L-2)(L-1)} & I
+		\end{array}
+		\right]
+\end{equation}
+
+
+\noindent where $R_{ii} = \Sigma_L (B_i B_i')^{-1}$.
+
+To find critical values based on the maximum of $(V_1,V_2,\ldots,V_{L-1})$ we need to know the structure of $R$.  As no analytical form is immediately available \removed{for finding critical values}, we simulate critical values using the multivariate Variance-Covariance structure for our apple data found in Table \ref{tbl:results-1}.  \added{This structure is defined based on the sample sizes\footnote{\changed{Please refer to Table \ref{tbl:results-1} for the sample sizes and design points.  Only the sample sizes are needed to compute simulated critical values; e.g., {\tt N = c(483,571,575,595,691,667,1022);} with an identification of how many parameters $k$ in the model and which sample size is the referent $L$.}} of each location.}   Figure \ref{fig:quantiles-simulation-100000} shows the \changed {simulated (run 100,000 times) for our specific data example (with unequal sample sizes).}
+
+
+\begin{table}[h!]
+	\begin{center}
+		
+		 \scalebox{0.70}{ \input{tables/simulation_quantitles} }
+		
+			
+		\caption{\textbf{Simulated Quantiles for Actual Sample Design Frame}}
+		\label{fig:quantiles-simulation-100000}
+	\end{center}
+\end{table}
+
+For $\alpha = .05$, we identify  $11.435436$ as the critical point specific the number of locations and the unique design frames at each location.
+
+\section{Application of Technique}\label{sec:application}
+
+We begin by estimating $\hat{\Sigma}$ which Dasgupta \citet{Dasgupta:1996} demonstrated was a consistent estimator for $\Sigma$.  In this case, we pool the variance across all locations based on the actual sample size from each location:
+
+\begin{equation}\label{eqn:pooled-variance}
+\hat{\Sigma} = \frac{ \sum_{i=1}^{L} (N_i - 1) \hat{\Sigma}_i } {(\sum_{i=1}^{L} N_i) - L }.
+\end{equation}
+
+\noindent In addition, we also consider $\hat{\Sigma}_L$ as an alternate estimator for $\Sigma$.  The nature of our apple data is based on unequal sample sizes and design points, so we proceed utilizing\footnote{Note:  we used the dependence matrix $R$ to simulate our critical point.} Case II, calculating $H_{ii}$ for each location.
+
+\begin{table}[h!]
+	\begin{center}
+		
+		\scalebox{0.90}{ \input{tables/application_results} }
+		
+			
+		\caption{\textbf{Application of Multiple Comparison to Control}}
+		\label{fig:table-stats-locations}
+	\end{center}
+\end{table}
+
+\noindent Whether we use the pooled variance or the control variance as the estimator for $\Sigma$ with our apple data,  we reject the null hypothesis and conclude that at least one location's growth curve is different from the control growth curve, see Table~\ref{fig:table-stats-locations}.  Identifying the maximum, we can conclude that apple growth at Orondo (3) is statistically different from the apple growth at Naches ($L$).  The built in multiple comparison allows us to also conclude that all locations other than Omak are different from Naches.
+
+\section{Simulations for Size and Power}\label{sec:sims}
+In the earlier sections, we provide a method for a comparing nonlinear curves to that of a control.  Our test statistic asymptotically follows the maximum of a multivariate chi-square distribution.  To understand its performance for finite samples, we run a Monte Carlo simulation for Type I error and power under the cases presented in this research.  Recall, that the non-centrality parameter for any location in the multivariate chi-square distribution is defined as:
+
+\begin{equation}\label{eqn:case-i-location-ncp}
+	ncp = (\Theta_i - \Theta_L)' H_{ii}^{-1} (\Theta_i - \Theta_L)
+\end{equation}
+
+\subsection*{\underline{Case I}: Same Design Points and Equal Sample Sizes}
+For type I error we generate data under the null and look at the effect of sample size and error variance on the Type I error.  Here we generate date from ($L-1$)=6 locations and a control with $\beta_1 = \beta_2 = \ldots = \beta_L = 2.87$, $\delta_1 = \delta_2 = \ldots = \delta_L = 0.0345$, $\tau_1 = \tau_2 = \ldots = \tau_L = 173$.  We chose these values as these are the estimated values for our reference site (see Table \ref{tbl:results-1}). We varied $\sigma^2$ from .05 to .25 in increments of .05, as our estimated variance from our data was .15.  We used the same design points $\{X_1 , X_2, \ldots, X_6\}$=$\{170, 188, 206, 242, 280\}$ for all six locations and the control to span our data range.  We then varied the sample sizes from 10 to 200 in our simulations and calculated the Type I error.   Table \ref{tbl:caseI-typeI-pooled} shows the results.  Our table entries are the number of hypothesis rejections out of the total number of ``good simulations".  We defined a ``good simulation" as the case when the nonlinear estimator (nls) converged for all six treatments and a control.  If the nls estimator failed to converge even for one of the locations, we considered it a ``bad" simulation.  Our results indicate that the Type I error was controlled well even for sample sizes around 30 with all the Type I errors being within 2 standard deviation of the simulation error (=$\sqrt{(.05)(.95)/10000}=.0021)$.  However, we see for smaller sample sizes we have a big number of ``bad simulations", which increases with the error variance.  As a matter of fact, when $n_{ij}=10$ and $\sigma^2$=.25 only 1028 cases out of the 10000 are ``good" simulations.  Meaning in 90 percent of the cases the estimates from the nls for one of the locations did not converge.  For sample size of 50, 87 percent of the cases were ``good" simulations for the same error variance.  This indicates that the Type I error performance depends upon on the convergence of the nls estimator.  The nls estimator seems to converge well when sample sizes are around 50 with our 6 design points.
+
+For marginal power \citep{Spurrier:1992}, fixing $\sigma^2$=.15, we generate data as described above for all but one location ($i = 2, 3, \ldots, L-1$), and we vary the parameter values for one location ($i=1$).  Based on the context of our data and results, we vary the parameters for Omak (1) in the following ranges:  $\beta$ [2.57,3.20] in 0.07 increments; $\delta$ [0.0258,0.0420] in 0.0017 increments; and $\tau$ [167,185] in 2 increments.  In turn, we vary each parameter in isolation (fixing the other parameters at the predefined values for the Type I simulations).  We also have cases of simulations where we varied all three parameters together.  This is available from the authors andis not included for space considerations. The case with $\beta$=2.87, $\delta$=.0345 and $\tau$=173 corresponds to the null case.  In Tables \ref{tbl:sim-parameter} we summarize the results.  We again report the number of hypothesis rejections out of the total number of ``good simulations".  The results indicate that our method is quite sensitive to small departures from the null.  This does depend upon the sample size which again highly influences the number of ``good" simulations.  For example when we change $\beta$ from 2.87 to 2.57, keeping $\delta$ and $\tau$ fixed at the reference values, the power changes from .02 for $n_{ij}$=10 to .24 at sample size 50, to .99 for sample size 100.  So, the results are not unexpected, as sample size increases so does marginal power.   As conceptually Case 1a is similar to Case 1, we do not include specific simulations for this case.
+
+\newpage
+\begin{landscape}
+	\begin{table}[h!]
+	  \begin{center}
+	    \scalebox{0.7}{	\input{tables/typeI-caseI-pooled} }
+	  \end{center}
+		\caption{\textbf{Type I error, Case I}:  For $\alpha = .05$, $nsim=10000$, and reasonable variances for $Y$, all locations are assigned these true parameters at the design points based on the sample sizes, with random noise ($var(Y)$).  We report the number of rejects (using the pooled variance, see Equations \eqref{eqn:case-i-critical} and \eqref{eqn:pooled-variance} ) based on good simulations (e.g., simulations for which the Gauss-Newton technique for nonlinear fitting converges, etc.) for six fixed design points $X_{ij}=\{170, 188, 206, 224, 242, 260\}$.  Under the null, parameters at location $L$ represent the true parameters:  $\beta = 2.87$, $\delta = 0.0345$, $\tau =  173$.}
+		\label{tbl:caseI-typeI-pooled}
+	\end{table}
+\end{landscape}
+
+
+\newpage
+\begin{landscape}
+	\begin{table}[h!]
+	  \begin{center}
+	     \scalebox{0.60}{	\input{tables/simulations-parameter} }
+	  \end{center}
+		\caption{\textbf{Marginal Power - Changing one parameter at one location.}}
+		\label{tbl:sim-parameter}
+	\end{table}
+\end{landscape}
+
+\subsection*{\underline{Case II}: Different Design Points and Unequal Sample Sizes (Most General Case)}
+To conduct Monte Carlo simulations in Case II is daunting as there are infinite possibilities with different sample sizes and different design points even within the data range of our example.  So we chose to simulate data choosing the sample size and the design points from our apple data.  This allowed us to estimate the $H_{ii}=\Sigma_L+\Sigma_i$ and construct the overall Covariance Matrix as in Equation \eqref{eqn:case-ii-central}.  Under the null, based on Equation \eqref{eqn:case-ii-central}, the differences of parameters to control is distributed as multivariate normal with mean zero and the covariance matrix as described based on $H_i=\Sigma_L+\Sigma_i$.  Because the Variance-Covariance structures of each model are different (Note:  the sign differences in the off-diagonals), we simulate two locations.  For each simulation at a location, we only vary the mean difference for that location, and test $M_V$ using the simulated critical value reported in Table \ref{fig:quantiles-simulation-100000}.  In the last two columns of Tables \ref{tbl:sim-parameter} we summarize the results.  We see with the sample frame described in Table \ref{tbl:results-1}, the test is quite sensitive to small departures from the null case.  Going from the reference value of 2.87 to 2.85 for $\beta$ keeping  $\delta$ and $\tau$ fixed gives a marginal power of 14.4 percent.  Changing $\delta$ from .0345 to .0330 keeping the other two parameters fixed gives a power of 38.6 percent.  Similarly changing $\tau$ from 173 to 175, with the others fixed gives a power of 79 percent.  When changing all three parameters together we generally see full power (100 percent) for very small departures from the null.  This sensitivity analysis of power further validates our proposed method.
+
+\section{Discussion and Conclusion}\label{sec:conclusion}
+
+In this manuscript motivated by a problem of comparing growth curves, we introduce a method based on Wald Statistics.  Our test statistic as the maximum of the statistics at each location  and is fairly easy to compute.   We have an inbuilt follow-up which allows us to identify which loactions are different than the control.  We demonstrated how to estimate the $H$ matrix (or specifically with our data, $H_{ii}$).  We considered both a pooled variance $\hat{\Sigma}$ as an estimate for $\Sigma$ and a control variance $\hat{\Sigma}_L$ as an alternative estimate for $\Sigma$.    Theoretically our test statistic is the maximum of a multivariate chi-square distribution equi-correlated under equal sample sizes and identical design points with a general dependence matrix under unequal sample sizes and/or design points.  We use methods in the literature to compute critical points for equal samples and use simulation methods to calculate the critical points for unequal sample sizes.
+
+In this manuscript we focus on the three-parameter Richard's curve to address our specific problem; however, we note that this technique is generalizable to other growth curves, and to other nonlinear forms.  Our algorithm is flexible and the calculation of the critical points under unequal sample sizes makes it more applicable in practice.  Hence, we foresee potential applications of this method in agricultural, biological, environmental, business, marketing, the social sciences, etc.  In addition, future research can theoretically address pairwise comparison of curves and comparing curves to the ``best" curve.  \reviewer{\textbf{(R3: \P \ 2)} In the section, we briefly discuss the comparison to best and pairwise as future research opportunities.} \added{In our example we had a known reference site, Naches and it was of interest to compare the other sites to this.  If the reference site is not known comparison to best makes sense.  However, this involves a non-linear comparison and whether the procedure generalizes from our method for the vector of parameters remain to be seen.  We plan on extendimng our results to this avenue in the future.}  Another avenue of future research is looking at comparing a large number of curves and using False Discovery Rates.
+
+While, we propose a general technique, there were some issues specific to $our$ problem that we faced and addressed.  These issues are not universal and not theoretical but we want to share our experiences with this problem as future researchers may face similar problems.  The biggest problem we faced was related to the order of magnitude of our parameters.  The $\beta$ parameter which, in our model, implies the maximum growth of the fruit \added{is} less than 4 inches.  Obviously, one does not encounter too many apples more than 4 inches in diameter in practice.  The second parameter $\delta$ is the growth rate in the Richard's curve.  This parameter is always less than one and generally quite small (between .02-.04, in our data) as the rate of growth of a fruit is not expected to be large.  The third parameter, $\tau$ represents time of maximum growth and in Julian days is around 170-185, (around mid-year).  These parameters make sense in the context of the problem and are of interest to growers.  However, mathematically there are of different orders of magnitude which makes off-diagonals of the Variance-Covariance matrix unique.  This might lead to instability or \added{``ill-conditioning"} of the covariance matrix which may have, in turn, contributed to the non-convergence of the nonlinear estimator.  While, standardizing these parameters is an option, we felt the gain in mathematical tractability did $not$ off-set the loss in practical application of this procedure.  Hence, we chose not to standardize but deal with the instability in our algorithms.  In our tables we delineate the number of cases where we did not have convergence of the nls estimator.  This is an area that needs some attention in the nonlinear estimation arena.
+
+In addition to this magnitude-effect, we also note that specific to our data and model fit, that the signs of the off-diagonal elements  Variance-Covariance matrix $\Sigma_i$ varied across locations.  Referring to Table \ref{tbl:results-1}, we note that locations Omak (1), Chelan (2), Orondo (3) and Wenatchee (4) have similar signs in the off-diagonals than Naches (Reference) and Wapato (6).  These are all different from Royal City (5).  This affected the calculation of our $H_{ii}=\Sigma_L+\Sigma_i$.  This emphasizes the importance of reporting and reviewing the Variance-Covariance matrix for nonlinear models, and not just reporting and reviewing the variance (standard error) estimates.
+
+In 1959 Richards notes  \citep[p. 299]{Richards:1959}: ``Unfortunately, sound statistical methods cannot be suggested at present [...] for estimating the probability that any difference between [...] growth curves is statistically real."  While we do not venture to believe we have solved this age-old problem, we feel our technique is a first step towards solving it.  Specifically, we mathematically demonstrated that our method is asymptotically exact, controls well for family-wise Type I error, and has stable marginal power.
+
+\section*{Acknowledgements}
+The authors would like to thank Washington Tree Fruit Research Commission (WTFRC AP-09-908) which supported part of this work.  We also would like to thank Karen Lewis and Tori Schmidt, the Co-PIs on the ``Modeling Washington Apple bloom phenology and fruit growth" research project.  \added{Additionally, we would like to thank Josh Heim for the apple-location map (see Figure~\ref{fig-wa-apples}) of the state of Washington.  Finally, we would like to thank the editor and reviewers for very helpful suggestions. }
+
+
+
+%\bibliographystyle{elsarticle-num}
+\bibliographystyle{cJAS}
+%\bibliographystyle{model1-num-names}
+\bibliography{biblio/apples}
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\label{lastpage}
+
+\end{document}
