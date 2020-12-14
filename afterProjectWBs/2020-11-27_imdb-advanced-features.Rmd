@@ -1,13 +1,16 @@
 ---
 title: 'R Notebook: IMDB (advanced features) for Will v Denzel'
 output:
+  pdf_document:
+    toc: yes
+    toc_depth: '5'
   html_document:
     df_print: paged
-    toc: true
-    toc_float: true
+    toc: yes
+    toc_float: yes
     toc_depth: 5
-    fig_caption: true
-    number_sections: true 
+    fig_caption: yes
+    number_sections: yes
 ---
 
 ```{r}

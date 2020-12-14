@@ -1,0 +1,381 @@
+---
+output:
+  pdf_document:
+    keep_tex: true
+    fig_caption: true
+    toc: true
+    toc_depth: 3 
+    number_sections: true
+    citation_package: natbib
+    latex_engine: pdflatex
+    template: ./LateX/report.tex
+  html_document:
+    
+    df_print: paged
+title: "Will V. Denzel"
+author: 
+- name: "Joshua Bennett"
+  affiliation: "Washington State University"
+keywords: |
+    T-tests, Histogram, Data Integrity, ScatterPlot, correlation tables
+abstract: |
+  In this Article we will discuss who is the better artor between Will Smith and Denzel
+  Washington.
+sectionnumberdepth: 3
+titleEndnotes: "ENDNOTES"
+titleReferences: "REFERENCES"
+columnsReferences: 2
+titleTOC:  "TABLE OF CONTENTS"
+bibliography: ./../biblio/master.bib
+bibliostyle: ./../biblio/ormsv080.bst
+date: "`r format(Sys.time(), '%B %d, %Y')`"
+---
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+
+library(devtools);
+
+library(humanVerseWSU);
+
+path.github = "https://raw.githubusercontent.com/MonteShaffer/humanVerseWSU/master/";
+
+include.me = paste0(path.github, "misc/functions-nlp.R");
+source_url( include.me );
+include.me = paste0(path.github, "misc/functions-nlp-str.R");
+source_url( include.me );
+include.me = paste0(path.github, "misc/functions-nlp-stack.R");
+source_url( include.me );
+include.me = paste0(path.github, "misc/functions-nlp-pos.R");
+source_url( include.me );
+
+include.me = paste0(path.github, "humanVerseWSU/R/functions-encryption.R");
+source_url( include.me );
+
+include.me = paste0(path.github,"misc/functions-project-measure.R");
+source_url( include.me);
+
+
+path.to.nascent = "C:/Users/Alexander Nevsky/Dropbox/WSU-419/Fall 2020/__student_access__/unit_02_confirmatory_data_analysis/nascent/";
+
+folder.nlp = "nlp/";
+path.to.nlp = paste0(path.to.nascent, folder.nlp);
+
+
+###### UPDATES TO dataframe subset function ######
+# inflation adjustments for NA ... and improvements on subsetting
+include.me = paste0(path.github, "humanVerseWSU/R/functions-dataframe.R");
+source_url( include.me );
+
+include.me = paste0(path.github, "humanVerseWSU/R/functions-inflation.R");
+source_url( include.me );
+
+
+```
+
+# (IMDB) Custom library
+
+This is a large dataset I harvested in September.  It will allow us to explore more comprehensively the relationships of various features of the movie database.  It is large (about 50MB), so installing may take some time if you are on a slow internet connection.
+
+This dataset will be the source you will use on your final exam to answer the question posed earlier in the semester about Will Smith and Denzel Washington.  You now have more analytics skills and with the new dataset there are more features you can extract.
+
+```{r}
+# library(devtools);
+# install_github("MonteShaffer/imdb/imdb"); # choose #3 to humanVerseWSU
+# detach(package:imdb);
+library(imdb);
+packageVersion("imdb");  # ‘0.1.1’
+# ?loadDataIMDB
+```
+
+## Load data
+
+Once this is run, a lot of memory will be required to read in the 23 compressed files.
+
+```{r}
+install_github("MonteShaffer/imdb/imdb")
+imdb::loadDataIMDB();
+names(imdb.data);
+
+humanVerseWSU::loadInflationData();
+```
+
+Create Dataframe for the top gross and best reviews movies
+
+```{r}
+library(KernSmooth)
+normalDiagnosticPlot = function(x,  normalityTest=TRUE,
+                                    showDensity=TRUE,
+                                    showNormal=TRUE,
+                                    showSDs=FALSE,
+                                    showAxis=TRUE
+                                )
+  {
+  xx = na.omit(x);
+  x.stats = doStatsSummary(x);
+  # x.table = table(x);
+  
+  # library(KernSmooth); # install.packages("KernSmooth", dependencies=TRUE);
+  # bin.count = dpih(xx);
+  # mybreaks = 100 * bin.count;
+  
+  mxlim = c(x.stats$mean - 3.5 * x.stats$sd , 
+            x.stats$mean + 3.5 * x.stats$sd );
+  h = hist(xx, breaks="Sturges", plot=F);
+  mylim = c(0, max(h$counts));
+  
+  myMain = paste0(  "Histogram (mean: ",
+                  round(x.stats$mean,digits=3), 
+                  ", sd: ",
+                  round(x.stats$sd,digits=3),
+                  ")"
+                  );
+  
+  
+  
+mxlab = "";  
+  if(normalityTest)
+    {
+    isNormal = NULL;
+    if(x.stats$shapiro.is.normal$`0.10`) { isNormal = 0.10; }
+    if(x.stats$shapiro.is.normal$`0.05`) { isNormal = 0.05; }
+    if(x.stats$shapiro.is.normal$`0.01`) { isNormal = 0.01; }
+    
+    isNormalResult = FALSE;
+    if(!is.null(isNormal)) { isNormalResult = TRUE;}
+    if(is.null(isNormal)) { isNormal = 0.05;}
+    
+    mxlab = paste0("Shapiro Normality test at (alpha = ",
+                isNormal, ") is ... ",isNormalResult);
+    }
+  
+  
+### Histogram  
+  hist(xx, breaks="Sturges",  xlim=mxlim, ylim=mylim,
+      xlab=mxlab, xaxt='n', main=myMain);
+  
+  if(showDensity)
+    {
+    par(new=T); # overlay
+  ### Density Plot (remember first reading?)
+    plot( density(xx, kernel="epanechnikov") ,
+            xlim=mxlim, 
+            main="", 
+            xlab="", 
+            ylab="", 
+            xaxt='n', 
+            yaxt='n'  
+        );
+    }
+    
+  
+  if(showNormal)
+    {    
+    par(new=T); # overlay  
+  ### Normal Curve
+    xt = seq(-3.5,3.5, length=100);
+  			yt = dnorm(xt);
+  
+  	plot( xt, yt, 
+  	      type="l", 
+  	      lwd=2, 
+  	      col = "red",
+  	      axes=F, 
+  	      xlab="",
+  	      ylab=""
+  	    );	
+    }
+  	
+    
+  if(showSDs)
+    {
+  ### vertical lines at sd's of data ...	
+    abline(v=x.stats$mean,lwd=4,col="blue");
+      abline(v=x.stats$mean - 1 * x.stats$sd , col="green",lwd=3);
+      abline(v=x.stats$mean + 1 * x.stats$sd , col="green",lwd=3);
+      abline(v=x.stats$mean - 2 * x.stats$sd , col="green",lwd=2);
+      abline(v=x.stats$mean + 2 * x.stats$sd , col="green",lwd=2);
+      abline(v=x.stats$mean - 3 * x.stats$sd , col="green",lwd=1);
+      abline(v=x.stats$mean + 3 * x.stats$sd , col="green",lwd=1);
+    }
+  
+    
+  if(showAxis)
+    {
+  ### axis labels showing the ability to use expression			
+  	axis(1, at = -3:3, labels = c( expression("-3"~hat(sigma) ), expression("-2"~sigma ), expression("-1"~hat(s) ), expression(bar(x)), expression("1"~hat(s) ), "2s", c( expression("3"~hat(sigma) ))) );
+  		#axis(1, at = -3:3, labels = c("-3s", "-2s", "-1s", "hat(mu)", "1s", "2s", "3s"))		
+    }
+  			
+  
+  }
+```
+
+
+
+
+Denzels revenue is also much more stable,
+much lower highs
+```{r}
+library(dplyr)
+
+will.nmid = "nm0000226";
+will.movies = IMDB.getMoviesForPerson(will.nmid);
+will.n = nrow(will.movies);
+
+
+denzel.nmid = "nm0000243";
+denzel.movies = IMDB.getMoviesForPerson(denzel.nmid);
+denzel.n = nrow(denzel.movies);
+#will = IMDB.searchPersonName("Will* Smith*");
+#denzel = IMDB.searchPersonName("Denzel* Washington")
+
+myWill.df = will.movies
+
+WillRatings = myWill.df$metacritic
+
+
+myDenzel.df = denzel.movies
+denzelTop = myDenzel.df
+
+DMovieRatings = myDenzel.df$metacritic
+
+
+WGross = will.movies$millions
+DGross = denzel.movies$millions
+
+normalDiagnosticPlot(WGross)
+normalDiagnosticPlot(DGross)
+
+hist(WGross, main = "Histogram of Will Smith movie Grosses")
+hist(DGross, main = "Histogram of Denzels movie Grosses")
+
+t.test(WGross, DGross)
+
+Wyear = myWill.df$year
+Dyear = myDenzel.df$year
+
+plot(WillRatings, Wyear)
+reg.n = lm(Wyear ~ WillRatings)
+abline(reg.n)
+
+abline(reg.n)
+
+plot(Dyear, DMovieRatings)
+reg.n = lm(DMovieRatings ~ Dyear)
+abline(reg.n)
+
+abline(reg.n)
+
+plot(Wyear, WGross)
+reg.n = lm(WGross ~ Wyear, col = "red")
+abline(reg.n)
+
+abline(reg.n)
+
+plot(Dyear, DGross)
+reg.n = lm(DGross ~ Dyear)
+abline(reg.n)
+
+abline(reg.n)
+
+summary(will.movies)
+summary(denzel.movies)
+
+
+```
+
+Reviews
+
+You can see that Denzels reviews are much more stable
+```{r}
+willReviews = will.movies
+
+Wreviews = willReviews$ratings
+
+DenzelReviews = denzel.movies
+
+DReviews = DenzelReviews$ratings
+
+plot(Wreviews, type = "l", lwd = 2, col = "red")
+plot(DReviews, type = "l", lwd = 2, col = "red")
+
+hist(Wreviews)
+
+hist(DReviews)
+
+normalDiagnosticPlot(willReviews$ratings)
+normalDiagnosticPlot(DenzelReviews$ratings)
+
+
+t.test(Wreviews, DReviews)
+
+```
+Popularity vs year of movie (when were they popular)
+
+\subsubsection{Tables of Descriptive Statistics and Correlations}
+\label{sec:correlation-tables}
+\input{tables/Will-Smith-corr.tex}
+
+```{r correlation, message=FALSE,include= FALSE}
+
+will.clean = removeNAsFromDataFrame(will.movies)
+
+path.project = "C:/Users/Galac/Desktop/git419/Stats419_FALL2020/Final/"
+path.tables = paste0(path.project, "tables/")
+createDirRecursive(path.tables)
+
+file.correlation = paste0(path.tables, "Will-Smith-corr.tex")
+myData = as.matrix(will.clean[,c("metacritic","millions","year")])
+
+buildLatexCorrelationTable(myData,
+                           rotateTable = FALSE,
+                           width.table = .95,
+                           myFile = file.correlation,
+                           myNames = c("metacritic", "millions","year"),
+                           myCaption = "will smith correlation")
+                
+
+```
+
+
+```{r}
+library(gtsummary)
+library(dplyr)
+
+myWill.df = will.movies
+
+WillYears= myWill.df$year
+
+myDenzel.df = denzel.movies
+denzelyear = myDenzel.df$year
+
+WGross = myWill.df$millions
+DGross = myDenzel.df$millions
+
+plot(WillYears, WGross)
+reg.n = lm(WGross ~ WillYears)
+abline(reg.n)
+
+abline(reg.n)
+plot(denzelyear, DGross)
+reg.n = lm(DGross ~ denzelyear)
+abline(reg.n)
+
+abline(reg.n)
+
+hist(WillYears)
+
+hist(denzelyear)
+
+total <- merge(myWill.df, myDenzel.df, by="year")
+#total
+
+t.test(WGross, DGross)
+#zero = myWill.df[,c("rating","millions")]
+summary(myWill.df)
+
+```
+

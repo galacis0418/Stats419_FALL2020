@@ -1,8 +1,5 @@
 ---
 output:
-  html_document:
-    
-    df_print: paged
   pdf_document:
     keep_tex: true
     fig_caption: true
@@ -12,6 +9,9 @@ output:
     citation_package: natbib
     latex_engine: pdflatex
     template: ./../LateX/report.tex
+  html_document:
+    
+    df_print: paged
 title: "Data Integrity: A Study"
 author: 
 - name: "Joshua Bennett"
@@ -33,6 +33,7 @@ date: "`r format(Sys.time(), '%B %d, %Y')`"
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+wd()
 ```
 
 \section{Introduction}
@@ -42,10 +43,8 @@ Data Integrity is a critical part of Data Analysis.  It is what ensures recovera
 Protecting the validity and accuracy of the data also increases stability and performance while improving reusability and maintainability.  Data Integrity can be compromised in several different ways. Physical compromise of the device, bugs/viruses, transfer errors(unintended alterations to the data), and Human error(malicious or not).  This report will be looking at mainly the last two categories of different ways it can compromised. Transfer errors, and Human error.
 
 
-![Outlier Data example](C:/Users/Galac/Desktop/git419/Stats419_FALL2020/Proj1/figures/outliers.png)
 This is an example of outliers in the data\footnote{Sometimes when looking for data that was fabricated or altered incorrectly it can be very hard to find.\newline So finding a good method for searching out the data is probably the most important part.  In this graphic we can easily see data that is significanly off the normal path. Both above and below the median.  This is a great visual example of failed Data Integrity.}
 
-![Vitruvian man measurements](C:/Users/Galac/Desktop/git419/Stats419_FALL2020/Proj1/figures/06_Reading_Vitruvian-Man.pdf)
 
 
 
@@ -79,7 +78,7 @@ The data gathered is focusing on bodily proportions but other data was taken as 
 Very brief introduction to the data, how it was collected, and so on.  Remember that everything is covered (who, what, when, where, why, how, so what, and so on).  Reference the section in the Appendix with greater detail about the data provenance.  This section should be about two paragraphs, and the Appendix should have more information.
 
 \subsection{Summary of Sample}
-![alt text here](C:/Users/Galac/Desktop/git419/Stats419_FALL2020/Proj1/figures/summary of data.png)
+
 This is a summary of the Data Set that was used for this analysis\footnote{This data is slightly changed from the given data at the start of the Project.
 I mainly used the proportion DataFrame that I created and I felt it was more fitting that I put the summary of the Proportion data here and not the measure.df}
 \label{sec:data-sample}
@@ -163,7 +162,6 @@ The minutes, length of time to record the information.\newline
 The notes, any additional information the subject or collector decided to add.\newline
 \label{sec:Provenance- Data Description}
 \subsubsection{Data Collection Handout}
-![alt text here](C:/Users/Galac/Desktop/git419/Stats419_FALL2020/Proj1/figures/handout.png)
 \label{sec:Provenance- Data Collection Handout}
 
 \subsection{Functions and devtools setup}

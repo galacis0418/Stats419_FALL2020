@@ -1,9 +1,6 @@
 ---
 title: 'R Notebook: Workspace Audit for [11373111]'
 output:
-  pdf_document:
-    toc: yes
-    toc_depth: '5'
   html_document:
     df_print: paged
     toc: yes
@@ -11,6 +8,9 @@ output:
     toc_depth: 5
     fig_caption: yes
     number_sections: yes
+  pdf_document:
+    toc: yes
+    toc_depth: '5'
 ---
 
 ```{r}
@@ -80,7 +80,7 @@ Browse to <https://github.com/MonteShaffer/WSU_STATS419_FALL2020/graphs/commit-a
 
 ## General Workspace Environment Data
 ```{r}
-path.to.git.local = "C:/_git_/WSU_STATS419_FALL2020/";
+path.to.git.local = "C:/Users/Galac/Desktop/git419/Stats419_FALL2020/";
 setwd(path.to.git.local);
 
 path.to.git.final = paste0(path.to.git.local,"final/");
@@ -281,5 +281,9 @@ Be certain to review the graphs and include self-reflective commentary on your w
 <pre style="font-weight: bold; font-family: monospace; white-space: pre-wrap; background-color: #717171; border: 2px solid #981e32;">
 -- WRITE SOMETHING HERE --
 
-I deserve XX/50 points because ...
+Hey, This is Josh Bennett. I feel I deserve 39/50 points for this section. Mainly being removed due to my lack of pushing to git.
+I generally spent around 2 to 2 and a half hours reading a notebook.  I would generally do this all in one sitting due to learning more when
+I go through the notebook at one time, along with my children not giving me real time to come back to it later. Basically if they fell asleep I would
+finish the whole thing. I also was working on multiple different computers due to my wife living half to time with her parents down in Vancouver, Wa so she
+can go to school. I tried to locate all the information needed and move it to this computer so it would be all in one place. 
 </pre>

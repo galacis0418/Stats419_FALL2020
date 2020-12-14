@@ -58,7 +58,7 @@ Using the sample file provided, we have all the known keys.  Now, we will use th
 
 path.your.measure = "C:/Users/Galac/Desktop/git419/Stats419_FALL2020/Proj1/";   # trailing slash or not?
 
-file.your.measure = paste0(path.your.measure,"/","measure.xlsx"); # if no trailing slash, notice the "/"
+file.your.measure = paste0(path.your.measure,"/","measure-student.xlsx"); # if no trailing slash, notice the "/"
 
 
 
